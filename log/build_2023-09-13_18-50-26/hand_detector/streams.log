@@ -1,0 +1,21 @@
+[1.755s] Invoking command in '/home/keny/MANOS_ws/src/hand_detector': AMENT_PREFIX_PATH=/home/keny/MANOS_ws/install/custom_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/keny/MANOS_ws/install/custom_msg:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/keny/MANOS_ws/install/custom_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/keny/MANOS_ws/build/hand_detector/prefix_override:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/acs/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/keny/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/hand_detector build --build-base /home/keny/MANOS_ws/build/hand_detector/build install --record /home/keny/MANOS_ws/build/hand_detector/install.log --single-version-externally-managed
+[2.020s] running egg_info
+[2.020s] writing ../../build/hand_detector/hand_detector.egg-info/PKG-INFO
+[2.095s] writing dependency_links to ../../build/hand_detector/hand_detector.egg-info/dependency_links.txt
+[2.109s] writing entry points to ../../build/hand_detector/hand_detector.egg-info/entry_points.txt
+[2.109s] writing requirements to ../../build/hand_detector/hand_detector.egg-info/requires.txt
+[2.109s] writing top-level names to ../../build/hand_detector/hand_detector.egg-info/top_level.txt
+[2.144s] reading manifest file '../../build/hand_detector/hand_detector.egg-info/SOURCES.txt'
+[2.146s] writing manifest file '../../build/hand_detector/hand_detector.egg-info/SOURCES.txt'
+[2.146s] running build
+[2.146s] running build_py
+[2.148s] running install
+[2.148s] running install_lib
+[2.150s] running install_data
+[2.151s] running install_egg_info
+[2.153s] removing '/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages/hand_detector-0.0.0-py3.8.egg-info' (and everything under it)
+[2.154s] Copying ../../build/hand_detector/hand_detector.egg-info to /home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages/hand_detector-0.0.0-py3.8.egg-info
+[2.155s] running install_scripts
+[2.170s] Installing hand_detector script to /home/keny/MANOS_ws/install/hand_detector/lib/hand_detector
+[2.170s] writing list of installed files to '/home/keny/MANOS_ws/build/hand_detector/install.log'
+[2.230s] Invoked command in '/home/keny/MANOS_ws/src/hand_detector' returned '0': AMENT_PREFIX_PATH=/home/keny/MANOS_ws/install/custom_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/keny/MANOS_ws/install/custom_msg:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/keny/MANOS_ws/install/custom_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/keny/MANOS_ws/build/hand_detector/prefix_override:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/acs/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/keny/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/hand_detector build --build-base /home/keny/MANOS_ws/build/hand_detector/build install --record /home/keny/MANOS_ws/build/hand_detector/install.log --single-version-externally-managed

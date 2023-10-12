@@ -1,0 +1,37 @@
+running egg_info
+creating ../../build/hand_detector_package/hand_detector_package.egg-info
+writing ../../build/hand_detector_package/hand_detector_package.egg-info/PKG-INFO
+writing dependency_links to ../../build/hand_detector_package/hand_detector_package.egg-info/dependency_links.txt
+writing entry points to ../../build/hand_detector_package/hand_detector_package.egg-info/entry_points.txt
+writing requirements to ../../build/hand_detector_package/hand_detector_package.egg-info/requires.txt
+writing top-level names to ../../build/hand_detector_package/hand_detector_package.egg-info/top_level.txt
+writing manifest file '../../build/hand_detector_package/hand_detector_package.egg-info/SOURCES.txt'
+reading manifest file '../../build/hand_detector_package/hand_detector_package.egg-info/SOURCES.txt'
+writing manifest file '../../build/hand_detector_package/hand_detector_package.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/keny/MANOS_ws/build/hand_detector_package/build
+creating /home/keny/MANOS_ws/build/hand_detector_package/build/lib
+creating /home/keny/MANOS_ws/build/hand_detector_package/build/lib/hand_detector_package
+copying hand_detector_package/hand_detector.py -> /home/keny/MANOS_ws/build/hand_detector_package/build/lib/hand_detector_package
+copying hand_detector_package/__init__.py -> /home/keny/MANOS_ws/build/hand_detector_package/build/lib/hand_detector_package
+running install
+running install_lib
+creating /home/keny/MANOS_ws/install/hand_detector_package/lib/python3.8/site-packages/hand_detector_package
+copying /home/keny/MANOS_ws/build/hand_detector_package/build/lib/hand_detector_package/hand_detector.py -> /home/keny/MANOS_ws/install/hand_detector_package/lib/python3.8/site-packages/hand_detector_package
+copying /home/keny/MANOS_ws/build/hand_detector_package/build/lib/hand_detector_package/__init__.py -> /home/keny/MANOS_ws/install/hand_detector_package/lib/python3.8/site-packages/hand_detector_package
+byte-compiling /home/keny/MANOS_ws/install/hand_detector_package/lib/python3.8/site-packages/hand_detector_package/hand_detector.py to hand_detector.cpython-38.pyc
+byte-compiling /home/keny/MANOS_ws/install/hand_detector_package/lib/python3.8/site-packages/hand_detector_package/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /home/keny/MANOS_ws/install/hand_detector_package/share
+creating /home/keny/MANOS_ws/install/hand_detector_package/share/ament_index
+creating /home/keny/MANOS_ws/install/hand_detector_package/share/ament_index/resource_index
+creating /home/keny/MANOS_ws/install/hand_detector_package/share/ament_index/resource_index/packages
+copying resource/hand_detector_package -> /home/keny/MANOS_ws/install/hand_detector_package/share/ament_index/resource_index/packages
+creating /home/keny/MANOS_ws/install/hand_detector_package/share/hand_detector_package
+copying package.xml -> /home/keny/MANOS_ws/install/hand_detector_package/share/hand_detector_package
+running install_egg_info
+Copying ../../build/hand_detector_package/hand_detector_package.egg-info to /home/keny/MANOS_ws/install/hand_detector_package/lib/python3.8/site-packages/hand_detector_package-0.0.0-py3.8.egg-info
+running install_scripts
+Installing hand_detector script to /home/keny/MANOS_ws/install/hand_detector_package/lib/hand_detector_package
+writing list of installed files to '/home/keny/MANOS_ws/build/hand_detector_package/install.log'

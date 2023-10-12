@@ -1,0 +1,8 @@
+[31mCMake Error at /opt/ros/galactic/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:93 (message):
+  rosidl_generate_interfaces() the passed file 'msg/ListString.msg' doesn't
+  exist relative to the CMAKE_CURRENT_SOURCE_DIR
+  '/home/keny/MANOS_ws/src/hand_detector_package'
+Call Stack (most recent call first):
+  CMakeLists.txt:15 (rosidl_generate_interfaces)
+
+[0m

@@ -1,0 +1,2 @@
+Invoking command in '/home/keny/MANOS_ws/build/hand_detector': /usr/bin/cmake /home/keny/MANOS_ws/src/hand_detector_package -DCMAKE_INSTALL_PREFIX=/home/keny/MANOS_ws/install/hand_detector
+Invoked command in '/home/keny/MANOS_ws/build/hand_detector' returned '1': /usr/bin/cmake /home/keny/MANOS_ws/src/hand_detector_package -DCMAKE_INSTALL_PREFIX=/home/keny/MANOS_ws/install/hand_detector

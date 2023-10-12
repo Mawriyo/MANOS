@@ -1,0 +1,19 @@
+[0.017s] Invoking command in '/home/keny/MANOS_ws/build/hand_detector': /usr/bin/cmake /home/keny/MANOS_ws/src/hand_detector_package -DCMAKE_INSTALL_PREFIX=/home/keny/MANOS_ws/install/hand_detector
+[0.022s] -- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)
+[0.043s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.093s] -- Found std_msgs: 2.2.4 (/opt/ros/galactic/share/std_msgs/cmake)
+[0.110s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.113s] -- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)
+[0.202s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.233s] -- Found rosidl_default_generators: 1.1.1 (/opt/ros/galactic/share/rosidl_default_generators/cmake)
+[0.238s] [31mCMake Error at /opt/ros/galactic/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:93 (message):
+[0.238s]   rosidl_generate_interfaces() the passed file 'msg/ListString.msg' doesn't
+[0.238s]   exist relative to the CMAKE_CURRENT_SOURCE_DIR
+[0.238s]   '/home/keny/MANOS_ws/src/hand_detector_package'
+[0.238s] Call Stack (most recent call first):
+[0.238s]   CMakeLists.txt:15 (rosidl_generate_interfaces)
+[0.238s] 
+[0.238s] [0m
+[0.238s] -- Configuring incomplete, errors occurred!
+[0.238s] See also "/home/keny/MANOS_ws/build/hand_detector/CMakeFiles/CMakeOutput.log".
+[0.269s] Invoked command in '/home/keny/MANOS_ws/build/hand_detector' returned '1': /usr/bin/cmake /home/keny/MANOS_ws/src/hand_detector_package -DCMAKE_INSTALL_PREFIX=/home/keny/MANOS_ws/install/hand_detector

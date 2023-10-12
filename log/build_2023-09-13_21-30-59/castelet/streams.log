@@ -1,0 +1,21 @@
+[1.227s] Invoking command in '/home/keny/MANOS_ws/src/castelet': PYTHONPATH=/home/keny/MANOS_ws/build/castelet/prefix_override:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/castelet build --build-base /home/keny/MANOS_ws/build/castelet/build install --record /home/keny/MANOS_ws/build/castelet/install.log --single-version-externally-managed
+[1.471s] running egg_info
+[1.472s] writing ../../build/castelet/castelet.egg-info/PKG-INFO
+[1.472s] writing dependency_links to ../../build/castelet/castelet.egg-info/dependency_links.txt
+[1.473s] writing entry points to ../../build/castelet/castelet.egg-info/entry_points.txt
+[1.473s] writing requirements to ../../build/castelet/castelet.egg-info/requires.txt
+[1.473s] writing top-level names to ../../build/castelet/castelet.egg-info/top_level.txt
+[1.504s] reading manifest file '../../build/castelet/castelet.egg-info/SOURCES.txt'
+[1.505s] writing manifest file '../../build/castelet/castelet.egg-info/SOURCES.txt'
+[1.505s] running build
+[1.505s] running build_py
+[1.506s] running install
+[1.506s] running install_lib
+[1.508s] running install_data
+[1.508s] running install_egg_info
+[1.510s] removing '/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet-0.0.0-py3.8.egg-info' (and everything under it)
+[1.510s] Copying ../../build/castelet/castelet.egg-info to /home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet-0.0.0-py3.8.egg-info
+[1.511s] running install_scripts
+[1.527s] Installing castelet script to /home/keny/MANOS_ws/install/castelet/lib/castelet
+[1.527s] writing list of installed files to '/home/keny/MANOS_ws/build/castelet/install.log'
+[1.548s] Invoked command in '/home/keny/MANOS_ws/src/castelet' returned '0': PYTHONPATH=/home/keny/MANOS_ws/build/castelet/prefix_override:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/castelet build --build-base /home/keny/MANOS_ws/build/castelet/build install --record /home/keny/MANOS_ws/build/castelet/install.log --single-version-externally-managed

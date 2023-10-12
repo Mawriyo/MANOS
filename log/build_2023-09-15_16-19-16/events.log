@@ -1,0 +1,223 @@
+[0.000000] (-) TimerEvent: {}
+[0.000150] (castelet) JobQueued: {'identifier': 'castelet', 'dependencies': OrderedDict()}
+[0.001130] (custom_msg) JobQueued: {'identifier': 'custom_msg', 'dependencies': OrderedDict()}
+[0.001168] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict([('custom_msg', '/home/keny/MANOS_ws/install/custom_msg')])}
+[0.001211] (hand_detector) JobQueued: {'identifier': 'hand_detector', 'dependencies': OrderedDict([('custom_msg', '/home/keny/MANOS_ws/install/custom_msg')])}
+[0.001252] (host_listener_package) JobQueued: {'identifier': 'host_listener_package', 'dependencies': OrderedDict([('custom_msg', '/home/keny/MANOS_ws/install/custom_msg')])}
+[0.001288] (custom_msg) JobStarted: {'identifier': 'custom_msg'}
+[0.017089] (castelet) JobStarted: {'identifier': 'castelet'}
+[0.024479] (custom_msg) JobProgress: {'identifier': 'custom_msg', 'progress': 'cmake'}
+[0.025596] (custom_msg) JobProgress: {'identifier': 'custom_msg', 'progress': 'build'}
+[0.025647] (custom_msg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/keny/MANOS_ws/build/custom_msg', '--', '-j16', '-l16'], 'cwd': '/home/keny/MANOS_ws/build/custom_msg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'keny'), ('SSH_AGENT_PID', '2650'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/keny/MANOS_ws/install/custom_msg/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib'), ('HOME', '/home/keny'), ('OLDPWD', '/home/keny/MANOS_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2460'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/keny/MANOS_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'keny'), ('JOURNAL_STREAM', '8:62924'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'keny'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/keny/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/keny-Precision-5540:@/tmp/.ICE-unix/2688,unix/keny-Precision-5540:/tmp/.ICE-unix/2688'), ('INVOCATION_ID', '2e110f49827f458792080b00ad1b539c'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/7b839f11_7038_4d0a_ae1d_92714a04a7bf'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.86'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/keny/MANOS_ws/install/py_launch_example:/home/keny/MANOS_ws/install/manos_launch:/home/keny/MANOS_ws/install/launch:/home/keny/MANOS_ws/install/host_listener_package:/home/keny/MANOS_ws/install/hand_detector:/home/keny/MANOS_ws/install/camera:/home/keny/MANOS_ws/install/custom_msg:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/keny/MANOS_ws/build/custom_msg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/keny/MANOS_ws/install/py_launch_example/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/manos_launch/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/keny/MANOS_ws/install/custom_msg:/home/keny/MANOS_ws/install/py_launch_example:/home/keny/MANOS_ws/install/manos_launch:/home/keny/MANOS_ws/install/launch:/home/keny/MANOS_ws/install/host_listener_package:/home/keny/MANOS_ws/install/hand_detector:/home/keny/MANOS_ws/install/camera:/opt/ros/galactic')]), 'shell': False}
+[0.028454] (castelet) JobProgress: {'identifier': 'castelet', 'progress': 'cmake'}
+[0.028717] (castelet) Command: {'cmd': ['/usr/bin/cmake', '/home/keny/MANOS_ws/src/castelet', '-DCMAKE_INSTALL_PREFIX=/home/keny/MANOS_ws/install/castelet'], 'cwd': '/home/keny/MANOS_ws/build/castelet', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'keny'), ('SSH_AGENT_PID', '2650'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/keny/MANOS_ws/install/custom_msg/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib'), ('HOME', '/home/keny'), ('OLDPWD', '/home/keny/MANOS_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2460'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/keny/MANOS_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'keny'), ('JOURNAL_STREAM', '8:62924'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'keny'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/keny/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/keny-Precision-5540:@/tmp/.ICE-unix/2688,unix/keny-Precision-5540:/tmp/.ICE-unix/2688'), ('INVOCATION_ID', '2e110f49827f458792080b00ad1b539c'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/7b839f11_7038_4d0a_ae1d_92714a04a7bf'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.86'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/keny/MANOS_ws/install/py_launch_example:/home/keny/MANOS_ws/install/manos_launch:/home/keny/MANOS_ws/install/launch:/home/keny/MANOS_ws/install/host_listener_package:/home/keny/MANOS_ws/install/hand_detector:/home/keny/MANOS_ws/install/camera:/home/keny/MANOS_ws/install/custom_msg:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/keny/MANOS_ws/build/castelet'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/keny/MANOS_ws/install/py_launch_example/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/manos_launch/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/keny/MANOS_ws/install/custom_msg')]), 'shell': False}
+[0.044008] (custom_msg) StdoutLine: {'line': b'[  2%] Built target custom_msg__cpp\n'}
+[0.045133] (custom_msg) StdoutLine: {'line': b'[ 12%] Built target custom_msg__rosidl_generator_c\n'}
+[0.054369] (custom_msg) StdoutLine: {'line': b'[ 43%] Built target custom_msg__rosidl_typesupport_cpp\n'}
+[0.054601] (custom_msg) StdoutLine: {'line': b'[ 43%] Built target custom_msg__rosidl_typesupport_c\n'}
+[0.054708] (custom_msg) StdoutLine: {'line': b'[ 43%] Built target custom_msg__rosidl_typesupport_introspection_c\n'}
+[0.054818] (custom_msg) StdoutLine: {'line': b'[ 53%] Built target custom_msg__rosidl_typesupport_introspection_cpp\n'}
+[0.054904] (custom_msg) StdoutLine: {'line': b'[ 64%] Built target custom_msg__rosidl_typesupport_fastrtps_cpp\n'}
+[0.064082] (custom_msg) StdoutLine: {'line': b'[ 74%] Built target custom_msg__rosidl_typesupport_fastrtps_c\n'}
+[0.070955] (custom_msg) StdoutLine: {'line': b'[ 74%] Built target custom_msg\n'}
+[0.079122] (custom_msg) StdoutLine: {'line': b'[ 76%] Built target custom_msg__py\n'}
+[0.089973] (custom_msg) StdoutLine: {'line': b'[ 84%] Built target custom_msg__python\n'}
+[0.099834] (-) TimerEvent: {}
+[0.102865] (custom_msg) StdoutLine: {'line': b'[ 89%] Built target custom_msg__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.103159] (custom_msg) StdoutLine: {'line': b'[ 94%] Built target custom_msg__rosidl_typesupport_introspection_c__pyext\n'}
+[0.103286] (custom_msg) StdoutLine: {'line': b'[100%] Built target custom_msg__rosidl_typesupport_c__pyext\n'}
+[0.108760] (custom_msg) CommandEnded: {'returncode': 0}
+[0.181676] (custom_msg) JobProgress: {'identifier': 'custom_msg', 'progress': 'install'}
+[0.193093] (custom_msg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/keny/MANOS_ws/build/custom_msg'], 'cwd': '/home/keny/MANOS_ws/build/custom_msg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'keny'), ('SSH_AGENT_PID', '2650'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/keny/MANOS_ws/install/custom_msg/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib'), ('HOME', '/home/keny'), ('OLDPWD', '/home/keny/MANOS_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2460'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/keny/MANOS_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'keny'), ('JOURNAL_STREAM', '8:62924'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'keny'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:/home/keny/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/keny-Precision-5540:@/tmp/.ICE-unix/2688,unix/keny-Precision-5540:/tmp/.ICE-unix/2688'), ('INVOCATION_ID', '2e110f49827f458792080b00ad1b539c'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/7b839f11_7038_4d0a_ae1d_92714a04a7bf'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.86'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/keny/MANOS_ws/install/py_launch_example:/home/keny/MANOS_ws/install/manos_launch:/home/keny/MANOS_ws/install/launch:/home/keny/MANOS_ws/install/host_listener_package:/home/keny/MANOS_ws/install/hand_detector:/home/keny/MANOS_ws/install/camera:/home/keny/MANOS_ws/install/custom_msg:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/keny/MANOS_ws/build/custom_msg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/keny/MANOS_ws/install/py_launch_example/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/manos_launch/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/keny/MANOS_ws/install/custom_msg:/home/keny/MANOS_ws/install/py_launch_example:/home/keny/MANOS_ws/install/manos_launch:/home/keny/MANOS_ws/install/launch:/home/keny/MANOS_ws/install/host_listener_package:/home/keny/MANOS_ws/install/hand_detector:/home/keny/MANOS_ws/install/camera:/opt/ros/galactic')]), 'shell': False}
+[0.199113] (custom_msg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.199453] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/ament_index/resource_index/rosidl_interfaces/custom_msg\n'}
+[0.199612] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg\n'}
+[0.200099] (-) TimerEvent: {}
+[0.200345] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg\n'}
+[0.200534] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail\n'}
+[0.200680] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__functions.h\n'}
+[0.200923] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__functions.c\n'}
+[0.201066] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__type_support.h\n'}
+[0.201204] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__type_support.h\n'}
+[0.201452] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__functions.c\n'}
+[0.201581] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__struct.h\n'}
+[0.201714] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__struct.h\n'}
+[0.201934] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__functions.h\n'}
+[0.202067] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.202204] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/list_string.h\n'}
+[0.202337] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/pos.h\n'}
+[0.202469] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/environment/library_path.sh\n'}
+[0.202600] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/environment/library_path.dsv\n'}
+[0.202805] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/libcustom_msg__rosidl_generator_c.so\n'}
+[0.203013] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg\n'}
+[0.203150] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg\n'}
+[0.203344] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.203480] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail\n'}
+[0.203613] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_fastrtps_c.h\n'}
+[0.203792] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_fastrtps_c.h\n'}
+[0.203956] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_c.so\n'}
+[0.204088] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg\n'}
+[0.204262] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg\n'}
+[0.204390] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail\n'}
+[0.204516] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/dds_fastrtps\n'}
+[0.204641] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.204771] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.204894] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.205018] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.205168] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg\n'}
+[0.205297] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg\n'}
+[0.205422] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail\n'}
+[0.205548] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__type_support.c\n'}
+[0.205674] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__type_support.c\n'}
+[0.205801] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_introspection_c.h\n'}
+[0.205935] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_introspection_c.h\n'}
+[0.206062] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.206188] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_c.so\n'}
+[0.206312] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_c.so\n'}
+[0.206437] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg\n'}
+[0.206563] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg\n'}
+[0.206688] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/pos.hpp\n'}
+[0.206814] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/list_string.hpp\n'}
+[0.206940] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail\n'}
+[0.207064] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__builder.hpp\n'}
+[0.207188] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__struct.hpp\n'}
+[0.207312] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__traits.hpp\n'}
+[0.207436] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__traits.hpp\n'}
+[0.207561] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__struct.hpp\n'}
+[0.207716] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__builder.hpp\n'}
+[0.207851] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg\n'}
+[0.207986] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg\n'}
+[0.208112] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail\n'}
+[0.208236] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__type_support.cpp\n'}
+[0.208360] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__type_support.cpp\n'}
+[0.208484] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.208609] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.208736] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_cpp.so\n'}
+[0.208863] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_cpp.so\n'}
+[0.208989] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/environment/pythonpath.sh\n'}
+[0.209116] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/environment/pythonpath.dsv\n'}
+[0.209250] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages/custom_msg/__init__.py\n'}
+[0.258178] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg\n'}
+[0.258292] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_list_string_s.c\n'}
+[0.258360] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_list_string.py\n'}
+[0.258422] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_pos.py\n'}
+[0.258483] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/__init__.py\n'}
+[0.258543] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_pos_s.c\n'}
+[0.258679] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\n'}
+[0.258780] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\n'}
+[0.258849] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\n'}
+[0.258943] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/lib/libcustom_msg__python.so\n'}
+[0.259012] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/msg/ListString.idl\n'}
+[0.259073] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/msg/Pos.idl\n'}
+[0.259170] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/msg/ListString.msg\n'}
+[0.259261] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/msg/Pos.msg\n'}
+[0.259322] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/ament_index/resource_index/package_run_dependencies/custom_msg\n'}
+[0.259382] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/ament_index/resource_index/parent_prefix_path/custom_msg\n'}
+[0.259441] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/environment/ament_prefix_path.sh\n'}
+[0.259500] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/environment/ament_prefix_path.dsv\n'}
+[0.259569] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/environment/path.sh\n'}
+[0.259621] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/environment/path.dsv\n'}
+[0.259699] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/local_setup.bash\n'}
+[0.259812] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/local_setup.sh\n'}
+[0.259864] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/local_setup.zsh\n'}
+[0.259918] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/local_setup.dsv\n'}
+[0.259972] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/package.dsv\n'}
+[0.260065] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/ament_index/resource_index/packages/custom_msg\n'}
+[0.260139] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_generator_cExport.cmake\n'}
+[0.260192] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_generator_cExport-noconfig.cmake\n'}
+[0.260246] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.260299] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[0.260353] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cExport.cmake\n'}
+[0.260407] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[0.260461] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_generator_cppExport.cmake\n'}
+[0.260514] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.260567] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[0.260619] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cppExport.cmake\n'}
+[0.260672] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[0.260725] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/rosidl_cmake-extras.cmake\n'}
+[0.260778] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.260830] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.260900] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.261070] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.261123] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.261272] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.261327] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msgConfig.cmake\n'}
+[0.261381] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/cmake/custom_msgConfig-version.cmake\n'}
+[0.261434] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/keny/MANOS_ws/install/custom_msg/share/custom_msg/package.xml\n'}
+[0.261971] (custom_msg) CommandEnded: {'returncode': 0}
+[0.300302] (-) TimerEvent: {}
+[0.400874] (-) TimerEvent: {}
+[0.501529] (-) TimerEvent: {}
+[0.602101] (-) TimerEvent: {}
+[0.701866] (castelet) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.702297] (-) TimerEvent: {}
+[0.802773] (-) TimerEvent: {}
+[0.877158] (custom_msg) JobEnded: {'identifier': 'custom_msg', 'rc': 0}
+[0.877440] (camera) JobStarted: {'identifier': 'camera'}
+[0.891303] (hand_detector) JobStarted: {'identifier': 'hand_detector'}
+[0.908068] (host_listener_package) JobStarted: {'identifier': 'host_listener_package'}
+[0.908290] (-) TimerEvent: {}
+[0.949257] (castelet) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.958518] (castelet) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.995936] (castelet) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.002654] (castelet) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.003047] (castelet) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.003512] (castelet) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.006259] (castelet) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.008382] (-) TimerEvent: {}
+[1.049397] (castelet) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.056638] (castelet) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.056903] (castelet) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.057312] (castelet) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.059392] (castelet) StdoutLine: {'line': b'-- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)\n'}
+[1.081185] (castelet) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[1.081344] (castelet) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.108499] (-) TimerEvent: {}
+[1.150044] (castelet) StdoutLine: {'line': b'-- Found std_msgs: 2.2.4 (/opt/ros/galactic/share/std_msgs/cmake)\n'}
+[1.178896] (castelet) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.183876] (castelet) StdoutLine: {'line': b'-- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)\n'}
+[1.208603] (-) TimerEvent: {}
+[1.240611] (castelet) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[1.262152] (castelet) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/galactic/include  \n'}
+[1.308709] (-) TimerEvent: {}
+[1.321387] (castelet) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.355610] (castelet) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.10.7 (/opt/ros/galactic/share/ament_lint_auto/cmake)\n'}
+[1.400259] (castelet) StderrLine: {'line': b"Error parsing '/home/keny/MANOS_ws/src/castelet/package.xml':\n"}
+[1.408864] (-) TimerEvent: {}
+[1.490919] (castelet) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[1.491104] (castelet) StderrLine: {'line': b'  File "/opt/ros/galactic/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 151, in <module>\n'}
+[1.491161] (castelet) StderrLine: {'line': b'    main()\n'}
+[1.491210] (castelet) StderrLine: {'line': b'  File "/opt/ros/galactic/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 54, in main\n'}
+[1.491258] (castelet) StderrLine: {'line': b'    raise e\n'}
+[1.491304] (castelet) StderrLine: {'line': b'  File "/opt/ros/galactic/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 50, in main\n'}
+[1.491350] (castelet) StderrLine: {'line': b'    package = parse_package_string(\n'}
+[1.491395] (castelet) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 786, in parse_package_string\n'}
+[1.491440] (castelet) StderrLine: {'line': b"    raise InvalidPackage('Error(s):%s' % (''.join(['\\n- %s' % e for e in errors])), filename)\n"}
+[1.491486] (castelet) StderrLine: {'line': b"catkin_pkg.package.InvalidPackage: Error(s) in package '/home/keny/MANOS_ws/src/castelet/package.xml':\n"}
+[1.491537] (castelet) StderrLine: {'line': b'Error(s):\n'}
+[1.491583] (castelet) StderrLine: {'line': b"- The generic dependency on 'rclpy' is redundant with: exec_depend\n"}
+[1.508948] (-) TimerEvent: {}
+[1.510765] (castelet) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/galactic/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:94 (message):\n'}
+[1.510938] (castelet) StderrLine: {'line': b'  execute_process(/usr/bin/python3\n'}
+[1.511006] (castelet) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py\n'}
+[1.511069] (castelet) StderrLine: {'line': b'  /home/keny/MANOS_ws/src/castelet/package.xml\n'}
+[1.511131] (castelet) StderrLine: {'line': b'  /home/keny/MANOS_ws/build/castelet/ament_cmake_core/package.cmake) returned\n'}
+[1.511192] (castelet) StderrLine: {'line': b'  error code 1\n'}
+[1.511251] (castelet) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.511311] (castelet) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)\n'}
+[1.511370] (castelet) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_lint_auto/cmake/ament_lint_auto_find_test_dependencies.cmake:31 (ament_package_xml)\n'}
+[1.511454] (castelet) StderrLine: {'line': b'  CMakeLists.txt:25 (ament_lint_auto_find_test_dependencies)\n'}
+[1.511528] (castelet) StderrLine: {'line': b'\n'}
+[1.511587] (castelet) StderrLine: {'line': b'\x1b[0m\n'}
+[1.511747] (castelet) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[1.511849] (castelet) StdoutLine: {'line': b'See also "/home/keny/MANOS_ws/build/castelet/CMakeFiles/CMakeOutput.log".\n'}
+[1.609056] (-) TimerEvent: {}
+[1.643348] (castelet) CommandEnded: {'returncode': 1}
+[1.644499] (castelet) JobEnded: {'identifier': 'castelet', 'rc': 1}
+[1.647596] (host_listener_package) JobEnded: {'identifier': 'host_listener_package', 'rc': 'SIGINT'}
+[1.648126] (hand_detector) JobEnded: {'identifier': 'hand_detector', 'rc': 'SIGINT'}
+[1.709172] (-) TimerEvent: {}
+[1.809411] (-) TimerEvent: {}
+[1.909670] (-) TimerEvent: {}
+[1.993811] (camera) JobEnded: {'identifier': 'camera', 'rc': 'SIGINT'}
+[2.004724] (-) EventReactorShutdown: {}

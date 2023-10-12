@@ -1,0 +1,7 @@
+{
+  "package_name": "custom_msg",
+  "non_idl_tuples": [
+    "/home/keny/MANOS_ws/src/custom_msg:msg/ListString.msg",
+    "/home/keny/MANOS_ws/src/custom_msg:msg/Pos.msg"
+  ]
+}

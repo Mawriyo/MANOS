@@ -1,0 +1,24 @@
+[1.243s] Invoking command in '/home/keny/MANOS_ws/src/castelet': PYTHONPATH=/home/keny/MANOS_ws/build/castelet/prefix_override:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/castelet build --build-base /home/keny/MANOS_ws/build/castelet/build install --record /home/keny/MANOS_ws/build/castelet/install.log --single-version-externally-managed
+[1.495s] running egg_info
+[1.496s] writing ../../build/castelet/castelet.egg-info/PKG-INFO
+[1.497s] writing dependency_links to ../../build/castelet/castelet.egg-info/dependency_links.txt
+[1.497s] writing entry points to ../../build/castelet/castelet.egg-info/entry_points.txt
+[1.497s] writing requirements to ../../build/castelet/castelet.egg-info/requires.txt
+[1.497s] writing top-level names to ../../build/castelet/castelet.egg-info/top_level.txt
+[1.530s] reading manifest file '../../build/castelet/castelet.egg-info/SOURCES.txt'
+[1.531s] writing manifest file '../../build/castelet/castelet.egg-info/SOURCES.txt'
+[1.532s] running build
+[1.532s] running build_py
+[1.532s] copying castelet/castelet.py -> /home/keny/MANOS_ws/build/castelet/build/lib/castelet
+[1.532s] running install
+[1.533s] running install_lib
+[1.534s] copying /home/keny/MANOS_ws/build/castelet/build/lib/castelet/castelet.py -> /home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet
+[1.534s] byte-compiling /home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet/castelet.py to castelet.cpython-38.pyc
+[1.536s] running install_data
+[1.536s] running install_egg_info
+[1.538s] removing '/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet-0.0.0-py3.8.egg-info' (and everything under it)
+[1.539s] Copying ../../build/castelet/castelet.egg-info to /home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet-0.0.0-py3.8.egg-info
+[1.540s] running install_scripts
+[1.555s] Installing castelet script to /home/keny/MANOS_ws/install/castelet/lib/castelet
+[1.556s] writing list of installed files to '/home/keny/MANOS_ws/build/castelet/install.log'
+[1.577s] Invoked command in '/home/keny/MANOS_ws/src/castelet' returned '0': PYTHONPATH=/home/keny/MANOS_ws/build/castelet/prefix_override:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/castelet build --build-base /home/keny/MANOS_ws/build/castelet/build install --record /home/keny/MANOS_ws/build/castelet/install.log --single-version-externally-managed

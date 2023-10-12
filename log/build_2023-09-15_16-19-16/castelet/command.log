@@ -1,0 +1,2 @@
+Invoking command in '/home/keny/MANOS_ws/build/castelet': /usr/bin/cmake /home/keny/MANOS_ws/src/castelet -DCMAKE_INSTALL_PREFIX=/home/keny/MANOS_ws/install/castelet
+Invoked command in '/home/keny/MANOS_ws/build/castelet' returned '1': /usr/bin/cmake /home/keny/MANOS_ws/src/castelet -DCMAKE_INSTALL_PREFIX=/home/keny/MANOS_ws/install/castelet

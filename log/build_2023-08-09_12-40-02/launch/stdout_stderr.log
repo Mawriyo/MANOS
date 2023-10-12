@@ -1,0 +1,31 @@
+running egg_info
+creating ../../build/launch/launch.egg-info
+writing ../../build/launch/launch.egg-info/PKG-INFO
+writing dependency_links to ../../build/launch/launch.egg-info/dependency_links.txt
+writing entry points to ../../build/launch/launch.egg-info/entry_points.txt
+writing requirements to ../../build/launch/launch.egg-info/requires.txt
+writing top-level names to ../../build/launch/launch.egg-info/top_level.txt
+writing manifest file '../../build/launch/launch.egg-info/SOURCES.txt'
+reading manifest file '../../build/launch/launch.egg-info/SOURCES.txt'
+writing manifest file '../../build/launch/launch.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/keny/MANOS_ws/build/launch/build
+creating /home/keny/MANOS_ws/build/launch/build/lib
+creating /home/keny/MANOS_ws/build/launch/build/lib/launch
+copying launch/__init__.py -> /home/keny/MANOS_ws/build/launch/build/lib/launch
+running install
+running install_lib
+creating /home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages/launch
+copying /home/keny/MANOS_ws/build/launch/build/lib/launch/__init__.py -> /home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages/launch
+byte-compiling /home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages/launch/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /home/keny/MANOS_ws/install/launch/share/ament_index
+creating /home/keny/MANOS_ws/install/launch/share/ament_index/resource_index
+creating /home/keny/MANOS_ws/install/launch/share/ament_index/resource_index/packages
+copying resource/launch -> /home/keny/MANOS_ws/install/launch/share/ament_index/resource_index/packages
+copying package.xml -> /home/keny/MANOS_ws/install/launch/share/launch
+running install_egg_info
+Copying ../../build/launch/launch.egg-info to /home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages/launch-0.0.0-py3.8.egg-info
+running install_scripts
+writing list of installed files to '/home/keny/MANOS_ws/build/launch/install.log'

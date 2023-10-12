@@ -1,0 +1,2 @@
+https://github.com/siemens/ros-sharp/issues/355
+https://docs.ros2.org/foxy/api/std_msgs/index-msg.html

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CaseletWindow</class>
+ <widget class="QMainWindow" name="CaseletWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>807</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>LEFT HAND</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="LeftHand_F5">
+        <property name="text">
+         <string>LHand_Function:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>100</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="1" rowspan="2">
+       <widget class="QLabel" name="label_14">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>120</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Purisa</family>
+          <pointsize>24</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>M.A.N.O.S</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>RIGHT HAND:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <layout class="QGridLayout" name="RightHand_GridLayout">
+        <item row="2" column="0">
+         <widget class="QLabel" name="RightHand_F3_Label">
+          <property name="text">
+           <string>Grid layout indicatng what finger is bound to what</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="RightHand_F1_Label">
+          <property name="text">
+           <string>RHand_function</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="RightHand_F2_Label">
+          <property name="text">
+           <string>RHand_function</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="RightHand_F4_Label">
+          <property name="text">
+           <string>RHand_function</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="4" column="0">
+       <layout class="QGridLayout" name="LeftHand_GridLayout">
+        <item row="3" column="1">
+         <widget class="QLabel" name="LeftHand_F4_Label">
+          <property name="text">
+           <string>LHand_Function:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="LeftHand_F2_Label">
+          <property name="text">
+           <string>LHand_Function:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="LeftHand_F1_Label">
+          <property name="text">
+           <string>LHand_Function:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="LeftHand_F3_Label">
+          <property name="text">
+           <string>Grid layout indicatng what finger is bound to what</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="5" column="2">
+       <widget class="QLabel" name="RightHand_F5_Label">
+        <property name="text">
+         <string>RHand_function</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="camera_lb">
+        <property name="minimumSize">
+         <size>
+          <width>480</width>
+          <height>480</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>VIDEOSTREAM /CAMERA/RAW</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="test">
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHost">
+    <property name="title">
+     <string>Host</string>
+    </property>
+    <addaction name="actionTurtleSim"/>
+    <addaction name="actionPiCarChu"/>
+   </widget>
+   <widget class="QMenu" name="menuBindings">
+    <property name="title">
+     <string>Bindings</string>
+    </property>
+    <widget class="QMenu" name="menuLeft_Hand">
+     <property name="title">
+      <string>Left Hand</string>
+     </property>
+     <widget class="QMenu" name="menuLThumb">
+      <property name="title">
+       <string>Thumb</string>
+      </property>
+      <addaction name="actionPlaceholder"/>
+     </widget>
+     <widget class="QMenu" name="menuLPointer">
+      <property name="title">
+       <string>Pointer</string>
+      </property>
+      <addaction name="actionPlaceholder_2"/>
+     </widget>
+     <widget class="QMenu" name="menuLMIddle">
+      <property name="title">
+       <string>MIddle</string>
+      </property>
+      <addaction name="actionLPlaceHolder"/>
+     </widget>
+     <widget class="QMenu" name="menuLRing">
+      <property name="title">
+       <string>Ring</string>
+      </property>
+      <addaction name="actionPlaceHolder_2"/>
+     </widget>
+     <widget class="QMenu" name="menuLPinky">
+      <property name="title">
+       <string>Pinky</string>
+      </property>
+      <addaction name="actionPlaceholder_3"/>
+     </widget>
+     <addaction name="menuLThumb"/>
+     <addaction name="menuLPointer"/>
+     <addaction name="menuLMIddle"/>
+     <addaction name="menuLRing"/>
+     <addaction name="menuLPinky"/>
+    </widget>
+    <widget class="QMenu" name="menuRight_Hand">
+     <property name="title">
+      <string>Right Hand</string>
+     </property>
+     <widget class="QMenu" name="menuThumb">
+      <property name="title">
+       <string>Thumb</string>
+      </property>
+      <addaction name="actionPlaceholder_4"/>
+     </widget>
+     <widget class="QMenu" name="menuPointer">
+      <property name="title">
+       <string>Pointer</string>
+      </property>
+      <addaction name="actionPlaceholder_5"/>
+     </widget>
+     <widget class="QMenu" name="menuMiddle">
+      <property name="title">
+       <string>Middle</string>
+      </property>
+      <addaction name="actionPlaceholder_6"/>
+     </widget>
+     <widget class="QMenu" name="menuRing">
+      <property name="title">
+       <string>Ring</string>
+      </property>
+      <addaction name="actionPlaceholder_7"/>
+     </widget>
+     <widget class="QMenu" name="menuPinky">
+      <property name="title">
+       <string>Pinky</string>
+      </property>
+      <addaction name="actionPlaceholder_8"/>
+     </widget>
+     <addaction name="menuThumb"/>
+     <addaction name="menuPointer"/>
+     <addaction name="menuMiddle"/>
+     <addaction name="menuRing"/>
+     <addaction name="menuPinky"/>
+    </widget>
+    <addaction name="menuLeft_Hand"/>
+    <addaction name="menuRight_Hand"/>
+   </widget>
+   <addaction name="menuHost"/>
+   <addaction name="menuBindings"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionTurtleSim">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>TurtleSim</string>
+   </property>
+  </action>
+  <action name="actionPiCarChu">
+   <property name="text">
+    <string>PiCarChu</string>
+   </property>
+  </action>
+  <action name="actionPlaceholder">
+   <property name="text">
+    <string>Placeholder</string>
+   </property>
+  </action>
+  <action name="actionPlaceholder_2">
+   <property name="text">
+    <string>Placeholder</string>
+   </property>
+  </action>
+  <action name="actionLPlaceHolder">
+   <property name="text">
+    <string>PlaceHolder</string>
+   </property>
+  </action>
+  <action name="actionPlaceHolder_2">
+   <property name="text">
+    <string>PlaceHolder</string>
+   </property>
+  </action>
+  <action name="actionPlaceholder_3">
+   <property name="text">
+    <string>Placeholder</string>
+   </property>
+  </action>
+  <action name="actionFingersUp">
+   <property name="text">
+    <string>FingersUp</string>
+   </property>
+  </action>
+  <action name="actionPlaceholder_4">
+   <property name="text">
+    <string>Placeholder</string>
+   </property>
+  </action>
+  <action name="actionPlaceholder_5">
+   <property name="text">
+    <string>Placeholder</string>
+   </property>
+  </action>
+  <action name="actionPlaceholder_6">
+   <property name="text">
+    <string>Placeholder</string>
+   </property>
+  </action>
+  <action name="actionPlaceholder_7">
+   <property name="text">
+    <string>Placeholder</string>
+   </property>
+  </action>
+  <action name="actionPlaceholder_8">
+   <property name="text">
+    <string>Placeholder</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

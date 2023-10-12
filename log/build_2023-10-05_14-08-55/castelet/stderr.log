@@ -1,0 +1,5 @@
+  File "/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet/castelet.py", line 43
+    'left_hand/': self.node.create_subscription(Pos, '/MANOS/left_hand/pointer_pos', None self.qos_profile),
+                                                                                          ^
+SyntaxError: invalid syntax
+

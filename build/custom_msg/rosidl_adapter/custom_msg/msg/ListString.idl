@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msg/msg/ListString.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msg {
+  module msg {
+    @verbatim (language="comment", text=
+      "Custom message to handle Hands[] data type..." "\n"
+      "credit to this reference...." "\n"
+      "https://docs.ros.org/en/galactic/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html" "\n"
+      "and https://roboticsbackend.com/")
+    struct ListString {
+      sequence<string> data;
+    };
+  };
+};

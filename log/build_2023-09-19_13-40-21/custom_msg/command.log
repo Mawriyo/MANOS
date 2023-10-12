@@ -1,0 +1,4 @@
+Invoking command in '/home/keny/MANOS_ws/build/custom_msg': /usr/bin/cmake --build /home/keny/MANOS_ws/build/custom_msg -- -j16 -l16
+Invoked command in '/home/keny/MANOS_ws/build/custom_msg' returned '0': /usr/bin/cmake --build /home/keny/MANOS_ws/build/custom_msg -- -j16 -l16
+Invoking command in '/home/keny/MANOS_ws/build/custom_msg': /usr/bin/cmake --install /home/keny/MANOS_ws/build/custom_msg
+Invoked command in '/home/keny/MANOS_ws/build/custom_msg' returned '0': /usr/bin/cmake --install /home/keny/MANOS_ws/build/custom_msg

@@ -1,0 +1,15 @@
+[0.039s] Invoking command in '/home/keny/MANOS_ws/build/custom_msg': CMAKE_PREFIX_PATH=/home/keny/MANOS_ws/install/custom_msg:/home/keny/MANOS_ws/install/py_launch_example:/home/keny/MANOS_ws/install/manos_launch:/home/keny/MANOS_ws/install/launch:/home/keny/MANOS_ws/install/host_listener_package:/home/keny/MANOS_ws/install/hand_detector:/home/keny/MANOS_ws/install/camera:/home/keny/MANOS_ws/install/castelet:/opt/ros/galactic:/home/keny/acs/devel:/opt/ros/noetic /usr/bin/cmake --build /home/keny/MANOS_ws/build/custom_msg -- -j16 -l16
+[0.058s] [  2%] Built target custom_msg__cpp
+[0.058s] [ 12%] Built target custom_msg__rosidl_generator_c
+[0.067s] [ 23%] Built target custom_msg__rosidl_typesupport_c
+[0.067s] [ 33%] Built target custom_msg__rosidl_typesupport_cpp
+[0.067s] [ 43%] Built target custom_msg__rosidl_typesupport_introspection_c
+[0.068s] [ 58%] Built target custom_msg__rosidl_typesupport_fastrtps_cpp
+[0.068s] [ 64%] Built target custom_msg__rosidl_typesupport_introspection_cpp
+[0.077s] [ 74%] Built target custom_msg__rosidl_typesupport_fastrtps_c
+[0.083s] [ 74%] Built target custom_msg
+[0.090s] [ 76%] Built target custom_msg__py
+[0.098s] [ 84%] Built target custom_msg__python
+[0.107s] [ 94%] Built target custom_msg__rosidl_typesupport_introspection_c__pyext
+[0.107s] [ 94%] Built target custom_msg__rosidl_typesupport_fastrtps_c__pyext
+[0.107s] [100%] Built target custom_msg__rosidl_typesupport_c__pyext

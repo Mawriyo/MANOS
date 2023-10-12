@@ -1,0 +1,20 @@
+[1.788s] Invoking command in '/home/keny/MANOS_ws/src/launch': PYTHONPATH=/home/keny/MANOS_ws/build/launch/prefix_override:/home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/launch build --build-base /home/keny/MANOS_ws/build/launch/build install --record /home/keny/MANOS_ws/build/launch/install.log --single-version-externally-managed
+[2.029s] running egg_info
+[2.029s] writing ../../build/launch/launch.egg-info/PKG-INFO
+[2.030s] writing dependency_links to ../../build/launch/launch.egg-info/dependency_links.txt
+[2.030s] writing entry points to ../../build/launch/launch.egg-info/entry_points.txt
+[2.030s] writing requirements to ../../build/launch/launch.egg-info/requires.txt
+[2.030s] writing top-level names to ../../build/launch/launch.egg-info/top_level.txt
+[2.060s] reading manifest file '../../build/launch/launch.egg-info/SOURCES.txt'
+[2.060s] writing manifest file '../../build/launch/launch.egg-info/SOURCES.txt'
+[2.060s] running build
+[2.060s] running build_py
+[2.061s] running install
+[2.061s] running install_lib
+[2.063s] running install_data
+[2.063s] running install_egg_info
+[2.065s] removing '/home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages/launch-0.0.0-py3.8.egg-info' (and everything under it)
+[2.066s] Copying ../../build/launch/launch.egg-info to /home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages/launch-0.0.0-py3.8.egg-info
+[2.067s] running install_scripts
+[2.081s] writing list of installed files to '/home/keny/MANOS_ws/build/launch/install.log'
+[2.158s] Invoked command in '/home/keny/MANOS_ws/src/launch' returned '0': PYTHONPATH=/home/keny/MANOS_ws/build/launch/prefix_override:/home/keny/MANOS_ws/install/launch/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/launch build --build-base /home/keny/MANOS_ws/build/launch/build install --record /home/keny/MANOS_ws/build/launch/install.log --single-version-externally-managed

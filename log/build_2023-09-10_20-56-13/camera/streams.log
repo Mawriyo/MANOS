@@ -1,0 +1,21 @@
+[1.269s] Invoking command in '/home/keny/MANOS_ws/src/camera': AMENT_PREFIX_PATH=/home/keny/MANOS_ws/install/custom_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/keny/MANOS_ws/install/custom_msg LD_LIBRARY_PATH=/home/keny/MANOS_ws/install/custom_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/keny/MANOS_ws/build/camera/prefix_override:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/keny/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/camera build --build-base /home/keny/MANOS_ws/build/camera/build install --record /home/keny/MANOS_ws/build/camera/install.log --single-version-externally-managed
+[1.484s] running egg_info
+[1.484s] writing ../../build/camera/camera.egg-info/PKG-INFO
+[1.562s] writing dependency_links to ../../build/camera/camera.egg-info/dependency_links.txt
+[1.562s] writing entry points to ../../build/camera/camera.egg-info/entry_points.txt
+[1.570s] writing requirements to ../../build/camera/camera.egg-info/requires.txt
+[1.571s] writing top-level names to ../../build/camera/camera.egg-info/top_level.txt
+[1.636s] reading manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[1.646s] writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[1.646s] running build
+[1.646s] running build_py
+[1.647s] running install
+[1.648s] running install_lib
+[1.649s] running install_data
+[1.651s] running install_egg_info
+[1.652s] removing '/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info' (and everything under it)
+[1.653s] Copying ../../build/camera/camera.egg-info to /home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info
+[1.654s] running install_scripts
+[1.666s] Installing camera script to /home/keny/MANOS_ws/install/camera/lib/camera
+[1.667s] writing list of installed files to '/home/keny/MANOS_ws/build/camera/install.log'
+[1.688s] Invoked command in '/home/keny/MANOS_ws/src/camera' returned '0': AMENT_PREFIX_PATH=/home/keny/MANOS_ws/install/custom_msg:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/keny/MANOS_ws/install/custom_msg LD_LIBRARY_PATH=/home/keny/MANOS_ws/install/custom_msg/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/keny/MANOS_ws/build/camera/prefix_override:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/keny/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/camera build --build-base /home/keny/MANOS_ws/build/camera/build install --record /home/keny/MANOS_ws/build/camera/install.log --single-version-externally-managed

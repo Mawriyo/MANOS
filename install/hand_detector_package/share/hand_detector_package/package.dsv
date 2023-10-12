@@ -1,0 +1,3 @@
+source;share/hand_detector_package/hook/pythonpath.ps1
+source;share/hand_detector_package/hook/pythonpath.dsv
+source;share/hand_detector_package/hook/pythonpath.sh
