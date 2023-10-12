@@ -22,7 +22,6 @@ class Camera_Publisher(Node):
 
     def timer_callback(self):
         ret, frame = self.cam.read()
-        print("camera" + str(type(self.br.cv2_to_imgmsg(frame))))
         if ret == True:
           self.raw_image_publisher.publish(self.br.cv2_to_imgmsg(frame))
 

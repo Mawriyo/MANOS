@@ -15,14 +15,13 @@ class Camera_Publisher(Node):
         #camera_arg = self.get_parameter('camera_arg').get_parameter_value().string_value
         self.cam= cv2.VideoCapture(0)
         self.br = CvBridge()
-        self.raw_image_publisher = self.create_publisher(Image, '/MANOS/camera/raw_image', 60)
+        self.raw_image_publisher = self.create_publisher(Image, '/MANOS/camera/raw_image', 30)
         timer_period = .01 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
 
     def timer_callback(self):
         ret, frame = self.cam.read()
-        print("camera" + str(type(self.br.cv2_to_imgmsg(frame))))
         if ret == True:
           self.raw_image_publisher.publish(self.br.cv2_to_imgmsg(frame))
 

@@ -23,7 +23,7 @@ class Host_Detector(Node):
 
 
     def get_topic_names_and_types(self):
-        topic_names_and_types =    self.node.get_topic_names_and_types()
+        topic_names_and_types =   self.node.get_topic_names_and_types()
         service_list = self.node.get_service_names_and_types()
         self.ros_topic_list = [topic_name for topic_name, _ in topic_names_and_types]
         list_string_msg = ListString()

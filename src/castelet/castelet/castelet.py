@@ -7,6 +7,7 @@
 from curses import COLOR_RED
 from functools import partial
 from math import pow, atan2, sqrt
+import math
 import cv2
 import rclpy
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
@@ -33,6 +34,7 @@ class Castlet(QMainWindow):
         self.handTxt = ""
         self.fingerTxt=""      
         self.handbinding=""
+        
         self.castelet_ui = Ui_CaseletWindow()
         self.castelet_ui.setupUi(self)
         self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
@@ -41,9 +43,9 @@ class Castlet(QMainWindow):
                                  depth=1)
         
         self.subscriptions = {
-            'left_hand': self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', self.test, self.qos_profile),
-            'rhand': self.node.create_subscription(Pos, '/MANOS/Right_Hand/Pointer_pos', self.test, self.qos_profile),
-            #'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw_image', None , self.qos_profile),
+          #  'left_hand': self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', self.test, self.qos_profile),
+           # 'rhand': self.node.create_subscription(Pos, '/MANOS/Right_Hand/Pointer_pos', self.test, self.qos_profile),
+            'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw_image', self.image_callback , self.qos_profile),
             'Skel':  self.node.create_subscription(Image, '/MANOS/camera/hand_pos', self.test, self.qos_profile),
         }
         self.spawned_turtles = []  # Dictionary to keep track of spawned turtles
@@ -51,19 +53,21 @@ class Castlet(QMainWindow):
 
 
         self.velocity_publisher = self.node.create_publisher(Twist, '/'+ self.namespace + '/cmd_vel', 2)
-        self.raw_image_subscription = self.node.create_subscription(Image, '/MANOS/camera/raw_image', self.image_callback, self.qos_profile)
+        # self.raw_image_subscription = self.node.create_subscription(Image, '/MANOS/camera/raw_image', self.image_callback, self.qos_profile)
 
         self.pose_subscriber = self.node.create_subscription(TPose, '/'+ self.namespace + '/pose', self.update_pose, self.qos_profile)
         self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/TopicDetector', self.getBindings,self.qos_profile)
         self.teleport_service = self.node.create_client(TeleportAbsolute, '/'+ self.namespace + '/teleport_absolute')
         self.spawnTurtle = self.node.create_client(Spawn, 'spawn' )
-        self.temp2=0
         self.topics = []
         self.bridge = CvBridge()
         self.ros_timer = QTimer(self)
         self.ros_timer.timeout.connect(self.process_ros_messages)
         self.ros_timer.start(30)
         self.temp = False
+        self.teleportNode = self.node.create_subscription(TPose, '/'+ self.namespace + '/pose', self.update_pose, 2)
+        self.rotateTurtle_sub = self.node.create_subscription(Pos, '/MANOS/Right_Hand/Pointer_pos', self.rotateTurtle, self.qos_profile)
+        self.telePortTurtle_sub = self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', self.teleportMethod, self.qos_profile)
 
 ###################################################################################################
 #
@@ -73,9 +77,7 @@ class Castlet(QMainWindow):
 
         self.castelet_ui.menuBindings.aboutToShow.connect(self.refreshBindings)
         self.castelet_ui.actionTurtleSim.triggered.connect(self.TurtleDemo)
-       
         #    def change_callback(self, sub_key, topic_type, topic, function):
-
 
     def test(self,msg):
         pass
@@ -129,7 +131,6 @@ class Castlet(QMainWindow):
         #     self.node.destroy_subscription(self.subscriptions['Skel'])
 
 
-
         if self.castelet_ui.actionTurtleSim.isChecked():
             self.change_callback('Skel', Image, '/MANOS/camera/hand_pos', self.image_callback)
             self.node.destroy_subscription(self.subscriptions['Cam'])
@@ -138,15 +139,8 @@ class Castlet(QMainWindow):
             self.node.destroy_subscription(self.subscriptions['Skel'])
 
 
-        #self.raw_image_subscription = self.node.create_subscription(Int16, '/MANOS/left_hand/fingers_up', self.turtleSelection, 2)
+       # self.spawner_subscription = self.node.create_subscription(Int16, '/MANOS/left_hand/fingers_up', self.turtleSelection, 2)
 
-
-
-#################################################################################################################################
-#
-#  If this was set to a regular subscriber this would become a blocking loop. Not entirly sure why
-#
-#################################################################################################################################
 
 
 #################################################################################################################################
@@ -158,12 +152,11 @@ class Castlet(QMainWindow):
 #################################################################################################################################
 
     def update_pose(self, data):
-        """Callback function which is called when a new message of type Pose is
-        received by the subscriber."""
-        self.pose = data
-        self.pose.x = round(self.pose.x, 4)
-        self.pose.y = round(self.pose.y, 4)
-
+        self.pose = TPose()
+        self.pose.x = round(data.x, 4)
+        self.pose.y = round(data.y, 4)
+       
+        
     def euclidean_distance(self, goal_pose):
         """Euclidean distance between current pose and the goal."""
         return sqrt(pow((goal_pose.position.x - self.pose.x), 2) +
@@ -220,25 +213,33 @@ class Castlet(QMainWindow):
 # For additional context you cannot go to (0,0) nor (0,10) as the hand no longer 
 # can be detected as it becomes out of frames. Possibly adding a calibration feature? 
 
-    def teleportMethod(self,msg):
-        print("teleport")
+    def teleportMethod(self, msg):
         teleport_request = TeleportAbsolute.Request()
-        teleport_request.x = (msg.x/640) * 10
-        teleport_request.y = (msg.y/480) * 10
-        teleport_request.theta = 0.0
+        teleport_request.x = 10- (msg.x / 640) * 10
+        teleport_request.y = 10 - (msg.y / 480) * 10  # Invert the y-coordinate
+        teleport_request.theta = 0.0  # Ensure that the turtle does not change its orientation
         self.teleport_service.call_async(teleport_request)
 
+    def rotateTurtle(self, msg):
+        request = TeleportAbsolute.Request()
+        request.x = self.pose.x
+        request.y = self.pose.y
+        request.theta = self.calculate_theta(10-(msg.x / 640) * 10, 10 - (msg.y / 480) * 10)  # Invert the y-coordinate
+        self.teleport_service.call_async(request)
 
-    def rotateTurtle(self,msg):
-        
-        self.teleportNode = self.node.create_subscription(TPose, '/'+ self.namespace + '/pose', self.update_pose, 2)
-        teleport_request = TeleportAbsolute.Request()
-        teleport_request.x = (msg.x/640) * 10
-        teleport_request.y = (msg.y/480) * 10
-        teleport_request.theta =0.0
-        self.teleport_service.call_async(teleport_request)
 
-  
+    def calculate_theta(self, x, y):
+        # Calculate the angle (theta) based on the finger position
+        current_x = self.pose.x # Get the current turtle's x-position here
+        current_y = self.pose.y # Get the current turtle's y-position here
+        delta_x = x - current_x
+        delta_y = y - current_y
+
+        # Calculate the angle using arctangent (in radians)
+        theta = math.atan2(delta_y, delta_x)
+
+        return theta
+
 
   #Turtle1 will automatically be spawned when \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     def turtleSelection(self, msg):

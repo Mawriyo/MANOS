@@ -1,0 +1,5 @@
+  File "/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages/hand_detector/hand_detector.py", line 178
+    self.rhand_fingers_publisher.(fingermsg)
+                                 ^
+SyntaxError: invalid syntax
+
