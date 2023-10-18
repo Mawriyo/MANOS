@@ -1,5 +1,0 @@
-  File "/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet/castelet.py", line 13
-    from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget,
-                                ^
-SyntaxError: trailing comma not allowed without surrounding parentheses
-

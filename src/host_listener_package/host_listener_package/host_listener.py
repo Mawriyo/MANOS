@@ -22,18 +22,34 @@ class Host_Detector(Node):
 
 
 
-    def get_topic_names_and_types(self):
-        topic_names_and_types =   self.node.get_topic_names_and_types()
-        service_list = self.node.get_service_names_and_types()
-        self.ros_topic_list = [topic_name for topic_name, _ in topic_names_and_types]
-        list_string_msg = ListString()
-        list_string_msg.data = self.ros_topic_list
+    def filter_and_store_topics(self):
+        topic_names_and_types = self.node.get_topic_names_and_types()
         
-        if (len(self.ros_topic_list) != self.old_length):
-            self.old_length =   len(self.ros_topic_list)
-            self.topic_publisher.publish(list_string_msg)
-            
+        filtered_topic_names_and_types = [(topic_name, topic_type) for topic_name, topic_type in topic_names_and_types
+                                          if not any(keyword in topic_name for keyword in ["camera_publisher", "parameter", "topic_names_node", "host_detector_subscriber", "castelet_node"])]
 
+        self.ros_topic_list = [topic_name for topic_name, _ in filtered_topic_names_and_types]
+        self.publish_services(self.ros_topic_list)
+
+
+    def filter_and_store_services(self):
+        service_list = self.node.get_service_names_and_types()
+        
+        filtered_service_list = [(service_name, service_type) for service_name, service_type in service_list
+                                if not any(keyword in service_name for keyword in ["camera_publisher", "parameter", "_action", "topic_names_node", "host_detector_subscriber", "castelet_node"])]
+
+        self.ros_service_list = [service_name for service_name, _ in filtered_service_list]
+        self.publish_services(self.ros_service_list)
+
+    def publish_topics(self, topic_list):
+        list_string_msg = ListString()
+        list_string_msg.data = topic_list
+        self.topic_publisher.publish(list_string_msg)
+
+    def publish_services(self, service_list ):
+        list_string_msg = ListString()
+        list_string_msg.data = service_list
+        self.service_publisher.publish(list_string_msg)
 def main(args=None):
     rclpy.init(args=args)
     host_detector = Host_Detector()

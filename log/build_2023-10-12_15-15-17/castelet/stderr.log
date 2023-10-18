@@ -1,5 +1,0 @@
-  File "/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet/castelet.py", line 245
-    current_x = self.pose.x # Get the current turtle's x-position here
-    ^
-SyntaxError: invalid syntax
-

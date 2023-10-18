@@ -9,6 +9,7 @@ from functools import partial
 from math import pow, atan2, sqrt
 import math
 import cv2
+from castelet.turtleSimControl.TurtleSimControl import TurtleSimControl
 import rclpy
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 import sys
@@ -29,7 +30,7 @@ from std_msgs.msg import Int16
 class Castlet(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
-        self.node = rclpy.create_node('castlet_node')
+        self.node = rclpy.create_node('castelet_node')
         self.menuSelection = ""
         self.handTxt = ""
         self.fingerTxt=""      
@@ -48,7 +49,7 @@ class Castlet(QMainWindow):
             'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw_image', self.image_callback , self.qos_profile),
             'Skel':  self.node.create_subscription(Image, '/MANOS/camera/hand_pos', self.test, self.qos_profile),
         }
-        self.spawned_turtles = []  # Dictionary to keep track of spawned turtles
+        self.spawned_turtles = []  
         self.namespace = 'turtle1' #Roslaunch script param? 
 
 
@@ -56,7 +57,7 @@ class Castlet(QMainWindow):
         # self.raw_image_subscription = self.node.create_subscription(Image, '/MANOS/camera/raw_image', self.image_callback, self.qos_profile)
 
         self.pose_subscriber = self.node.create_subscription(TPose, '/'+ self.namespace + '/pose', self.update_pose, self.qos_profile)
-        self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/TopicDetector', self.getBindings,self.qos_profile)
+        self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/ServiceDetector', self.getBindings,self.qos_profile)
         self.teleport_service = self.node.create_client(TeleportAbsolute, '/'+ self.namespace + '/teleport_absolute')
         self.spawnTurtle = self.node.create_client(Spawn, 'spawn' )
         self.topics = []
@@ -66,8 +67,8 @@ class Castlet(QMainWindow):
         self.ros_timer.start(30)
         self.temp = False
         self.teleportNode = self.node.create_subscription(TPose, '/'+ self.namespace + '/pose', self.update_pose, 2)
-        self.rotateTurtle_sub = self.node.create_subscription(Pos, '/MANOS/Right_Hand/Pointer_pos', self.rotateTurtle, self.qos_profile)
-        self.telePortTurtle_sub = self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', self.teleportMethod, self.qos_profile)
+      #  self.rotateTurtle_sub = self.node.create_subscription(Pos, '/MANOS/Right_Hand/Pointer_pos', self.rotateTurtle, self.qos_profile)
+       # self.telePortTurtle_sub = self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', self.teleportMethod, self.qos_profile)
 
 ###################################################################################################
 #
@@ -138,7 +139,7 @@ class Castlet(QMainWindow):
             self.change_callback('Cam', Image, '/MANOS/camera/raw_image', self.image_callback)
             self.node.destroy_subscription(self.subscriptions['Skel'])
 
-
+        self.turtleSimControl = TurtleSimControl()
        # self.spawner_subscription = self.node.create_subscription(Int16, '/MANOS/left_hand/fingers_up', self.turtleSelection, 2)
 
 
@@ -267,8 +268,7 @@ class Castlet(QMainWindow):
             if 'turtle5' not in self.spawned_turtles:
                self.spawned_turtles.append('turtle5')
                self.spawn_turtle('turtle5', 8.0, 5.0, 0.0)
-        print(self.namespace)
-
+        return self.namespace
 
     def spawn_turtle(self, name, x, y, theta):
         request = Spawn.Request()

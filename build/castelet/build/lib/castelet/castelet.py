@@ -29,7 +29,7 @@ from std_msgs.msg import Int16
 class Castlet(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
-        self.node = rclpy.create_node('castlet_node')
+        self.node = rclpy.create_node('castelet_node')
         self.menuSelection = ""
         self.handTxt = ""
         self.fingerTxt=""      
@@ -56,10 +56,9 @@ class Castlet(QMainWindow):
         # self.raw_image_subscription = self.node.create_subscription(Image, '/MANOS/camera/raw_image', self.image_callback, self.qos_profile)
 
         self.pose_subscriber = self.node.create_subscription(TPose, '/'+ self.namespace + '/pose', self.update_pose, self.qos_profile)
-        self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/TopicDetector', self.getBindings,self.qos_profile)
+        self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/ServiceDetector', self.getBindings,self.qos_profile)
         self.teleport_service = self.node.create_client(TeleportAbsolute, '/'+ self.namespace + '/teleport_absolute')
         self.spawnTurtle = self.node.create_client(Spawn, 'spawn' )
-        self.temp2=0
         self.topics = []
         self.bridge = CvBridge()
         self.ros_timer = QTimer(self)
@@ -67,8 +66,8 @@ class Castlet(QMainWindow):
         self.ros_timer.start(30)
         self.temp = False
         self.teleportNode = self.node.create_subscription(TPose, '/'+ self.namespace + '/pose', self.update_pose, 2)
-        self.rotateTurtle_sub = self.node.create_subscription(Pos, '/MANOS/Right_Hand/Pointer_pos', self.rotateTurtle, self.qos_profile)
-        self.telePortTurtle_sub = self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', self.teleportMethod, self.qos_profile)
+      #  self.rotateTurtle_sub = self.node.create_subscription(Pos, '/MANOS/Right_Hand/Pointer_pos', self.rotateTurtle, self.qos_profile)
+       # self.telePortTurtle_sub = self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', self.teleportMethod, self.qos_profile)
 
 ###################################################################################################
 #
@@ -145,13 +144,6 @@ class Castlet(QMainWindow):
 
 
 #################################################################################################################################
-#
-#  If this was set to a regular subscriber this would become a blocking loop. Not entirly sure why
-#
-#################################################################################################################################
-
-
-#################################################################################################################################
 #                           WITH SOME EDITS I CREATED THE FOLLOWING TO ADAPT TO MY IMPLEMENTATION                               #
 #                               http://wiki.ros.org/turtlesim/Tutorials/Go%20to%20Goal
 #  This is going to be Trickier than I thought. Where as the link above demonstrates being able to give it a waypoint, the way
@@ -160,7 +152,6 @@ class Castlet(QMainWindow):
 #################################################################################################################################
 
     def update_pose(self, data):
-
         self.pose = TPose()
         self.pose.x = round(data.x, 4)
         self.pose.y = round(data.y, 4)
@@ -239,7 +230,6 @@ class Castlet(QMainWindow):
 
     def calculate_theta(self, x, y):
         # Calculate the angle (theta) based on the finger position
-        print(str(self.pose.x))
         current_x = self.pose.x # Get the current turtle's x-position here
         current_y = self.pose.y # Get the current turtle's y-position here
         delta_x = x - current_x
@@ -277,7 +267,6 @@ class Castlet(QMainWindow):
             if 'turtle5' not in self.spawned_turtles:
                self.spawned_turtles.append('turtle5')
                self.spawn_turtle('turtle5', 8.0, 5.0, 0.0)
-        print(self.namespace)
 
 
     def spawn_turtle(self, name, x, y, theta):

@@ -1,9 +1,0 @@
-[1.539s] Invoking command in '/home/keny/MANOS_ws/src/manos_launch': PYTHONPATH=/home/keny/MANOS_ws/build/manos_launch/prefix_override:/home/keny/MANOS_ws/install/manos_launch/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_launch build --build-base /home/keny/MANOS_ws/build/manos_launch/build install --record /home/keny/MANOS_ws/build/manos_launch/install.log --single-version-externally-managed
-[1.776s] running egg_info
-[1.776s] writing ../../build/manos_launch/manos_launch.egg-info/PKG-INFO
-[1.777s] writing dependency_links to ../../build/manos_launch/manos_launch.egg-info/dependency_links.txt
-[1.777s] writing entry points to ../../build/manos_launch/manos_launch.egg-info/entry_points.txt
-[1.777s] writing requirements to ../../build/manos_launch/manos_launch.egg-info/requires.txt
-[1.777s] writing top-level names to ../../build/manos_launch/manos_launch.egg-info/top_level.txt
-[1.806s] error: package directory 'manos_launch' does not exist
-[1.822s] Invoked command in '/home/keny/MANOS_ws/src/manos_launch' returned '1': PYTHONPATH=/home/keny/MANOS_ws/build/manos_launch/prefix_override:/home/keny/MANOS_ws/install/manos_launch/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_launch build --build-base /home/keny/MANOS_ws/build/manos_launch/build install --record /home/keny/MANOS_ws/build/manos_launch/install.log --single-version-externally-managed

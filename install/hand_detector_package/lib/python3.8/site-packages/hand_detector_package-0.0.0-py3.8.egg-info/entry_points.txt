@@ -1,3 +1,0 @@
-[console_scripts]
-hand_detector = hand_detector_package.hand_detector:main
-

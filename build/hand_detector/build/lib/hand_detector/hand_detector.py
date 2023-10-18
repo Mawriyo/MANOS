@@ -122,8 +122,6 @@ class Hand_Detector(Node):
                 fingermsg.data = [str(finger) for finger in array]
                 self.rhand_fingers_publisher.publish(fingermsg)
 
-                print('right' +str(fingermsg))
-
                 fingermsg.data=[]
 
                 msg.data=sum(array2)
@@ -136,7 +134,6 @@ class Hand_Detector(Node):
                 self.lhand_pinky_publisher.publish(self.pos_message(ldigits[4]))
                 fingermsg.data = [str(finger) for finger in array2]
                 self.lhand_fingers_publisher.publish(fingermsg)
-                print('left' +str(fingermsg))
 
                 fingermsg.data=[]
 
@@ -155,7 +152,6 @@ class Hand_Detector(Node):
                 self.lhand_pinky_publisher.publish(self.pos_message(ldigits[4]))
                 fingermsg.data = [str(finger) for finger in array]
                 self.lhand_fingers_publisher.publish(fingermsg)
-                print('left' +str(fingermsg))
 
                 fingermsg.data=[]
         
@@ -169,7 +165,6 @@ class Hand_Detector(Node):
                 self.rhand_pinky_publisher.publish(self.pos_message(rdigits[4]))
                 fingermsg.data = [str(finger) for finger in array2]
                 self.rhand_fingers_publisher.publish(fingermsg)
-                print('right' +str(fingermsg))
 
 
 #Sacrificing memory for readability here... 
