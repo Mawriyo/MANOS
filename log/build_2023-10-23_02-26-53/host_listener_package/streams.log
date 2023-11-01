@@ -1,0 +1,21 @@
+[1.746s] Invoking command in '/home/keny/MANOS_ws/src/host_listener_package': PYTHONPATH=/home/keny/MANOS_ws/build/host_listener_package/prefix_override:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/keny/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/host_listener_package build --build-base /home/keny/MANOS_ws/build/host_listener_package/build install --record /home/keny/MANOS_ws/build/host_listener_package/install.log --single-version-externally-managed
+[2.051s] running egg_info
+[2.052s] writing ../../build/host_listener_package/host_listener_package.egg-info/PKG-INFO
+[2.052s] writing dependency_links to ../../build/host_listener_package/host_listener_package.egg-info/dependency_links.txt
+[2.052s] writing entry points to ../../build/host_listener_package/host_listener_package.egg-info/entry_points.txt
+[2.053s] writing requirements to ../../build/host_listener_package/host_listener_package.egg-info/requires.txt
+[2.053s] writing top-level names to ../../build/host_listener_package/host_listener_package.egg-info/top_level.txt
+[2.093s] reading manifest file '../../build/host_listener_package/host_listener_package.egg-info/SOURCES.txt'
+[2.095s] writing manifest file '../../build/host_listener_package/host_listener_package.egg-info/SOURCES.txt'
+[2.095s] running build
+[2.095s] running build_py
+[2.096s] running install
+[2.097s] running install_lib
+[2.099s] running install_data
+[2.099s] running install_egg_info
+[2.102s] removing '/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages/host_listener_package-0.0.0-py3.8.egg-info' (and everything under it)
+[2.102s] Copying ../../build/host_listener_package/host_listener_package.egg-info to /home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages/host_listener_package-0.0.0-py3.8.egg-info
+[2.103s] running install_scripts
+[2.127s] Installing host_listener script to /home/keny/MANOS_ws/install/host_listener_package/lib/host_listener_package
+[2.128s] writing list of installed files to '/home/keny/MANOS_ws/build/host_listener_package/install.log'
+[2.181s] Invoked command in '/home/keny/MANOS_ws/src/host_listener_package' returned '0': PYTHONPATH=/home/keny/MANOS_ws/build/host_listener_package/prefix_override:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/keny/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/host_listener_package build --build-base /home/keny/MANOS_ws/build/host_listener_package/build install --record /home/keny/MANOS_ws/build/host_listener_package/install.log --single-version-externally-managed
