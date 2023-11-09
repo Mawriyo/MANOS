@@ -1,0 +1,6 @@
+source;share/CustomRosController/hook/pythonpath.ps1
+source;share/CustomRosController/hook/pythonpath.dsv
+source;share/CustomRosController/hook/pythonpath.sh
+source;share/CustomRosController/hook/ament_prefix_path.ps1
+source;share/CustomRosController/hook/ament_prefix_path.dsv
+source;share/CustomRosController/hook/ament_prefix_path.sh

@@ -1,0 +1,31 @@
+running egg_info
+creating ../../build/manos_manager/manos_manager.egg-info
+writing ../../build/manos_manager/manos_manager.egg-info/PKG-INFO
+writing dependency_links to ../../build/manos_manager/manos_manager.egg-info/dependency_links.txt
+writing entry points to ../../build/manos_manager/manos_manager.egg-info/entry_points.txt
+writing requirements to ../../build/manos_manager/manos_manager.egg-info/requires.txt
+writing top-level names to ../../build/manos_manager/manos_manager.egg-info/top_level.txt
+writing manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+reading manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+writing manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/keny/MANOS_ws/build/manos_manager/build
+creating /home/keny/MANOS_ws/build/manos_manager/build/lib
+creating /home/keny/MANOS_ws/build/manos_manager/build/lib/manos_manager
+copying manos_manager/__init__.py -> /home/keny/MANOS_ws/build/manos_manager/build/lib/manos_manager
+running install
+running install_lib
+creating /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager
+copying /home/keny/MANOS_ws/build/manos_manager/build/lib/manos_manager/__init__.py -> /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager
+byte-compiling /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /home/keny/MANOS_ws/install/manos_manager/share/ament_index
+creating /home/keny/MANOS_ws/install/manos_manager/share/ament_index/resource_index
+creating /home/keny/MANOS_ws/install/manos_manager/share/ament_index/resource_index/packages
+copying resource/manos_manager -> /home/keny/MANOS_ws/install/manos_manager/share/ament_index/resource_index/packages
+copying package.xml -> /home/keny/MANOS_ws/install/manos_manager/share/manos_manager
+running install_egg_info
+Copying ../../build/manos_manager/manos_manager.egg-info to /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info
+running install_scripts
+writing list of installed files to '/home/keny/MANOS_ws/build/manos_manager/install.log'

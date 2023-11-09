@@ -1,0 +1,33 @@
+[1.728s] Invoking command in '/home/keny/MANOS_ws/src/manos_manager': PYTHONPATH=/home/keny/MANOS_ws/build/manos_manager/prefix_override:/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_manager build --build-base /home/keny/MANOS_ws/build/manos_manager/build install --record /home/keny/MANOS_ws/build/manos_manager/install.log --single-version-externally-managed
+[1.998s] running egg_info
+[1.998s] creating ../../build/manos_manager/manos_manager.egg-info
+[1.999s] writing ../../build/manos_manager/manos_manager.egg-info/PKG-INFO
+[1.999s] writing dependency_links to ../../build/manos_manager/manos_manager.egg-info/dependency_links.txt
+[1.999s] writing entry points to ../../build/manos_manager/manos_manager.egg-info/entry_points.txt
+[1.999s] writing requirements to ../../build/manos_manager/manos_manager.egg-info/requires.txt
+[1.999s] writing top-level names to ../../build/manos_manager/manos_manager.egg-info/top_level.txt
+[2.001s] writing manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[2.034s] reading manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[2.035s] writing manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[2.035s] running build
+[2.035s] running build_py
+[2.036s] creating /home/keny/MANOS_ws/build/manos_manager/build
+[2.036s] creating /home/keny/MANOS_ws/build/manos_manager/build/lib
+[2.036s] creating /home/keny/MANOS_ws/build/manos_manager/build/lib/manos_manager
+[2.036s] copying manos_manager/__init__.py -> /home/keny/MANOS_ws/build/manos_manager/build/lib/manos_manager
+[2.036s] running install
+[2.036s] running install_lib
+[2.037s] creating /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager
+[2.037s] copying /home/keny/MANOS_ws/build/manos_manager/build/lib/manos_manager/__init__.py -> /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager
+[2.038s] byte-compiling /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager/__init__.py to __init__.cpython-38.pyc
+[2.039s] running install_data
+[2.039s] creating /home/keny/MANOS_ws/install/manos_manager/share/ament_index
+[2.040s] creating /home/keny/MANOS_ws/install/manos_manager/share/ament_index/resource_index
+[2.040s] creating /home/keny/MANOS_ws/install/manos_manager/share/ament_index/resource_index/packages
+[2.040s] copying resource/manos_manager -> /home/keny/MANOS_ws/install/manos_manager/share/ament_index/resource_index/packages
+[2.040s] copying package.xml -> /home/keny/MANOS_ws/install/manos_manager/share/manos_manager
+[2.040s] running install_egg_info
+[2.041s] Copying ../../build/manos_manager/manos_manager.egg-info to /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info
+[2.042s] running install_scripts
+[2.058s] writing list of installed files to '/home/keny/MANOS_ws/build/manos_manager/install.log'
+[2.094s] Invoked command in '/home/keny/MANOS_ws/src/manos_manager' returned '0': PYTHONPATH=/home/keny/MANOS_ws/build/manos_manager/prefix_override:/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_manager build --build-base /home/keny/MANOS_ws/build/manos_manager/build install --record /home/keny/MANOS_ws/build/manos_manager/install.log --single-version-externally-managed

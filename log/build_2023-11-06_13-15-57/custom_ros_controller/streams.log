@@ -1,0 +1,21 @@
+[1.682s] Invoking command in '/home/keny/MANOS_ws/src/custom_ros_controller': PYTHONPATH=/home/keny/MANOS_ws/build/custom_ros_controller/prefix_override:/home/keny/MANOS_ws/install/custom_ros_controller/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/custom_ros_controller build --build-base /home/keny/MANOS_ws/build/custom_ros_controller/build install --record /home/keny/MANOS_ws/build/custom_ros_controller/install.log --single-version-externally-managed
+[1.918s] running egg_info
+[1.918s] writing ../../build/custom_ros_controller/custom_ros_controller.egg-info/PKG-INFO
+[1.919s] writing dependency_links to ../../build/custom_ros_controller/custom_ros_controller.egg-info/dependency_links.txt
+[1.919s] writing entry points to ../../build/custom_ros_controller/custom_ros_controller.egg-info/entry_points.txt
+[1.919s] writing requirements to ../../build/custom_ros_controller/custom_ros_controller.egg-info/requires.txt
+[1.919s] writing top-level names to ../../build/custom_ros_controller/custom_ros_controller.egg-info/top_level.txt
+[1.948s] reading manifest file '../../build/custom_ros_controller/custom_ros_controller.egg-info/SOURCES.txt'
+[1.949s] writing manifest file '../../build/custom_ros_controller/custom_ros_controller.egg-info/SOURCES.txt'
+[1.949s] running build
+[1.949s] running build_py
+[1.949s] running install
+[1.950s] running install_lib
+[1.951s] running install_data
+[1.952s] running install_egg_info
+[1.953s] removing '/home/keny/MANOS_ws/install/custom_ros_controller/lib/python3.8/site-packages/custom_ros_controller-0.0.0-py3.8.egg-info' (and everything under it)
+[1.953s] Copying ../../build/custom_ros_controller/custom_ros_controller.egg-info to /home/keny/MANOS_ws/install/custom_ros_controller/lib/python3.8/site-packages/custom_ros_controller-0.0.0-py3.8.egg-info
+[1.954s] running install_scripts
+[1.968s] Installing custom_ros_controller script to /home/keny/MANOS_ws/install/custom_ros_controller/lib/custom_ros_controller
+[1.968s] writing list of installed files to '/home/keny/MANOS_ws/build/custom_ros_controller/install.log'
+[1.988s] Invoked command in '/home/keny/MANOS_ws/src/custom_ros_controller' returned '0': PYTHONPATH=/home/keny/MANOS_ws/build/custom_ros_controller/prefix_override:/home/keny/MANOS_ws/install/custom_ros_controller/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/custom_ros_controller build --build-base /home/keny/MANOS_ws/build/custom_ros_controller/build install --record /home/keny/MANOS_ws/build/custom_ros_controller/install.log --single-version-externally-managed

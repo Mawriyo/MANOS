@@ -1,0 +1,21 @@
+[1.599s] Invoking command in '/home/keny/MANOS_ws/src/camera': PYTHONPATH=/home/keny/MANOS_ws/build/camera/prefix_override:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/CustomRosController/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/keny/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/camera build --build-base /home/keny/MANOS_ws/build/camera/build install --record /home/keny/MANOS_ws/build/camera/install.log --single-version-externally-managed
+[1.945s] running egg_info
+[1.946s] writing ../../build/camera/camera.egg-info/PKG-INFO
+[1.946s] writing dependency_links to ../../build/camera/camera.egg-info/dependency_links.txt
+[1.947s] writing entry points to ../../build/camera/camera.egg-info/entry_points.txt
+[1.947s] writing requirements to ../../build/camera/camera.egg-info/requires.txt
+[1.947s] writing top-level names to ../../build/camera/camera.egg-info/top_level.txt
+[2.009s] reading manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[2.009s] writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[2.010s] running build
+[2.010s] running build_py
+[2.011s] running install
+[2.015s] running install_lib
+[2.016s] running install_data
+[2.017s] running install_egg_info
+[2.018s] removing '/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info' (and everything under it)
+[2.019s] Copying ../../build/camera/camera.egg-info to /home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info
+[2.019s] running install_scripts
+[2.031s] Installing camera script to /home/keny/MANOS_ws/install/camera/lib/camera
+[2.039s] writing list of installed files to '/home/keny/MANOS_ws/build/camera/install.log'
+[2.061s] Invoked command in '/home/keny/MANOS_ws/src/camera' returned '0': PYTHONPATH=/home/keny/MANOS_ws/build/camera/prefix_override:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/CustomRosController/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/keny/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/camera build --build-base /home/keny/MANOS_ws/build/camera/build install --record /home/keny/MANOS_ws/build/camera/install.log --single-version-externally-managed

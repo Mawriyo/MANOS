@@ -168,13 +168,13 @@ class TurtleSimControl(Node):
         self.servicess = msg.data
         self.filtered_service_list = [(service_name, service_type) for service_name, service_type in self.servicess
                                       if any(keyword in service_name for keyword in self.keywords)]
-
-    
+        
 def main(args=None):
     rclpy.init(args=args)
     node = rclpy.create_node('turtleInterface')  # Create a ROS 2 Node instance
     turtle_control = TurtleSimControl()
     rclpy.spin(turtle_control)
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,28 @@
+[3.888s] Invoking command in '/home/keny/MANOS_ws/src/manos_manager': PYTHONPATH=/home/keny/MANOS_ws/build/manos_manager/prefix_override:/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_manager build --build-base /home/keny/MANOS_ws/build/manos_manager/build install --record /home/keny/MANOS_ws/build/manos_manager/install.log --single-version-externally-managed
+[4.688s] running egg_info
+[4.688s] writing ../../build/manos_manager/manos_manager.egg-info/PKG-INFO
+[4.689s] writing dependency_links to ../../build/manos_manager/manos_manager.egg-info/dependency_links.txt
+[4.689s] writing entry points to ../../build/manos_manager/manos_manager.egg-info/entry_points.txt
+[4.689s] writing requirements to ../../build/manos_manager/manos_manager.egg-info/requires.txt
+[4.689s] writing top-level names to ../../build/manos_manager/manos_manager.egg-info/top_level.txt
+[4.768s] reading manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[4.769s] writing manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[4.770s] running build
+[4.770s] running build_py
+[4.771s] copying manos_manager/mm.py -> /home/keny/MANOS_ws/build/manos_manager/build/lib/manos_manager
+[4.771s] running install
+[4.772s] running install_lib
+[4.775s] copying /home/keny/MANOS_ws/build/manos_manager/build/lib/manos_manager/mm.py -> /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager
+[4.776s] byte-compiling /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager/mm.py to mm.cpython-38.pyc
+[4.779s]   File "/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager/mm.py", line 32
+[4.780s]     self.subscriber = self.create_node(Pos, self.menuItem, TurtleSimControl.teleport_turtle,self.qos_profile))
+[4.780s]                                                                                                              ^
+[4.780s] SyntaxError: unmatched ')'
+[4.780s] 
+[4.781s] running install_data
+[4.781s] running install_egg_info
+[4.784s] removing '/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info' (and everything under it)
+[4.785s] Copying ../../build/manos_manager/manos_manager.egg-info to /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info
+[4.787s] running install_scripts
+[4.824s] writing list of installed files to '/home/keny/MANOS_ws/build/manos_manager/install.log'
+[4.884s] Invoked command in '/home/keny/MANOS_ws/src/manos_manager' returned '0': PYTHONPATH=/home/keny/MANOS_ws/build/manos_manager/prefix_override:/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_manager build --build-base /home/keny/MANOS_ws/build/manos_manager/build install --record /home/keny/MANOS_ws/build/manos_manager/install.log --single-version-externally-managed

@@ -1,0 +1,21 @@
+[1.752s] Invoking command in '/home/keny/MANOS_ws/src/manos_manager': PYTHONPATH=/home/keny/MANOS_ws/build/manos_manager/prefix_override:/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/CustomRosController/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/keny/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_manager build --build-base /home/keny/MANOS_ws/build/manos_manager/build install --record /home/keny/MANOS_ws/build/manos_manager/install.log --single-version-externally-managed
+[2.033s] running egg_info
+[2.034s] writing ../../build/manos_manager/manos_manager.egg-info/PKG-INFO
+[2.034s] writing dependency_links to ../../build/manos_manager/manos_manager.egg-info/dependency_links.txt
+[2.034s] writing entry points to ../../build/manos_manager/manos_manager.egg-info/entry_points.txt
+[2.035s] writing requirements to ../../build/manos_manager/manos_manager.egg-info/requires.txt
+[2.035s] writing top-level names to ../../build/manos_manager/manos_manager.egg-info/top_level.txt
+[2.067s] reading manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[2.067s] writing manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[2.067s] running build
+[2.068s] running build_py
+[2.068s] running install
+[2.069s] running install_lib
+[2.070s] running install_data
+[2.071s] running install_egg_info
+[2.072s] removing '/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info' (and everything under it)
+[2.073s] Copying ../../build/manos_manager/manos_manager.egg-info to /home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info
+[2.074s] running install_scripts
+[2.090s] Installing manos_manager script to /home/keny/MANOS_ws/install/manos_manager/lib/manos_manager
+[2.090s] writing list of installed files to '/home/keny/MANOS_ws/build/manos_manager/install.log'
+[2.131s] Invoked command in '/home/keny/MANOS_ws/src/manos_manager' returned '0': PYTHONPATH=/home/keny/MANOS_ws/build/manos_manager/prefix_override:/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/custom_msg/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/host_listener_package/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/hand_detector/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/camera/lib/python3.8/site-packages:/home/keny/MANOS_ws/install/CustomRosController/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/keny/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_manager build --build-base /home/keny/MANOS_ws/build/manos_manager/build install --record /home/keny/MANOS_ws/build/manos_manager/install.log --single-version-externally-managed
