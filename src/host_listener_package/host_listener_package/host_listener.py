@@ -28,10 +28,7 @@ class Host_Detector(Node):
         self.ros_topic_list = [topic_name for topic_name, _ in topic_names_and_types]
         list_string_msg = ListString()
         list_string_msg.data = self.ros_topic_list
-        
-        if (len(self.ros_topic_list) != self.old_length):
-            self.old_length =   len(self.ros_topic_list)
-            self.topic_publisher.publish(list_string_msg)
+        self.topic_publisher.publish(list_string_msg)
             
 
 def main(args=None):

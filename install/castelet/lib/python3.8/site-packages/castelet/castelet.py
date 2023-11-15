@@ -41,9 +41,9 @@ class Castlet(QMainWindow):
                                  depth=1)
         
         self.subscriptions = {
-            'left_hand': self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', None, self.qos_profile),
+            'left_hand': self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', self.test, self.qos_profile),
             'rhand': self.node.create_subscription(Pos, '/MANOS/Right_Hand/Pointer_pos', self.test, self.qos_profile),
-            #'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw_image', None , self.qos_profile),
+            'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw_image', self.image_callback , self.qos_profile),
             'Skel':  self.node.create_subscription(Image, '/MANOS/camera/hand_pos', self.test, self.qos_profile),
         }
         self.spawned_turtles = []  # Dictionary to keep track of spawned turtles
@@ -51,7 +51,7 @@ class Castlet(QMainWindow):
 
 
         self.velocity_publisher = self.node.create_publisher(Twist, '/'+ self.namespace + '/cmd_vel', 2)
-        self.raw_image_subscription = self.node.create_subscription(Image, '/MANOS/camera/raw_image', self.image_callback, self.qos_profile)
+        #  self.raw_image_subscription = self.node.create_subscription(Image, '/MANOS/camera/raw_image', self.image_callback, self.qos_profile)
 
         self.pose_subscriber = self.node.create_subscription(TPose, '/'+ self.namespace + '/pose', self.update_pose, self.qos_profile)
         self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/TopicDetector', self.getBindings,self.qos_profile)
@@ -125,17 +125,18 @@ class Castlet(QMainWindow):
 
             
     def TurtleDemo(self):
-        if 'Skel' in self.subscriptions and self.subscriptions['Skel']:
-            self.node.destroy_subscription(self.subscriptions['Skel'])
+        # if 'Skel' in self.subscriptions and self.subscriptions['Skel']:
+        #     self.node.destroy_subscription(self.subscriptions['Skel'])
 
 
 
         if self.castelet_ui.actionTurtleSim.isChecked():
             self.change_callback('Skel', Image, '/MANOS/camera/hand_pos', self.image_callback)
-            self.change_callback('Cam', Image, '/MANOS/camera/raw_image', None)
+            self.node.destroy_subscription(self.subscriptions['Cam'])
         else:
-            self.change_callback('Skel', Image, '/MANOS/camera/hand_pos', None)
             self.change_callback('Cam', Image, '/MANOS/camera/raw_image', self.image_callback)
+            self.node.destroy_subscription(self.subscriptions['Skel'])
+
 
         #self.raw_image_subscription = self.node.create_subscription(Int16, '/MANOS/left_hand/fingers_up', self.turtleSelection, 2)
 
@@ -282,6 +283,7 @@ class Castlet(QMainWindow):
             # Convert ROS Image message to OpenCV image
             cv_image = self.bridge.imgmsg_to_cv2(msg)
             # Display the image in the QtLabel
+            print(type(cv_image))
             self.display_image(cv_image)
 
         except Exception as e:

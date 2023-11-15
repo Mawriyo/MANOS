@@ -14,47 +14,53 @@ class Hand_Detector(Node):
     def __init__(self):
         super().__init__('hand_detector_subscriber')
         self.br = CvBridge()
-        self.lhand_fingers_publisher =  self.create_publisher(Int16, '/MANOS/Left_Hand/fingers_up', 5) #Records the amount of fingers up on the left hand... Datatructure: array[5] 
+        self.lhand_fingers_up_publisher =  self.create_publisher(Int16, '/MANOS/Left_Hand/fingers_up', 5) #Records the amount of fingers up on the left hand... Datatructure: array[5] 
+        self.lhand_fingers_publisher =  self.create_publisher(ListString, '/MANOS/Left_Hand/fingers', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
+
         self.lhand_publisher = self.create_publisher(ListString, '/MANOS/Left_Hand', 5)
         self.lhand_thumb_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Thumb_pos', 5)
         self.lhand_pointer_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Pointer_pos', 5)
         self.lhand_middle_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Middle_pos', 5)
         self.lhand_ring_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Ring_pos', 5)
         self.lhand_pinky_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Pinky_pos', 5)
+        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', 5)
 
-        self.rhand_fingers_publisher =  self.create_publisher(Int16, '/MANOS/Right_Hand/fingers_up', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
+        self.rhand_fingers_up_publisher =  self.create_publisher(Int16, '/MANOS/Right_Hand/fingers_up', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
+        self.rhand_fingers_publisher =  self.create_publisher(ListString, '/MANOS/Right_Hand/fingers', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
+     
         self.rhand_publisher = self.create_publisher(ListString, '/MANOS/Right_Hand', 5) #Records the right hand pose within the frame... Datatructure: array[26]
         self.rhand_thumb_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Thumb_pos', 5)
         self.rhand_pointer_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Pointer_pos', 5)
         self.rhand_middle_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Middle_pos', 5)
         self.rhand_ring_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Ring_pos', 5)
         self.rhand_pinky_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Pinky_pos', 5)
-        qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
+        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', 5)
+
+
+        self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
                                  depth=1)
-        self.raw_image_subscription = self.create_subscription(Image, '/MANOS/camera/raw_image', self.imagedecoder_callback, qos_profile)
+        self.raw_image_subscription = self.create_subscription(Image, '/MANOS/camera/raw_image', self.imagedecoder_callback, self.qos_profile)
 
         #Records the left hand pose within the frame... Datatructure: array[26]
         self.detector =  HandTrackingModule.HandDetector(detectionCon=0.73, maxHands=2)
-        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', qos_profile)
 
 
 
     def imagedecoder_callback(self, data):
         msg = Int16()
+        fingermsg = ListString()
         current_frame = self.br.imgmsg_to_cv2(data)
         
         hands, img = self.detector.findHands(current_frame)
-        
-        print("cvzone" + str(type(self.br.cv2_to_imgmsg(current_frame))))
 
-         #only publish images.... not the other thing... 
-        # if not (type(self.br.cv2_to_imgmsg(img)) == "numpy.ndarray"):
+        #only publish images.... not the other thing... 
+        # if not (type(self.br.cv2_to_imgmsg(img)) == "numpy.ndarray")
+
+
+        # Keep the window open and update it for each frame; wait for 1 millisecond between frames
         self.hand_pose_image.publish(self.br.cv2_to_imgmsg(img))
-
-       #     print("cvzone" + str(type(self.br.cv2_to_imgmsg(img))))
-
 
 
         if len(hands) == 1:
@@ -62,9 +68,10 @@ class Hand_Detector(Node):
             lmList1 = hand1["lmList"]
             digits=self.lmList_convert(lmList1)
             msg.data = sum(self.detector.fingersUp(hand1))
+            fingermsg.data = self.detector.fingersUp(hand1)
 
             if (hand1["type"]=="Right"):
-                self.rhand_fingers_publisher.publish(msg)
+                self.rhand_fingers_up_publisher.publish(msg)
 
                 self.rhand_thumb_publisher.publish(self.pos_message(digits[0]))
                 self.rhand_pointer_publisher.publish(self.pos_message(digits[1]))
@@ -74,7 +81,7 @@ class Hand_Detector(Node):
                 return
 
             if (hand1["type"]=="Left"):
-                self.lhand_fingers_publisher.publish(msg)
+                self.lhand_fingers_up_publisher.publish(msg)
                 self.lhand_thumb_publisher.publish(self.pos_message(self.thumb))
                 self.lhand_pointer_publisher.publish(self.pos_message(self.pointer))
                 self.lhand_middle_publisher.publish(self.pos_message(self.middle))
@@ -97,7 +104,7 @@ class Hand_Detector(Node):
                 
                 msg.data=sum(self.detector.fingersUp(hand1))
                 rdigits=self.lmList_convert(lmList1)
-                self.rhand_fingers_publisher.publish(msg)
+                self.rhand_fingers_up_publisher.publish(msg)
                 self.rhand_thumb_publisher.publish(self.pos_message(rdigits[0]))
                 self.rhand_pointer_publisher.publish(self.pos_message(rdigits[1]))
                 self.rhand_middle_publisher.publish(self.pos_message(rdigits[2]))
@@ -106,7 +113,7 @@ class Hand_Detector(Node):
 
                 msg.data=sum(self.detector.fingersUp(hand2))
                 ldigits=self.lmList_convert(lmList2)
-                self.lhand_fingers_publisher.publish(msg)
+                self.lhand_fingers_up_publisher.publish(msg)
                 self.lhand_thumb_publisher.publish(self.pos_message(ldigits[0]))
                 self.lhand_pointer_publisher.publish(self.pos_message(ldigits[1]))
                 self.lhand_middle_publisher.publish(self.pos_message(ldigits[2]))
@@ -117,7 +124,7 @@ class Hand_Detector(Node):
                 msg.data=sum(self.detector.fingersUp(hand1))
                 ldigits=self.lmList_convert(lmList1)
 
-                self.lhand_fingers_publisher.publish(msg)
+                self.lhand_fingers_up_publisher.publish(msg)
                 self.lhand_thumb_publisher.publish(self.pos_message(ldigits[0]))
                 self.lhand_pointer_publisher.publish(self.pos_message(ldigits[1]))
                 self.lhand_middle_publisher.publish(self.pos_message(ldigits[2]))
@@ -126,7 +133,7 @@ class Hand_Detector(Node):
                
                 msg.data=sum(self.detector.fingersUp(hand2))
                 rdigits=self.lmList_convert(lmList2)
-                self.rhand_fingers_publisher.publish(msg)
+                self.rhand_fingers_up_publisher.publish(msg)
                 self.rhand_thumb_publisher.publish(self.pos_message(rdigits[0]))
                 self.rhand_pointer_publisher.publish(self.pos_message(rdigits[1]))
                 self.rhand_middle_publisher.publish(self.pos_message(rdigits[2]))

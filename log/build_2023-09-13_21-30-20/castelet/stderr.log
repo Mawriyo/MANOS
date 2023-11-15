@@ -1,5 +1,0 @@
-  File "/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet/castelet.py", line 36
-    rclpy.spin_once(self.node, timeout_sec=timeout_sec_rclpy)        self.castelet_ui.camera_lb.setText("AH")
-                                                                     ^
-SyntaxError: invalid syntax
-

@@ -16,15 +16,14 @@ class Hand_Detector(Node):
         self.br = CvBridge()
         self.lhand_fingers_up_publisher =  self.create_publisher(Int16, '/MANOS/Left_Hand/fingers_up', 5) #Records the amount of fingers up on the left hand... Datatructure: array[5] 
         self.lhand_fingers_publisher =  self.create_publisher(ListString, '/MANOS/Left_Hand/fingers', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
-      
+
         self.lhand_publisher = self.create_publisher(ListString, '/MANOS/Left_Hand', 5)
         self.lhand_thumb_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Thumb_pos', 5)
         self.lhand_pointer_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Pointer_pos', 5)
         self.lhand_middle_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Middle_pos', 5)
         self.lhand_ring_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Ring_pos', 5)
         self.lhand_pinky_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Pinky_pos', 5)
-        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', qos_profile)
-
+        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', 5)
 
         self.rhand_fingers_up_publisher =  self.create_publisher(Int16, '/MANOS/Right_Hand/fingers_up', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
         self.rhand_fingers_publisher =  self.create_publisher(ListString, '/MANOS/Right_Hand/fingers', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
@@ -35,14 +34,14 @@ class Hand_Detector(Node):
         self.rhand_middle_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Middle_pos', 5)
         self.rhand_ring_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Ring_pos', 5)
         self.rhand_pinky_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Pinky_pos', 5)
-        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', qos_profile)
+        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', 5)
 
 
-        qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
+        self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
                                  depth=1)
-        self.raw_image_subscription = self.create_subscription(Image, '/MANOS/camera/raw_image', self.imagedecoder_callback, qos_profile)
+        self.raw_image_subscription = self.create_subscription(Image, '/MANOS/camera/raw_image', self.imagedecoder_callback, self.qos_profile)
 
         #Records the left hand pose within the frame... Datatructure: array[26]
         self.detector =  HandTrackingModule.HandDetector(detectionCon=0.73, maxHands=2)
@@ -55,11 +54,12 @@ class Hand_Detector(Node):
         current_frame = self.br.imgmsg_to_cv2(data)
         
         hands, img = self.detector.findHands(current_frame)
-        
-        print("cvzone" + str(type(self.br.cv2_to_imgmsg(current_frame))))
 
-         #only publish images.... not the other thing... 
-        # if not (type(self.br.cv2_to_imgmsg(img)) == "numpy.ndarray"):
+        #only publish images.... not the other thing... 
+        # if not (type(self.br.cv2_to_imgmsg(img)) == "numpy.ndarray")
+
+
+        # Keep the window open and update it for each frame; wait for 1 millisecond between frames
         self.hand_pose_image.publish(self.br.cv2_to_imgmsg(img))
 
 

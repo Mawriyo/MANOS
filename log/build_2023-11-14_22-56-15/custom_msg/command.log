@@ -1,0 +1,6 @@
+Invoking command in '/home/field/MANOS/build/custom_msg': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake /home/field/MANOS/src/custom_msg -DCMAKE_INSTALL_PREFIX=/home/field/MANOS/install/custom_msg
+Invoked command in '/home/field/MANOS/build/custom_msg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake /home/field/MANOS/src/custom_msg -DCMAKE_INSTALL_PREFIX=/home/field/MANOS/install/custom_msg
+Invoking command in '/home/field/MANOS/build/custom_msg': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/field/MANOS/build/custom_msg -- -j20 -l20
+Invoked command in '/home/field/MANOS/build/custom_msg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --build /home/field/MANOS/build/custom_msg -- -j20 -l20
+Invoking command in '/home/field/MANOS/build/custom_msg': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --install /home/field/MANOS/build/custom_msg
+Invoked command in '/home/field/MANOS/build/custom_msg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/galactic /usr/bin/cmake --install /home/field/MANOS/build/custom_msg
