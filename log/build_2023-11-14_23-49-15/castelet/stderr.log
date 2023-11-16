@@ -1,5 +1,0 @@
-  File "/home/field/MANOS/install/castelet/lib/python3.8/site-packages/castelet/castelet.py", line 47
-    'Skel':  self.node.create_subscription(Image, '/MANOS/camera/hand_pos', self.test, self.qos_profile),
-    ^
-SyntaxError: invalid syntax
-

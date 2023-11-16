@@ -1,18 +1,24 @@
 import rclpy
 import cv2
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
+from rclpy.qos import QoSHistoryPolicy
+from rclpy.qos import QoSReliabilityPolicy
+from rclpy.qos import QoSDurabilityPolicy
+
+
+
+
 from rclpy.node import Node
 from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
 from cvzone import HandTrackingModule
 from sensor_msgs.msg import Image
 from std_msgs.msg import Int16
-from cvzone import HandTrackingModule
 import time
 from custom_msg.msg import ListString, Pos
 class Hand_Detector(Node):
 
     def __init__(self):
-        super().__init__('hand_detector_subscriber')
+        super().__init__('hand_detector')
         self.br = CvBridge()
         self.lhand_fingers_up_publisher =  self.create_publisher(Int16, '/MANOS/Left_Hand/fingers_up', 5) #Records the amount of fingers up on the left hand... Datatructure: array[5] 
         self.lhand_fingers_publisher =  self.create_publisher(ListString, '/MANOS/Left_Hand/fingers', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
@@ -23,7 +29,7 @@ class Hand_Detector(Node):
         self.lhand_middle_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Middle_pos', 5)
         self.lhand_ring_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Ring_pos', 5)
         self.lhand_pinky_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Pinky_pos', 5)
-        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', 5)
+        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', 60)
 
         self.rhand_fingers_up_publisher =  self.create_publisher(Int16, '/MANOS/Right_Hand/fingers_up', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
         self.rhand_fingers_publisher =  self.create_publisher(ListString, '/MANOS/Right_Hand/fingers', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
@@ -34,17 +40,20 @@ class Hand_Detector(Node):
         self.rhand_middle_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Middle_pos', 5)
         self.rhand_ring_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Ring_pos', 5)
         self.rhand_pinky_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Pinky_pos', 5)
-        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', 5)
 
 
-        self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
-                                 durability=DurabilityPolicy.VOLATILE,
-                                 history=HistoryPolicy.KEEP_LAST,
-                                 depth=1)
-        self.raw_image_subscription = self.create_subscription(Image, '/MANOS/camera/raw_image', self.imagedecoder_callback, self.qos_profile)
+        self.qos_profile = QoSProfile(
+    reliability=QoSReliabilityPolicy.BEST_EFFORT,
+    history=QoSHistoryPolicy.KEEP_LAST,
+    depth=1,
+    durability=QoSDurabilityPolicy.VOLATILE
+
+)
+        self.raw_image_subscription = self.create_subscription(Image,"/MANOS/camera/raw",  self.imagedecoder_callback, 1)
 
         #Records the left hand pose within the frame... Datatructure: array[26]
-        self.detector =  HandTrackingModule.HandDetector(detectionCon=0.73, maxHands=2)
+        self.detector =  HandTrackingModule.HandDetector(detectionCon=0.80, maxHands=2)
+        
 
 
 
@@ -68,11 +77,13 @@ class Hand_Detector(Node):
             lmList1 = hand1["lmList"]
             digits=self.lmList_convert(lmList1)
             msg.data = sum(self.detector.fingersUp(hand1))
-            fingermsg.data = self.detector.fingersUp(hand1)
+
+            # Convert each element to a string
+            fingermsg.data = [str(finger) for finger in self.detector.fingersUp(hand1)]
 
             if (hand1["type"]=="Right"):
                 self.rhand_fingers_up_publisher.publish(msg)
-
+                self.rhand_publisher.publish(fingermsg)
                 self.rhand_thumb_publisher.publish(self.pos_message(digits[0]))
                 self.rhand_pointer_publisher.publish(self.pos_message(digits[1]))
                 self.rhand_middle_publisher.publish(self.pos_message(digits[2]))
@@ -82,6 +93,7 @@ class Hand_Detector(Node):
 
             if (hand1["type"]=="Left"):
                 self.lhand_fingers_up_publisher.publish(msg)
+                self.lhand_publisher.publish(fingermsg)
                 self.lhand_thumb_publisher.publish(self.pos_message(self.thumb))
                 self.lhand_pointer_publisher.publish(self.pos_message(self.pointer))
                 self.lhand_middle_publisher.publish(self.pos_message(self.middle))

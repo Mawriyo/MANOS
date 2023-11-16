@@ -11,20 +11,19 @@ class Host_Detector(Node):
         self.ros_topic_list = []
         self.old_length=0 
         timer_period = 1  
-        self.timer = self.create_timer(timer_period, self.get_topic_names_and_types)
-        self.node = rclpy.create_node('topic_names_node')
+        self.timer = self.create_timer(timer_period, self.get_topics)
         qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
                                  depth=1)
-        self.topic_publisher = self.node.create_publisher(ListString, '/MANOS/TopicDetector', qos_profile)
-        self.service_publisher = self.node.create_publisher(ListString, '/MANOS/ServiceDetector', qos_profile)
+        self.topic_publisher = self.create_publisher(ListString, '/MANOS/TopicDetector', qos_profile)
+        self.service_publisher = self.create_publisher(ListString, '/MANOS/ServiceDetector', qos_profile)
 
 
 
-    def get_topic_names_and_types(self):
-        topic_names_and_types =    self.node.get_topic_names_and_types()
-        service_list = self.node.get_service_names_and_types()
+    def get_topics(self):
+        topic_names_and_types =  self.get_topic_names_and_types()
+        service_list = self.get_service_names_and_types()
         self.ros_topic_list = [topic_name for topic_name, _ in topic_names_and_types]
         list_string_msg = ListString()
         list_string_msg.data = self.ros_topic_list
