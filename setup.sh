@@ -14,7 +14,10 @@ install_ros() {
     sudo apt upgrade -y
     sudo apt install -y ros-galactic-desktop
     sudo apt install python3-colcon-common-extensions -y 
+    source /opt/ros/galactic/setup.sh
     colcon build
+    pip install cvzone mediapipe opencv-python -y
+    
 }
 
 uninstall_ros() {

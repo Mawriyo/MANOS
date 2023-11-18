@@ -21,6 +21,17 @@ class Ui_CaseletWindow(object):
         self.gridLayout.setObjectName("gridLayout")
         self.gridLayout_2 = QtWidgets.QGridLayout()
         self.gridLayout_2.setObjectName("gridLayout_2")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setStyleSheet("   color: #2c3e50;\n"
+"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
+"    font-size: 14pt;\n"
+"    font-weight: bold;\n"
+"    padding: 8px;\n"
+"    background-color: #ecf0f1;\n"
+"    text-align: center;")
+        self.label.setText("")
+        self.label.setObjectName("label")
+        self.gridLayout_2.addWidget(self.label, 5, 0, 1, 3)
         self.label_14 = QtWidgets.QLabel(self.centralwidget)
         self.label_14.setMinimumSize(QtCore.QSize(0, 120))
         font = QtGui.QFont()
@@ -38,74 +49,15 @@ class Ui_CaseletWindow(object):
         self.label_14.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.label_14.setObjectName("label_14")
         self.gridLayout_2.addWidget(self.label_14, 2, 0, 1, 3)
-        self.LeftHand_GridLayout = QtWidgets.QGridLayout()
-        self.LeftHand_GridLayout.setObjectName("LeftHand_GridLayout")
-        self.LeftHand_F4_Label = QtWidgets.QLabel(self.centralwidget)
-        self.LeftHand_F4_Label.setStyleSheet("   color: #2c3e50;\n"
-"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
-"    font-size: 14pt;\n"
-"    font-weight: bold;\n"
-"    padding: 8px;\n"
-"    margin: 4px;\n"
-"    background-color: #ecf0f1;\n"
-"    border: 1px solid #bdc3c7;\n"
-"    border-radius: 4px;\n"
-"    text-align: center;")
-        self.LeftHand_F4_Label.setObjectName("LeftHand_F4_Label")
-        self.LeftHand_GridLayout.addWidget(self.LeftHand_F4_Label, 3, 1, 1, 1)
-        self.LeftHand_F1_Label = QtWidgets.QLabel(self.centralwidget)
-        self.LeftHand_F1_Label.setStyleSheet("   color: #2c3e50;\n"
-"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
-"    font-size: 14pt;\n"
-"    font-weight: bold;\n"
-"    padding: 8px;\n"
-"    margin: 4px;\n"
-"    background-color: #ecf0f1;\n"
-"    border: 1px solid #bdc3c7;\n"
-"    border-radius: 4px;\n"
-"    text-align: center;")
-        self.LeftHand_F1_Label.setObjectName("LeftHand_F1_Label")
-        self.LeftHand_GridLayout.addWidget(self.LeftHand_F1_Label, 0, 1, 1, 1)
-        self.LeftHand_F3_Label = QtWidgets.QLabel(self.centralwidget)
-        self.LeftHand_F3_Label.setStyleSheet("   color: #2c3e50;\n"
-"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
-"    font-size: 14pt;\n"
-"    font-weight: bold;\n"
-"    padding: 8px;\n"
-"    margin: 4px;\n"
-"    background-color: #ecf0f1;\n"
-"    border: 1px solid #bdc3c7;\n"
-"    border-radius: 4px;\n"
-"    text-align: center;")
-        self.LeftHand_F3_Label.setObjectName("LeftHand_F3_Label")
-        self.LeftHand_GridLayout.addWidget(self.LeftHand_F3_Label, 2, 1, 1, 1)
-        self.LeftHand_F2_Label = QtWidgets.QLabel(self.centralwidget)
-        self.LeftHand_F2_Label.setStyleSheet("   color: #2c3e50;\n"
-"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
-"    font-size: 14pt;\n"
-"    font-weight: bold;\n"
-"    padding: 8px;\n"
-"    margin: 4px;\n"
-"    background-color: #ecf0f1;\n"
-"    border: 1px solid #bdc3c7;\n"
-"    border-radius: 4px;\n"
-"    text-align: center;")
-        self.LeftHand_F2_Label.setObjectName("LeftHand_F2_Label")
-        self.LeftHand_GridLayout.addWidget(self.LeftHand_F2_Label, 1, 1, 1, 1)
-        self.LeftHand_F5 = QtWidgets.QLabel(self.centralwidget)
-        self.LeftHand_F5.setStyleSheet("   color: #2c3e50;\n"
-"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
-"    font-size: 14pt;\n"
-"    font-weight: bold;\n"
-"    padding: 8px;\n"
-"    margin: 4px;\n"
-"    background-color: #ecf0f1;\n"
-"    border: 1px solid #bdc3c7;\n"
-"    border-radius: 4px;\n"
-"    text-align: center;")
-        self.LeftHand_F5.setObjectName("LeftHand_F5")
-        self.LeftHand_GridLayout.addWidget(self.LeftHand_F5, 4, 1, 1, 1)
-        self.gridLayout_2.addLayout(self.LeftHand_GridLayout, 4, 0, 1, 1)
+        self.camera_lb = QtWidgets.QLabel(self.centralwidget)
+        self.camera_lb.setMinimumSize(QtCore.QSize(480, 480))
+        self.camera_lb.setStyleSheet("background-color: #f2f2f2;\n"
+"    color: #333;\n"
+"    font-family: \'Segoe UI\', Arial, sans-serif;")
+        self.camera_lb.setAlignment(QtCore.Qt.AlignCenter)
+        self.camera_lb.setWordWrap(True)
+        self.camera_lb.setObjectName("camera_lb")
+        self.gridLayout_2.addWidget(self.camera_lb, 4, 1, 1, 1)
         self.RightHand_GridLayout = QtWidgets.QGridLayout()
         self.RightHand_GridLayout.setObjectName("RightHand_GridLayout")
         self.RightHand_F3_Label = QtWidgets.QLabel(self.centralwidget)
@@ -174,26 +126,75 @@ class Ui_CaseletWindow(object):
         self.RightHand_F5_Label.setObjectName("RightHand_F5_Label")
         self.RightHand_GridLayout.addWidget(self.RightHand_F5_Label, 4, 0, 1, 1)
         self.gridLayout_2.addLayout(self.RightHand_GridLayout, 4, 2, 1, 1)
-        self.camera_lb = QtWidgets.QLabel(self.centralwidget)
-        self.camera_lb.setMinimumSize(QtCore.QSize(480, 480))
-        self.camera_lb.setStyleSheet("background-color: #f2f2f2;\n"
-"    color: #333;\n"
-"    font-family: \'Segoe UI\', Arial, sans-serif;")
-        self.camera_lb.setAlignment(QtCore.Qt.AlignCenter)
-        self.camera_lb.setWordWrap(True)
-        self.camera_lb.setObjectName("camera_lb")
-        self.gridLayout_2.addWidget(self.camera_lb, 4, 1, 1, 1)
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setStyleSheet("   color: #2c3e50;\n"
+        self.LeftHand_GridLayout = QtWidgets.QGridLayout()
+        self.LeftHand_GridLayout.setObjectName("LeftHand_GridLayout")
+        self.LeftHand_F4_Label = QtWidgets.QLabel(self.centralwidget)
+        self.LeftHand_F4_Label.setStyleSheet("   color: #2c3e50;\n"
 "    font-family: \'Segoe UI\', Arial, sans-serif;\n"
 "    font-size: 14pt;\n"
 "    font-weight: bold;\n"
 "    padding: 8px;\n"
+"    margin: 4px;\n"
 "    background-color: #ecf0f1;\n"
+"    border: 1px solid #bdc3c7;\n"
+"    border-radius: 4px;\n"
 "    text-align: center;")
-        self.label.setText("")
-        self.label.setObjectName("label")
-        self.gridLayout_2.addWidget(self.label, 5, 0, 1, 3)
+        self.LeftHand_F4_Label.setObjectName("LeftHand_F4_Label")
+        self.LeftHand_GridLayout.addWidget(self.LeftHand_F4_Label, 5, 1, 1, 1)
+        self.LeftHand_F2_Label = QtWidgets.QLabel(self.centralwidget)
+        self.LeftHand_F2_Label.setStyleSheet("   color: #2c3e50;\n"
+"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
+"    font-size: 14pt;\n"
+"    font-weight: bold;\n"
+"    padding: 8px;\n"
+"    margin: 4px;\n"
+"    background-color: #ecf0f1;\n"
+"    border: 1px solid #bdc3c7;\n"
+"    border-radius: 4px;\n"
+"    text-align: center;")
+        self.LeftHand_F2_Label.setObjectName("LeftHand_F2_Label")
+        self.LeftHand_GridLayout.addWidget(self.LeftHand_F2_Label, 3, 1, 1, 1)
+        self.LeftHand_F3_Label = QtWidgets.QLabel(self.centralwidget)
+        self.LeftHand_F3_Label.setStyleSheet("   color: #2c3e50;\n"
+"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
+"    font-size: 14pt;\n"
+"    font-weight: bold;\n"
+"    padding: 8px;\n"
+"    margin: 4px;\n"
+"    background-color: #ecf0f1;\n"
+"    border: 1px solid #bdc3c7;\n"
+"    border-radius: 4px;\n"
+"    text-align: center;")
+        self.LeftHand_F3_Label.setObjectName("LeftHand_F3_Label")
+        self.LeftHand_GridLayout.addWidget(self.LeftHand_F3_Label, 2, 1, 1, 1)
+        self.LeftHand_F1_Label = QtWidgets.QLabel(self.centralwidget)
+        self.LeftHand_F1_Label.setStyleSheet("   color: #2c3e50;\n"
+"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
+"    font-size: 14pt;\n"
+"    font-weight: bold;\n"
+"    padding: 8px;\n"
+"    margin: 4px;\n"
+"    background-color: #ecf0f1;\n"
+"background-color: rgb(113, 200, 195);\n"
+"    border: 1px solid #bdc3c7;\n"
+"    border-radius: 4px;\n"
+"    text-align: center;")
+        self.LeftHand_F1_Label.setObjectName("LeftHand_F1_Label")
+        self.LeftHand_GridLayout.addWidget(self.LeftHand_F1_Label, 0, 1, 1, 1)
+        self.LeftHand_F5_Label = QtWidgets.QLabel(self.centralwidget)
+        self.LeftHand_F5_Label.setStyleSheet("   color: #2c3e50;\n"
+"    font-family: \'Segoe UI\', Arial, sans-serif;\n"
+"    font-size: 14pt;\n"
+"    font-weight: bold;\n"
+"    padding: 8px;\n"
+"    margin: 4px;\n"
+"    background-color: #ecf0f1;\n"
+"    border: 1px solid #bdc3c7;\n"
+"    border-radius: 4px;\n"
+"    text-align: center;")
+        self.LeftHand_F5_Label.setObjectName("LeftHand_F5_Label")
+        self.LeftHand_GridLayout.addWidget(self.LeftHand_F5_Label, 4, 1, 1, 1)
+        self.gridLayout_2.addLayout(self.LeftHand_GridLayout, 4, 0, 1, 1)
         self.gridLayout.addLayout(self.gridLayout_2, 0, 0, 1, 1)
         self.test = QtWidgets.QPushButton(self.centralwidget)
         self.test.setObjectName("test")
@@ -292,17 +293,17 @@ class Ui_CaseletWindow(object):
         _translate = QtCore.QCoreApplication.translate
         CaseletWindow.setWindowTitle(_translate("CaseletWindow", "MainWindow"))
         self.label_14.setText(_translate("CaseletWindow", "M.A.N.O.S"))
-        self.LeftHand_F4_Label.setText(_translate("CaseletWindow", "LHand_Function:"))
-        self.LeftHand_F1_Label.setText(_translate("CaseletWindow", "LHand_Function:"))
-        self.LeftHand_F3_Label.setText(_translate("CaseletWindow", "LHand_Function:"))
-        self.LeftHand_F2_Label.setText(_translate("CaseletWindow", "LHand_Function:"))
-        self.LeftHand_F5.setText(_translate("CaseletWindow", "LHand_Function:"))
+        self.camera_lb.setText(_translate("CaseletWindow", "VIDEOSTREAM /CAMERA/RAW"))
         self.RightHand_F3_Label.setText(_translate("CaseletWindow", "RHand_Function"))
         self.RightHand_F1_Label.setText(_translate("CaseletWindow", "RHand_function"))
         self.RightHand_F2_Label.setText(_translate("CaseletWindow", "RHand_function"))
         self.RightHand_F4_Label.setText(_translate("CaseletWindow", "RHand_function"))
         self.RightHand_F5_Label.setText(_translate("CaseletWindow", "RHand_function"))
-        self.camera_lb.setText(_translate("CaseletWindow", "VIDEOSTREAM /CAMERA/RAW"))
+        self.LeftHand_F4_Label.setText(_translate("CaseletWindow", "LHand_Function:"))
+        self.LeftHand_F2_Label.setText(_translate("CaseletWindow", "LHand_Function:"))
+        self.LeftHand_F3_Label.setText(_translate("CaseletWindow", "LHand_Function:"))
+        self.LeftHand_F1_Label.setText(_translate("CaseletWindow", "LHand_Function:"))
+        self.LeftHand_F5_Label.setText(_translate("CaseletWindow", "LHand_Function:"))
         self.test.setText(_translate("CaseletWindow", "PushButton"))
         self.menuHost.setTitle(_translate("CaseletWindow", "Host"))
         self.menuBindings.setTitle(_translate("CaseletWindow", "Bindings"))

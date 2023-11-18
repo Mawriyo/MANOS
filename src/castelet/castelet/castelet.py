@@ -41,6 +41,7 @@ class Castlet(QMainWindow):
         self.castelet_ui = Ui_CaseletWindow()
         self.castelet_ui.setupUi(self)
         self.fingeruparray = []
+        self.LfingersArray = []
         self.qos_profile = QoSProfile(
             reliability=QoSReliabilityPolicy.BEST_EFFORT,
             history=QoSHistoryPolicy.KEEP_LAST,
@@ -55,8 +56,11 @@ class Castlet(QMainWindow):
             "topic": self.node.create_subscription(
                 ListString, "/MANOS/TopicDetector", self.getBindings, self.qos_profile
             ),
+            "fingersup": self.node.create_subscription(
+                Int16, "/MANOS/Left_Hand/fingers_up", self.guiLSelection, 1
+            ),
         }
-        self.spawned_turtles = []  # Dictionary to keep track of spawned turtles
+        self.spawned_turtles = []
         self.namespace = "turtle1"  # Roslaunch script param?
         self.teleport_services = {}
         self.rotate_services = {}
@@ -89,6 +93,46 @@ class Castlet(QMainWindow):
 
     def test(self, msg):
         pass
+
+    def guiLSelection(self, msg):
+        for i in range(self.castelet_ui.LeftHand_GridLayout.count()):
+            widget = self.castelet_ui.LeftHand_GridLayout.itemAt(i).widget()
+            if widget is not None:
+                if i == msg.data:
+                    # Darken the style for the widget at the index of msg.data
+                    print(f"Widget at index {i}: {widget.objectName()}")  # Print the name of the widget
+
+                    widget.setStyleSheet(
+                        """
+                        color: #2c3e50;
+                        font-family: 'Segoe UI', Arial, sans-serif;
+                        font-size: 14pt;
+                        font-weight: bold;
+                        padding: 8px;
+                        margin: 4px;
+                        background-color: rgb(113, 200, 195);
+                        border: 1px solid #bdc3c7;
+                        border-radius: 4px;
+                        text-align: center;
+                        """
+                    )
+                else:
+                    # Default style for other widgets
+                    widget.setStyleSheet(
+                        """
+                        color: #2c3e50;
+                        font-family: 'Segoe UI', Arial, sans-serif;
+                        font-size: 14pt;
+                        font-weight: bold;
+                        padding: 8px;
+                        margin: 4px;
+                        background-color: #ecf0f1;
+                        border: 1px solid #bdc3c7;
+                        border-radius: 4px;
+                        text-align: center;
+                        """
+                    )
+
 
     def run_turtleSim(self):
         subprocess.Popen(["ros2", "run", "turtlesim", "turtlesim_node"])
@@ -261,21 +305,9 @@ class Castlet(QMainWindow):
         theta = math.atan2(delta_y, delta_x)
         return theta
 
-    def turleSel(self, name):
-        if self.namespace == name:
-            pass
-        else:
-            self.namespace = name
-            self.node.destroy_subscription(self.pose_subscriber)
-            self.turtlePoseSubNode = self.node.create_subscription(
-                TPose,
-                "/" + self.namespace + "/pose",
-                self.update_pose,
-                self.qos_profile,
-            )
-
     def turtleSelection(self, msg):
         val = msg.data
+
         if val == 1:
             self.turleSel("turtle1")
         elif val == 2:
@@ -302,6 +334,19 @@ class Castlet(QMainWindow):
                 self.spawned_turtles.append("turtle5")
                 self.spawn_turtle("turtle5", 8.0, 5.0, 0.0)
             self.turleSel("turtle5")
+
+    def turleSel(self, name):
+        if self.namespace == name:
+            pass
+        else:
+            self.namespace = name
+            self.node.destroy_subscription(self.pose_subscriber)
+            self.turtlePoseSubNode = self.node.create_subscription(
+                TPose,
+                "/" + self.namespace + "/pose",
+                self.update_pose,
+                self.qos_profile,
+            )
 
     def spawn_turtle(self, name, x, y, theta):
         request = Spawn.Request()

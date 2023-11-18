@@ -20,6 +20,22 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_2">
+      <item row="5" column="0" colspan="3">
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">   color: #2c3e50;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 8px;
+    background-color: #ecf0f1;
+    text-align: center;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="0" colspan="3">
        <widget class="QLabel" name="label_14">
         <property name="minimumSize">
@@ -52,104 +68,29 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="0">
-       <layout class="QGridLayout" name="LeftHand_GridLayout">
-        <item row="3" column="1">
-         <widget class="QLabel" name="LeftHand_F4_Label">
-          <property name="styleSheet">
-           <string notr="true">   color: #2c3e50;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 14pt;
-    font-weight: bold;
-    padding: 8px;
-    margin: 4px;
-    background-color: #ecf0f1;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
-    text-align: center;</string>
-          </property>
-          <property name="text">
-           <string>LHand_Function:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="LeftHand_F1_Label">
-          <property name="styleSheet">
-           <string notr="true">   color: #2c3e50;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 14pt;
-    font-weight: bold;
-    padding: 8px;
-    margin: 4px;
-    background-color: #ecf0f1;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
-    text-align: center;</string>
-          </property>
-          <property name="text">
-           <string>LHand_Function:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="LeftHand_F3_Label">
-          <property name="styleSheet">
-           <string notr="true">   color: #2c3e50;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 14pt;
-    font-weight: bold;
-    padding: 8px;
-    margin: 4px;
-    background-color: #ecf0f1;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
-    text-align: center;</string>
-          </property>
-          <property name="text">
-           <string>LHand_Function:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLabel" name="LeftHand_F2_Label">
-          <property name="styleSheet">
-           <string notr="true">   color: #2c3e50;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 14pt;
-    font-weight: bold;
-    padding: 8px;
-    margin: 4px;
-    background-color: #ecf0f1;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
-    text-align: center;</string>
-          </property>
-          <property name="text">
-           <string>LHand_Function:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QLabel" name="LeftHand_F5">
-          <property name="styleSheet">
-           <string notr="true">   color: #2c3e50;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 14pt;
-    font-weight: bold;
-    padding: 8px;
-    margin: 4px;
-    background-color: #ecf0f1;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
-    text-align: center;</string>
-          </property>
-          <property name="text">
-           <string>LHand_Function:</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+      <item row="4" column="1">
+       <widget class="QLabel" name="camera_lb">
+        <property name="minimumSize">
+         <size>
+          <width>480</width>
+          <height>480</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #f2f2f2;
+    color: #333;
+    font-family: 'Segoe UI', Arial, sans-serif;</string>
+        </property>
+        <property name="text">
+         <string>VIDEOSTREAM /CAMERA/RAW</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item row="4" column="2">
        <layout class="QGridLayout" name="RightHand_GridLayout">
@@ -250,45 +191,105 @@
         </item>
        </layout>
       </item>
-      <item row="4" column="1">
-       <widget class="QLabel" name="camera_lb">
-        <property name="minimumSize">
-         <size>
-          <width>480</width>
-          <height>480</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: #f2f2f2;
-    color: #333;
-    font-family: 'Segoe UI', Arial, sans-serif;</string>
-        </property>
-        <property name="text">
-         <string>VIDEOSTREAM /CAMERA/RAW</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0" colspan="3">
-       <widget class="QLabel" name="label">
-        <property name="styleSheet">
-         <string notr="true">   color: #2c3e50;
+      <item row="4" column="0">
+       <layout class="QGridLayout" name="LeftHand_GridLayout">
+        <item row="5" column="1">
+         <widget class="QLabel" name="LeftHand_F4_Label">
+          <property name="styleSheet">
+           <string notr="true">   color: #2c3e50;
     font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 14pt;
     font-weight: bold;
     padding: 8px;
+    margin: 4px;
     background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
     text-align: center;</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
+          </property>
+          <property name="text">
+           <string>LHand_Function:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="LeftHand_F2_Label">
+          <property name="styleSheet">
+           <string notr="true">   color: #2c3e50;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 8px;
+    margin: 4px;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    text-align: center;</string>
+          </property>
+          <property name="text">
+           <string>LHand_Function:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="LeftHand_F3_Label">
+          <property name="styleSheet">
+           <string notr="true">   color: #2c3e50;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 8px;
+    margin: 4px;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    text-align: center;</string>
+          </property>
+          <property name="text">
+           <string>LHand_Function:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="LeftHand_F1_Label">
+          <property name="styleSheet">
+           <string notr="true">   color: #2c3e50;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 8px;
+    margin: 4px;
+    background-color: #ecf0f1;
+background-color: rgb(113, 200, 195);
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    text-align: center;</string>
+          </property>
+          <property name="text">
+           <string>LHand_Function:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="LeftHand_F5_Label">
+          <property name="styleSheet">
+           <string notr="true">   color: #2c3e50;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 8px;
+    margin: 4px;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    text-align: center;</string>
+          </property>
+          <property name="text">
+           <string>LHand_Function:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
