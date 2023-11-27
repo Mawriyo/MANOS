@@ -1,5 +1,0 @@
-  File "/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager/mm.py", line 32
-    self.subscriber = self.create_node(Pos, self.menuItem, TurtleSimControl.teleport_turtle,self.qos_profile))
-                                                                                                             ^
-SyntaxError: unmatched ')'
-

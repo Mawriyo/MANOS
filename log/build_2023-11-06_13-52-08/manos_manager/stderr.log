@@ -1,5 +1,0 @@
-  File "/home/keny/MANOS_ws/install/manos_manager/lib/python3.8/site-packages/manos_manager/manos_manager.py", line 3
-    from src.custom_ros_controller.custom_ros_controller.turtle_sim_controller import TurtleSimControl.
-                                                                                                      ^
-SyntaxError: invalid syntax
-

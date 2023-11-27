@@ -35,10 +35,7 @@ class TurtleSimControl(Node):
         self.spawned_turtles = [] 
         
     def hear(self,type, name):
-        print("AH")
-        print(type + name)
-        hear = self.create_subscription(type, name, self.teleport_turtle, self.qos_profile)
-        print("AH")
+        self.create_subscription(type, name, self.teleport_turtle, self.qos_profile)
 
     def teleport_turtle(self, msg):
 

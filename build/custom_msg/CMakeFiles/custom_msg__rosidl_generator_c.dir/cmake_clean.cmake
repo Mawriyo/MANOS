@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/msg/detail/list_string__functions.c.o"
-  "CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/msg/detail/list_string__functions.c.o.d"
   "CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/msg/detail/pos__functions.c.o"
-  "CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/msg/detail/pos__functions.c.o.d"
   "libcustom_msg__rosidl_generator_c.pdb"
   "libcustom_msg__rosidl_generator_c.so"
   "rosidl_generator_c/custom_msg/msg/detail/list_string__functions.c"

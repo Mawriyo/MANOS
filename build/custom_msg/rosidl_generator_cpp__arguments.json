@@ -1,10 +1,10 @@
 {
   "package_name": "custom_msg",
-  "output_dir": "/home/keny/MANOS_ws/build/custom_msg/rosidl_generator_cpp/custom_msg",
+  "output_dir": "/home/field/MANOS/build/custom_msg/rosidl_generator_cpp/custom_msg",
   "template_dir": "/opt/ros/galactic/share/rosidl_generator_cpp/cmake/../resource",
   "idl_tuples": [
-    "/home/keny/MANOS_ws/build/custom_msg/rosidl_adapter/custom_msg:msg/ListString.idl",
-    "/home/keny/MANOS_ws/build/custom_msg/rosidl_adapter/custom_msg:msg/Pos.idl"
+    "/home/field/MANOS/build/custom_msg/rosidl_adapter/custom_msg:msg/ListString.idl",
+    "/home/field/MANOS/build/custom_msg/rosidl_adapter/custom_msg:msg/Pos.idl"
   ],
   "ros_interface_dependencies": [
     "std_msgs:/opt/ros/galactic/share/std_msgs/msg/Bool.idl",
@@ -56,8 +56,8 @@
     "/opt/ros/galactic/share/rosidl_generator_cpp/cmake/../resource/srv__builder.hpp.em",
     "/opt/ros/galactic/share/rosidl_generator_cpp/cmake/../resource/srv__struct.hpp.em",
     "/opt/ros/galactic/share/rosidl_generator_cpp/cmake/../resource/srv__traits.hpp.em",
-    "/home/keny/MANOS_ws/build/custom_msg/rosidl_adapter/custom_msg/msg/ListString.idl",
-    "/home/keny/MANOS_ws/build/custom_msg/rosidl_adapter/custom_msg/msg/Pos.idl",
+    "/home/field/MANOS/build/custom_msg/rosidl_adapter/custom_msg/msg/ListString.idl",
+    "/home/field/MANOS/build/custom_msg/rosidl_adapter/custom_msg/msg/Pos.idl",
     "/opt/ros/galactic/share/std_msgs/msg/Bool.idl",
     "/opt/ros/galactic/share/std_msgs/msg/Byte.idl",
     "/opt/ros/galactic/share/std_msgs/msg/ByteMultiArray.idl",

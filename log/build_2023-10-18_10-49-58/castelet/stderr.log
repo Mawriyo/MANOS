@@ -1,5 +1,0 @@
-  File "/home/keny/MANOS_ws/install/castelet/lib/python3.8/site-packages/castelet/castelet.py", line 12
-    from castelet/turtleSimControl/TurtleSimControl import TurtleSimControl
-                 ^
-SyntaxError: invalid syntax
-

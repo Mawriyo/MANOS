@@ -1,3 +1,3 @@
 import sys
 sys.real_prefix = sys.prefix
-sys.prefix = sys.exec_prefix = '/home/keny/MANOS_ws/install/hand_detector'
+sys.prefix = sys.exec_prefix = '/home/field/MANOS/install/hand_detector'

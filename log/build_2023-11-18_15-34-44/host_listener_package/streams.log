@@ -1,0 +1,40 @@
+[1.453s] Invoking command in '/home/field/MANOS/src/host_listener_package': PYTHONPATH=/home/field/MANOS/build/host_listener_package/prefix_override:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/field/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/host_listener_package build --build-base /home/field/MANOS/build/host_listener_package/build install --record /home/field/MANOS/build/host_listener_package/install.log --single-version-externally-managed
+[1.589s] running egg_info
+[1.590s] creating ../../build/host_listener_package/host_listener_package.egg-info
+[1.590s] writing ../../build/host_listener_package/host_listener_package.egg-info/PKG-INFO
+[1.590s] writing dependency_links to ../../build/host_listener_package/host_listener_package.egg-info/dependency_links.txt
+[1.590s] writing entry points to ../../build/host_listener_package/host_listener_package.egg-info/entry_points.txt
+[1.590s] writing requirements to ../../build/host_listener_package/host_listener_package.egg-info/requires.txt
+[1.590s] writing top-level names to ../../build/host_listener_package/host_listener_package.egg-info/top_level.txt
+[1.591s] writing manifest file '../../build/host_listener_package/host_listener_package.egg-info/SOURCES.txt'
+[1.616s] reading manifest file '../../build/host_listener_package/host_listener_package.egg-info/SOURCES.txt'
+[1.616s] writing manifest file '../../build/host_listener_package/host_listener_package.egg-info/SOURCES.txt'
+[1.616s] running build
+[1.616s] running build_py
+[1.616s] creating /home/field/MANOS/build/host_listener_package/build
+[1.616s] creating /home/field/MANOS/build/host_listener_package/build/lib
+[1.616s] creating /home/field/MANOS/build/host_listener_package/build/lib/host_listener_package
+[1.616s] copying host_listener_package/__init__.py -> /home/field/MANOS/build/host_listener_package/build/lib/host_listener_package
+[1.617s] copying host_listener_package/host_processor.py -> /home/field/MANOS/build/host_listener_package/build/lib/host_listener_package
+[1.617s] copying host_listener_package/host_listener.py -> /home/field/MANOS/build/host_listener_package/build/lib/host_listener_package
+[1.617s] running install
+[1.617s] running install_lib
+[1.617s] creating /home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages/host_listener_package
+[1.618s] copying /home/field/MANOS/build/host_listener_package/build/lib/host_listener_package/__init__.py -> /home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages/host_listener_package
+[1.618s] copying /home/field/MANOS/build/host_listener_package/build/lib/host_listener_package/host_processor.py -> /home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages/host_listener_package
+[1.618s] copying /home/field/MANOS/build/host_listener_package/build/lib/host_listener_package/host_listener.py -> /home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages/host_listener_package
+[1.618s] byte-compiling /home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages/host_listener_package/__init__.py to __init__.cpython-38.pyc
+[1.618s] byte-compiling /home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages/host_listener_package/host_processor.py to host_processor.cpython-38.pyc
+[1.618s] byte-compiling /home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages/host_listener_package/host_listener.py to host_listener.cpython-38.pyc
+[1.618s] running install_data
+[1.619s] creating /home/field/MANOS/install/host_listener_package/share/ament_index
+[1.619s] creating /home/field/MANOS/install/host_listener_package/share/ament_index/resource_index
+[1.619s] creating /home/field/MANOS/install/host_listener_package/share/ament_index/resource_index/packages
+[1.619s] copying resource/host_listener_package -> /home/field/MANOS/install/host_listener_package/share/ament_index/resource_index/packages
+[1.619s] copying package.xml -> /home/field/MANOS/install/host_listener_package/share/host_listener_package
+[1.619s] running install_egg_info
+[1.620s] Copying ../../build/host_listener_package/host_listener_package.egg-info to /home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages/host_listener_package-0.0.0-py3.8.egg-info
+[1.620s] running install_scripts
+[1.630s] Installing host_listener script to /home/field/MANOS/install/host_listener_package/lib/host_listener_package
+[1.630s] writing list of installed files to '/home/field/MANOS/build/host_listener_package/install.log'
+[1.672s] Invoked command in '/home/field/MANOS/src/host_listener_package' returned '0': PYTHONPATH=/home/field/MANOS/build/host_listener_package/prefix_override:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages:/home/field/acs/src/behaviors/ /usr/bin/python3 setup.py egg_info --egg-base ../../build/host_listener_package build --build-base /home/field/MANOS/build/host_listener_package/build install --record /home/field/MANOS/build/host_listener_package/install.log --single-version-externally-managed

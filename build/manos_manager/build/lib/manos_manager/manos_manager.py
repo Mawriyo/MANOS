@@ -32,23 +32,19 @@ class Manos_Manager(Node):
 
     def checkMenuSelection(self, msg):
         self.menuItem=msg.data
-        print(self.menuItem + "AH")
         self.test()
 
 
     def checkBindingSelection(self, msg):
         self.binding=msg.data
-        print(self.binding + "AHg")
 
         
     def test(self):
-        print(self.menuItem + "YO")
         # self.turtle.test()
         while not self.temp:
             try:
                 self.turtle.hear(Pos, self.menuItem)
                 # self.fingersUP = self.create_subscription(Pos, "/MANOS/Left_Hand/Pointer_pos", self.turtle.teleport_turtle ,self.qos_profile)
-                self.temp=True
             except:
                 pass
         

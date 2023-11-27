@@ -1,3 +1,3 @@
 import sys
 sys.real_prefix = sys.prefix
-sys.prefix = sys.exec_prefix = '/home/keny/MANOS_ws/install/custom_ros_controller'
+sys.prefix = sys.exec_prefix = '/home/field/MANOS/install/custom_ros_controller'

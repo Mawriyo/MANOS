@@ -9,7 +9,6 @@ setup.py
 ../../build/castelet/castelet.egg-info/top_level.txt
 ../../build/castelet/castelet.egg-info/zip-safe
 castelet/CasteletWindow.py
-castelet/ClickableLabel.py
 castelet/__init__.py
 castelet/castelet.py
 resource/castelet
