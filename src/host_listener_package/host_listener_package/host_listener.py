@@ -14,14 +14,17 @@ class Host_Detector(Node):
         self.topictimer = self.create_timer(timer_period, self.filter_and_store_topics)
         self.servicetimer = self.create_timer(timer_period, self.filter_and_store_services)
 
+
         qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
                                  depth=1)
+
         
         self.topic_publisher = self.create_publisher(ListString, '/MANOS/TopicDetector', qos_profile)
         self.service_publisher = self.create_publisher(ListString, '/MANOS/ServiceDetector', qos_profile)
-
+        self.topic_publisher = self.create_publisher(ListString, '/MANOS/TopicDetector', qos_profile)
+        self.service_publisher = self.create_publisher(ListString, '/MANOS/ServiceDetector', qos_profile)
 
 
     def filter_and_store_topics(self):
@@ -54,6 +57,7 @@ class Host_Detector(Node):
         list_string_msg.data = service_list
         print("Publishing services" + str(list_string_msg))
         self.service_publisher.publish(list_string_msg)
+
 
 def main(args=None):
     rclpy.init(args=args)

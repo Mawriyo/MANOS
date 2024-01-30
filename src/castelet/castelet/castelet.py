@@ -1,21 +1,23 @@
 ##########################################################################
 # https://www.pythonguis.com/tutorials/first-steps-qt-creator/
 # https://answers.ros.org/question/393183/using-qt-designer-and-ros2-together-for-a-gui/
-# Reference for initial programming in addition to a forum about PYQT GUI 
+# Reference for initial programming in addition to a forum about PYQT GUI
 ###########################################################################
 
-from curses import COLOR_RED
-from functools import partial
-import cv2
-# from src.castelet.turtleSimControl.TurtleSimControl import TurtleSimControl
-import rclpy
-from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
-import sys
 from cv_bridge import CvBridge
+from functools import partial
+import math
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QImage, QPixmap, QPainter, QPen, QColor
-from PyQt5.QtWidgets import QMainWindow, QAction, QWidget,QMenu
+from PyQt5.QtWidgets import QMainWindow, QAction, QMenu
+import rclpy
+from rclpy.qos import (
+    QoSProfile,
+    QoSHistoryPolicy,
+    QoSReliabilityPolicy,
+    QoSDurabilityPolicy,
+)
 from sensor_msgs.msg import Image
 from castelet.CasteletWindow import Ui_CaseletWindow
 from geometry_msgs.msg import Twist, Pose
@@ -58,6 +60,7 @@ class Castlet(QMainWindow,):
         self.bindings_selection_publisher = self.node.create_publisher(String, '/MANOS/binding', 2)
         self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/ServiceDetector', self.getBindings, self.qos_profile)
 
+
         self.topics = []
         self.bridge = CvBridge()
         self.ros_timer = QTimer(self)
@@ -78,11 +81,57 @@ class Castlet(QMainWindow,):
         self.castelet_ui.menuBindings.aboutToShow.connect(self.refreshBindings)
         self.castelet_ui.actionTurtleSim.triggered.connect(self.TurtleDemo)
 
-    def test(self,msg):
+    def test(self, msg):
         pass
    
     def getServiceList(self):
         return self.services
+
+    def guiLSelection(self, msg):
+        for i in range(self.castelet_ui.LeftHand_GridLayout.count()):
+            widget = self.castelet_ui.LeftHand_GridLayout.itemAt(i).widget()
+            if widget is not None:
+                if i == msg.data:
+                    # Darken the style for the widget at the index of msg.data
+                    print(f"Widget at index {i}: {widget.objectName()}")  # Print the name of the widget
+
+                    widget.setStyleSheet(
+                        """
+                        color: #2c3e50;
+                        font-family: 'Segoe UI', Arial, sans-serif;
+                        font-size: 14pt;
+                        font-weight: bold;
+                        padding: 8px;
+                        margin: 4px;
+                        background-color: rgb(113, 200, 195);
+                        border: 1px solid #bdc3c7;
+                        border-radius: 4px;
+                        text-align: center;
+                        """
+                    )
+                else:
+                    # Default style for other widgets
+                    widget.setStyleSheet(
+                        """
+                        color: #2c3e50;
+                        font-family: 'Segoe UI', Arial, sans-serif;
+                        font-size: 14pt;
+                        font-weight: bold;
+                        padding: 8px;
+                        margin: 4px;
+                        background-color: #ecf0f1;
+                        border: 1px solid #bdc3c7;
+                        border-radius: 4px;
+                        text-align: center;
+                        """
+                    )
+
+
+    def run_turtleSim(self):
+        subprocess.Popen(["ros2", "run", "turtlesim", "turtlesim_node"])
+
+    def fingersUp(self, msg):
+        self.fingeruparray = msg.data
 
     def refreshBindings(self):
         menu_bindings = self.castelet_ui.menuBindings
@@ -101,8 +150,31 @@ class Castlet(QMainWindow,):
     def handSelection(self, text): 
         self.handTxt=text   
 
-    def fingerSelection(self, text,sub_widget):  
-        self.fingerTxt=text      
+
+        self.castelet_ui.menuLeft_Hand.aboutToShow.connect(
+            partial(self.handSelection, "/MANOS/Left_Hand/")
+        )
+        self.castelet_ui.menuRight_Hand.aboutToShow.connect(
+            partial(self.handSelection, "/MANOS/Right_Hand/")
+        )
+        child_widgets = menu_bindings.findChildren(
+            QMenu
+        )  # Children of binding Lhand and RHand
+        for widget in child_widgets:
+            widget.triggered.connect(partial(self.handSelection, widget.title()))
+            sub_children = widget.findChildren(QMenu)
+            for sub_widget in sub_children:
+                sub_widget.aboutToShow.connect(
+                    partial(
+                        self.fingerSelection, sub_widget.title() + "_pos", sub_widget
+                    )
+                )
+
+    def handSelection(self, text):
+        self.handTxt = text
+
+    def fingerSelection(self, text, sub_widget):
+        self.fingerTxt = text
         self.handbinding = self.handTxt + self.fingerTxt
         sub_widget.clear()
 
@@ -111,12 +183,22 @@ class Castlet(QMainWindow,):
                 action = QAction(sub_widget)
                 action.setText(topic)
                 action.triggered.connect(partial(self.bindings, self.handbinding, topic))
+# =======
+#                 # /MANOS/left_hand/pointer_pos
+#                 action.triggered.connect(
+#                     partial(
+#                         self.change_callback,
+#                         self.handbinding,
+#                         Pos,
+#                         self.handbinding,
+#                         self.teleportMethod,
+#                     )
+#                 )
+# >>>>>>> master
                 sub_widget.addAction(action)
 
-
-    def getBindings(self,msg):
+    def getBindings(self, msg):
         self.topics = msg.data
-
 
     def bindings(self, selection, topic):
         self.menuselection = String()
@@ -134,17 +216,19 @@ class Castlet(QMainWindow,):
             old_subscription = self.subscriptions[sub_key]
             if old_subscription:
                 self.node.destroy_subscription(old_subscription)
-        new_subscription = self.node.create_subscription(topic_type, topic, function, self.qos_profile)
+        new_subscription = self.node.create_subscription(topic_type, topic, function, 1)
         self.subscriptions[sub_key] = new_subscription
 
             
     def TurtleDemo(self):
         if self.castelet_ui.actionTurtleSim.isChecked():
-            self.change_callback('Skel', Image, '/MANOS/camera/hand_pos', self.image_callback)
-            self.node.destroy_subscription(self.subscriptions['Cam'])
+            self.change_callback(
+                "Skel", Image, "/MANOS/camera/hand_pos", self.image_callback
+            )
+            self.node.destroy_subscription(self.subscriptions["Cam"])
         else:
-            self.change_callback('Cam', Image, '/MANOS/camera/raw_image', self.image_callback)
-            self.node.destroy_subscription(self.subscriptions['Skel'])
+            self.change_callback("Cam", Image, "/MANOS/camera/raw", self.image_callback)
+            self.node.destroy_subscription(self.subscriptions["Skel"])
 
         # Pass the Node instance to TurtleSimControl
  
@@ -177,7 +261,6 @@ class Castlet(QMainWindow,):
     #     return self.namespace
 
 
-        
     def image_callback(self, msg):
         try:
             cv_image = self.bridge.imgmsg_to_cv2(msg)
@@ -189,7 +272,7 @@ class Castlet(QMainWindow,):
     def display_image(self, cv_image):
         # Comment this line to become a smurf...
         reversed_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2RGB)
-        reversed_image = cv2.flip(reversed_image,1)
+        reversed_image = cv2.flip(reversed_image, 1)
         # Get the image dimensions
         height, width, channel = reversed_image.shape
 
@@ -200,7 +283,7 @@ class Castlet(QMainWindow,):
             width,
             height,
             bytes_per_line,
-            QImage.Format_RGB888
+            QImage.Format_RGB888,
         )
 
         pixmap = QPixmap.fromImage(q_image)
@@ -208,11 +291,9 @@ class Castlet(QMainWindow,):
         pen = QPen(QColor(255, 0, 0)) 
         pen.setWidth(2)
         painter.setPen(pen)
-
-
         height, _ = pixmap.height(), pixmap.width()
         painter.drawLine(0, height // 2, width, height // 2)
-        painter.drawLine(width//2, 0, width//2, height)
+        painter.drawLine(width // 2, 0, width // 2, height)
 
         painter.end()
 
@@ -220,9 +301,6 @@ class Castlet(QMainWindow,):
 
     def process_ros_messages(self):
         rclpy.spin_once(self.node)
-
-
-
 
 def main(args=None):
     rclpy.init(args=None)
@@ -232,5 +310,6 @@ def main(args=None):
     app.exec_()
     rclpy.shutdown()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
