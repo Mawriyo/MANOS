@@ -1,3 +1,0 @@
-[console_scripts]
-manos_manager = manos_manager.manos_manager:main
-

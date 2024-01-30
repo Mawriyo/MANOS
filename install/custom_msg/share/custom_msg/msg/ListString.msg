@@ -1,6 +1,0 @@
-#Custom message to handle Hands[] data type...
-#credit to this reference.... 
-#https://docs.ros.org/en/galactic/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html
-#and https://roboticsbackend.com/
-
-string[] data
