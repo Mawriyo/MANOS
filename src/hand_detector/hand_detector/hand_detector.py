@@ -29,7 +29,6 @@ class Hand_Detector(Node):
         self.lhand_middle_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Middle_pos', 5)
         self.lhand_ring_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Ring_pos', 5)
         self.lhand_pinky_publisher = self.create_publisher(Pos, '/MANOS/Left_Hand/Pinky_pos', 5)
-        self.hand_pose_image = self.create_publisher(Image, '/MANOS/camera/hand_pos', 60)
 
         self.rhand_fingers_up_publisher =  self.create_publisher(Int16, '/MANOS/Right_Hand/fingers_up', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
         self.rhand_fingers_publisher =  self.create_publisher(ListString, '/MANOS/Right_Hand/fingers', 5) #Records the amount of fingers up on the Right hand... Datatructure: array[5] 
@@ -40,8 +39,6 @@ class Hand_Detector(Node):
         self.rhand_middle_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Middle_pos', 5)
         self.rhand_ring_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Ring_pos', 5)
         self.rhand_pinky_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Pinky_pos', 5)
-
-
         self.qos_profile = QoSProfile(
     reliability=QoSReliabilityPolicy.BEST_EFFORT,
     history=QoSHistoryPolicy.KEEP_LAST,
@@ -50,7 +47,6 @@ class Hand_Detector(Node):
 
 )
         self.raw_image_subscription = self.create_subscription(Image,"/MANOS/camera/raw",  self.imagedecoder_callback, 1)
-
         #Records the left hand pose within the frame... Datatructure: array[26]
         self.detector =  HandTrackingModule.HandDetector(detectionCon=0.80, maxHands=2)
         
@@ -76,19 +72,21 @@ class Hand_Detector(Node):
             hand1=hands[0]
             lmList1 = hand1["lmList"]
             digits=self.lmList_convert(lmList1)
-            msg.data = sum(self.detector.fingersUp(hand1))
-
-            # Convert each element to a string
-            fingermsg.data = [str(finger) for finger in self.detector.fingersUp(hand1)]
+            array = self.detector.fingersUp(hand1)
+            msg.data = sum(array)
 
             if (hand1["type"]=="Right"):
                 self.rhand_fingers_up_publisher.publish(msg)
-                self.rhand_publisher.publish(fingermsg)
                 self.rhand_thumb_publisher.publish(self.pos_message(digits[0]))
                 self.rhand_pointer_publisher.publish(self.pos_message(digits[1]))
                 self.rhand_middle_publisher.publish(self.pos_message(digits[2]))
                 self.rhand_ring_publisher.publish(self.pos_message(digits[3]))
                 self.rhand_pinky_publisher.publish(self.pos_message(digits[4]))
+                fingermsg.data = [str(finger) for finger in array]
+                self.rhand_fingers_publisher.publish(fingermsg)
+
+                fingermsg.data=[]
+
                 return
 
             if (hand1["type"]=="Left"):
@@ -99,6 +97,11 @@ class Hand_Detector(Node):
                 self.lhand_middle_publisher.publish(self.pos_message(self.middle))
                 self.lhand_ring_publisher.publish(self.pos_message(self.ring))
                 self.lhand_pinky_publisher.publish(self.pos_message(self.pinky))
+                fingermsg.data = [str(finger) for finger in array]
+                self.lhand_fingers_publisher.publish(fingermsg)
+
+                fingermsg.data=[]
+
                 return
 
         elif len(hands) == 2:
@@ -113,8 +116,10 @@ class Hand_Detector(Node):
             #(lmList1[4][0:2]) #returns XY I am not sure what the last value is in the list...
 
             if (hand1["type"]=="Right"):
+                array = self.detector.fingersUp(hand1) #Right
+                array2 = self.detector.fingersUp(hand2) #Left
+                msg.data=sum(array)
                 
-                msg.data=sum(self.detector.fingersUp(hand1))
                 rdigits=self.lmList_convert(lmList1)
                 self.rhand_fingers_up_publisher.publish(msg)
                 self.rhand_thumb_publisher.publish(self.pos_message(rdigits[0]))
@@ -122,8 +127,12 @@ class Hand_Detector(Node):
                 self.rhand_middle_publisher.publish(self.pos_message(rdigits[2]))
                 self.rhand_ring_publisher.publish(self.pos_message(rdigits[3]))
                 self.rhand_pinky_publisher.publish(self.pos_message(rdigits[4]))
+                fingermsg.data = [str(finger) for finger in array]
+                self.rhand_fingers_publisher.publish(fingermsg)
 
-                msg.data=sum(self.detector.fingersUp(hand2))
+                fingermsg.data=[]
+
+                msg.data=sum(array2)
                 ldigits=self.lmList_convert(lmList2)
                 self.lhand_fingers_up_publisher.publish(msg)
                 self.lhand_thumb_publisher.publish(self.pos_message(ldigits[0]))
@@ -131,9 +140,16 @@ class Hand_Detector(Node):
                 self.lhand_middle_publisher.publish(self.pos_message(ldigits[2]))
                 self.lhand_ring_publisher.publish(self.pos_message(ldigits[3]))
                 self.lhand_pinky_publisher.publish(self.pos_message(ldigits[4]))
+                fingermsg.data = [str(finger) for finger in array2]
+                self.lhand_fingers_publisher.publish(fingermsg)
+
+                fingermsg.data=[]
 
             if (hand1["type"]=="Left"):
-                msg.data=sum(self.detector.fingersUp(hand1))
+                array = self.detector.fingersUp(hand1) #Left
+                array2 = self.detector.fingersUp(hand2) #Right
+                msg.data=sum(array)
+
                 ldigits=self.lmList_convert(lmList1)
 
                 self.lhand_fingers_up_publisher.publish(msg)
@@ -142,8 +158,12 @@ class Hand_Detector(Node):
                 self.lhand_middle_publisher.publish(self.pos_message(ldigits[2]))
                 self.lhand_ring_publisher.publish(self.pos_message(ldigits[3]))
                 self.lhand_pinky_publisher.publish(self.pos_message(ldigits[4]))
-               
-                msg.data=sum(self.detector.fingersUp(hand2))
+                fingermsg.data = [str(finger) for finger in array]
+                self.lhand_fingers_publisher.publish(fingermsg)
+
+                fingermsg.data=[]
+        
+                msg.data=sum(array2)
                 rdigits=self.lmList_convert(lmList2)
                 self.rhand_fingers_up_publisher.publish(msg)
                 self.rhand_thumb_publisher.publish(self.pos_message(rdigits[0]))
@@ -151,6 +171,9 @@ class Hand_Detector(Node):
                 self.rhand_middle_publisher.publish(self.pos_message(rdigits[2]))
                 self.rhand_ring_publisher.publish(self.pos_message(rdigits[3]))
                 self.rhand_pinky_publisher.publish(self.pos_message(rdigits[4]))
+                fingermsg.data = [str(finger) for finger in array2]
+                self.rhand_fingers_publisher.publish(fingermsg)
+
 
 #Sacrificing memory for readability here... 
     def lmList_convert(self, lmlist):
