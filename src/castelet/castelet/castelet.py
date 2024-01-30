@@ -3,7 +3,7 @@
 # https://answers.ros.org/question/393183/using-qt-designer-and-ros2-together-for-a-gui/
 # Reference for initial programming in addition to a forum about PYQT GUI
 ###########################################################################
-
+import cv2
 from cv_bridge import CvBridge
 from functools import partial
 import math
@@ -14,9 +14,9 @@ from PyQt5.QtWidgets import QMainWindow, QAction, QMenu
 import rclpy
 from rclpy.qos import (
     QoSProfile,
-    QoSHistoryPolicy,
-    QoSReliabilityPolicy,
-    QoSDurabilityPolicy,
+    HistoryPolicy,
+    ReliabilityPolicy,
+    DurabilityPolicy,
 )
 from sensor_msgs.msg import Image
 from castelet.CasteletWindow import Ui_CaseletWindow
@@ -25,9 +25,9 @@ from custom_msg.msg import Pos, ListString
 from turtlesim.msg import Pose as TPose #This line caused an unessasary amount of frustration
 from turtlesim.srv import TeleportAbsolute, TeleportRelative, Spawn
 from std_msgs.msg import Int16,String
+import sys
 
-
-class Castlet(QMainWindow,):
+class Castlet(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
         self.node = rclpy.create_node('castelet_node')
@@ -50,10 +50,10 @@ class Castlet(QMainWindow,):
         self.subscriptions = {
           #  'left_hand': self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', self.test, self.qos_profile),
            # 'rhand': self.node.create_subscription(Pos, '/MANOS/Right_Hand/Pointer_pos', self.test, self.qos_profile),
-            'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw_image', self.image_callback , self.qos_profile),
+            'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw', self.image_callback , self.qos_profile),
             'Skel':  self.node.create_subscription(Image, '/MANOS/camera/hand_pos', self.test, self.qos_profile),
-            'temp':  self.node.create_subscription(ListString, '/MANOS/ServiceDetector', self.test, self.qos_profile),
-
+            "fingersup": self.node.create_subscription(Int16, "/MANOS/Left_Hand/fingers_up", self.guiLSelection, 1  ),
+            # "topic": self.node.create_subscription(ListString, "/MANOS/TopicDetector", self.getBindings, self.qos_profile
         }
 
         self.menu_selection_publisher = self.node.create_publisher(String, '/MANOS/menuSelection', 2)
@@ -134,10 +134,10 @@ class Castlet(QMainWindow,):
         self.fingeruparray = msg.data
 
     def refreshBindings(self):
-        menu_bindings = self.castelet_ui.menuBindings
+        self.menu_bindings = self.castelet_ui.menuBindings
         self.handTxt = ""
         self.fingerTxt = ""
-        child_widgets = menu_bindings.findChildren(QMenu) 
+        child_widgets = self.menu_bindings.findChildren(QMenu) 
          
         for widget in child_widgets:
             if not widget.signalsBlocked():
@@ -157,7 +157,7 @@ class Castlet(QMainWindow,):
         self.castelet_ui.menuRight_Hand.aboutToShow.connect(
             partial(self.handSelection, "/MANOS/Right_Hand/")
         )
-        child_widgets = menu_bindings.findChildren(
+        child_widgets = self.menu_bindings.findChildren(
             QMenu
         )  # Children of binding Lhand and RHand
         for widget in child_widgets:
@@ -171,6 +171,7 @@ class Castlet(QMainWindow,):
                 )
 
     def handSelection(self, text):
+        print(text)
         self.handTxt = text
 
     def fingerSelection(self, text, sub_widget):

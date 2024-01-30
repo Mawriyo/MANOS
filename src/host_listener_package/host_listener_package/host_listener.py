@@ -23,8 +23,7 @@ class Host_Detector(Node):
         
         self.topic_publisher = self.create_publisher(ListString, '/MANOS/TopicDetector', qos_profile)
         self.service_publisher = self.create_publisher(ListString, '/MANOS/ServiceDetector', qos_profile)
-        self.topic_publisher = self.create_publisher(ListString, '/MANOS/TopicDetector', qos_profile)
-        self.service_publisher = self.create_publisher(ListString, '/MANOS/ServiceDetector', qos_profile)
+
 
 
     def filter_and_store_topics(self):
@@ -39,16 +38,18 @@ class Host_Detector(Node):
     def publish_topics(self, topic_list):
         list_string_msg = ListString()
         list_string_msg.data = topic_list
+        # print("Publishing topics" + str(list_string_msg))
+
         self.topic_publisher.publish(list_string_msg)
 
 
     def filter_and_store_services(self):
         service_list = self.get_service_names_and_types()
         
-        filtered_service_list = [(service_name, service_type) for service_name, service_type in service_list
-                                if not any(keyword in service_name for keyword in ["camera_publisher", "parameter", "_action", "topic_names_node", "host_detector_subscriber", "castelet_node"])]
+        # filtered_service_list = [(service_name, service_type) for service_name, service_type in service_list
+        #                         if not any(keyword in service_name for keyword in [ "parameter", "_action", "topic_names_node", "host_detector_subscriber", "castelet_node"])]
 
-        self.ros_service_list = [service_name for service_name, _ in filtered_service_list]
+        self.ros_service_list = [service_name for service_name, _ in service_list]
         self.publish_services(self.ros_service_list)
 
 

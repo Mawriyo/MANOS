@@ -39,6 +39,7 @@ class Hand_Detector(Node):
         self.rhand_middle_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Middle_pos', 5)
         self.rhand_ring_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Ring_pos', 5)
         self.rhand_pinky_publisher = self.create_publisher(Pos, '/MANOS/Right_Hand/Pinky_pos', 5)
+        self.hand_pose_image = self.create_publisher(Image, "/MANOS/camera/hand_pos",60)
         self.qos_profile = QoSProfile(
     reliability=QoSReliabilityPolicy.BEST_EFFORT,
     history=QoSHistoryPolicy.KEEP_LAST,
