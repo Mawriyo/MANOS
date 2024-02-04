@@ -20,9 +20,10 @@ class Host_Detector(Node):
                                  history=HistoryPolicy.KEEP_LAST,
                                  depth=1)
 
-        
-        self.topic_publisher = self.create_publisher(ListString, '/MANOS/TopicDetector', qos_profile)
+        self.topic_subscriber = self.create_subscription(ListString, '/MANOS/TopicDetector', qos_profile)
         self.service_publisher = self.create_publisher(ListString, '/MANOS/ServiceDetector', qos_profile)
+        self.topic_publisher = self.create_publisher(ListString, '/MANOS/Topics', qos_profile)
+        self.service_publisher = self.create_publisher(ListString, '/MANOS/Service', qos_profile)
 
 
 

@@ -17,17 +17,17 @@ class Camera_Publisher(Node):
         self.cam= cv2.VideoCapture(4)
         self.br = CvBridge()
         self.raw_image_publisher = self.create_publisher(Image, '/MANOS/camera/raw', 60)
-        self.test = self.create_publisher(Int16, 'test', 60)
+        # self.test = self.create_publisher(Int16, 'test', 60)
 
         timer_period = .01 # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.int= Int16()
-        self.int.data=1
+        # self.int= Int16()
+        # self.int.data=1
     def timer_callback(self):
         ret, frame = self.cam.read()
         if ret == True:
           self.raw_image_publisher.publish(self.br.cv2_to_imgmsg(frame))
-          self.test.publish(self.int)
+        #   self.test.publish(self.int)
 
 def main(args=None):
     rclpy.init(args=args)
