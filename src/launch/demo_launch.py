@@ -26,6 +26,13 @@ def generate_launch_description():
             executable='host_listener',
             name='host_listener_node',
             output='screen'
+        ),
+        Node(
+            package='manos_manager',
+            executable='manos_manager',
+            name='manos_manager_node',
+            output='screen'
         )
+
     ])
 

@@ -26,6 +26,32 @@ from turtlesim.msg import Pose as TPose #This line caused an unessasary amount o
 from turtlesim.srv import TeleportAbsolute, TeleportRelative, Spawn
 from std_msgs.msg import Int16,String
 import sys
+from PyQt5.QtWidgets import QLabel
+SELECTED_STYLE = """
+    color: #2c3e50;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 8px;
+    margin: 4px;
+    background-color: rgb(113, 200, 195);
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    text-align: center;
+"""
+
+UNSELECTED_STYLE = """
+    color: #2c3e50;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 8px;
+    margin: 4px;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    text-align: center;
+"""
 
 class Castlet(QMainWindow):
     def __init__(self, parent=None):
@@ -48,12 +74,12 @@ class Castlet(QMainWindow):
         self.castelet_ui.menuLeft_Hand.aboutToShow.connect(partial(self.handSelection, '/MANOS/Left_Hand/'))
         self.castelet_ui.menuRight_Hand.aboutToShow.connect(partial(self.handSelection, '/MANOS/Right_Hand/'))
         self.subscriptions = {
-          #  'left_hand': self.node.create_subscription(Pos, '/MANOS/Left_Hand/Pointer_pos', self.test, self.qos_profile),
-           # 'rhand': self.node.create_subscription(Pos, '/MANOS/Right_Hand/Pointer_pos', self.test, self.qos_profile),
             'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw', self.image_callback , self.qos_profile),
             'Skel':  self.node.create_subscription(Image, '/MANOS/camera/hand_pos', self.test, self.qos_profile),
-            "fingersup": self.node.create_subscription(Int16, "/MANOS/Left_Hand/fingers_up", self.guiLSelection, 1  ),
-            # "topic": self.node.create_subscription(ListString, "/MANOS/TopicDetector", self.getBindings, self.qos_profile
+            'lfingersupgui': self.node.create_subscription(Int16, "/MANOS/Left_Hand/fingers_up", partial(self.guiSelection,'left') , 1  ),
+            'rfingersupgui': self.node.create_subscription(Int16, "/MANOS/Right_Hand/fingers_up", partial(self.guiSelection,"right") ,1  ),
+
+
         }
 
         self.menu_selection_publisher = self.node.create_publisher(String, '/MANOS/menuSelection', 2)
@@ -66,10 +92,9 @@ class Castlet(QMainWindow):
         self.ros_timer = QTimer(self)
         self.ros_timer.timeout.connect(self.process_ros_messages)
         self.ros_timer.start(30)
-
-        # t1 = threading.Thread(target=self.process_ros_messages2)
-        # t1.start()
         self.temp = False
+        self.guiHelper("left")
+        self.guiHelper("right")
         
 
 ###################################################################################################
@@ -87,46 +112,34 @@ class Castlet(QMainWindow):
     def getServiceList(self):
         return self.services
 
-    def guiLSelection(self, msg):
-        for i in range(self.castelet_ui.LeftHand_GridLayout.count()):
-            widget = self.castelet_ui.LeftHand_GridLayout.itemAt(i).widget()
+    def guiSelection(self, side, msg):
+        grid_layout = None
+
+        if side == "left":
+            grid_layout = self.castelet_ui.LeftHand_GridLayout
+        elif side == "right":
+            grid_layout = self.castelet_ui.RightHand_GridLayout  # Assuming you have a RightHand_GridLayout
+
+        for i in range(grid_layout.count()):
+            widget = grid_layout.itemAt(i).widget()
             if widget is not None:
                 if i == msg.data:
-                    # Darken the style for the widget at the index of msg.data
-                    print(f"Widget at index {i}: {widget.objectName()}")  # Print the name of the widget
+                    print(f"Widget at index {i}: {widget.objectName()}") 
 
-                    widget.setStyleSheet(
-                        """
-                        color: #2c3e50;
-                        font-family: 'Segoe UI', Arial, sans-serif;
-                        font-size: 14pt;
-                        font-weight: bold;
-                        padding: 8px;
-                        margin: 4px;
-                        background-color: rgb(113, 200, 195);
-                        border: 1px solid #bdc3c7;
-                        border-radius: 4px;
-                        text-align: center;
-                        """
-                    )
+                    widget.setStyleSheet(SELECTED_STYLE)
                 else:
-                    # Default style for other widgets
-                    widget.setStyleSheet(
-                        """
-                        color: #2c3e50;
-                        font-family: 'Segoe UI', Arial, sans-serif;
-                        font-size: 14pt;
-                        font-weight: bold;
-                        padding: 8px;
-                        margin: 4px;
-                        background-color: #ecf0f1;
-                        border: 1px solid #bdc3c7;
-                        border-radius: 4px;
-                        text-align: center;
-                        """
-                    )
+                    widget.setStyleSheet(UNSELECTED_STYLE)
 
-
+    def guiHelper(self, side):
+        if side == "left":
+            grid_layout = self.castelet_ui.LeftHand_GridLayout
+        elif side == "right":
+            grid_layout = self.castelet_ui.RightHand_GridLayout 
+        if grid_layout is not None:
+            for i in range(5):
+                label = QLabel(f"{i + 1}")
+                label.setStyleSheet(UNSELECTED_STYLE)  # Use the constant here
+                grid_layout.addWidget(label, i, 0)     
     def run_turtleSim(self):
         subprocess.Popen(["ros2", "run", "turtlesim", "turtlesim_node"])
 

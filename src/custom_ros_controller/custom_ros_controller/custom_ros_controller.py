@@ -33,20 +33,23 @@ class TurtleSimControl(Node):
         self.keywords = ['/clear', '/kill', '/reset', '/spawn',  '/turtle1/teleport_absolute',
                           '/turtle1/teleport_relative'] #'/turtle1/set_pen' for example. 
         self.spawned_turtles = [] 
-        
+        print("INITIALIZED MAYBE")
     def hear(self,type, name):
+        print("creates")
+
         self.create_subscription(type, name, self.teleport_turtle, self.qos_profile)
+        print("before!")
 
     def teleport_turtle(self, msg):
+        print("Beforeeee")
 
         teleport_request = TeleportAbsolute.Request()
-        teleport_request.namespace = "turtle1"
         teleport_request.x = 10 - (msg.x / 640) * 10
         teleport_request.y = 10 - (msg.y / 480) * 10  # Invert the y-coordinate
         teleport_request.theta = 0.0  # Ensure that the turtle does not change its orientation
         print("Before")
 
-        self.teleport_service.call_async(teleport_request)
+        self.teleport_client.call_async(teleport_request)
         print("after")
 
     def rotateTurtle(self, msg):

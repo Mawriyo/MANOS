@@ -1,6 +1,6 @@
 import math
 import threading
-from src.custom_ros_controller.custom_ros_controller.custom_ros_controller import TurtleSimControl
+from custom_ros_controller.custom_ros_controller import TurtleSimControl
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
@@ -32,11 +32,23 @@ class Manos_Manager(Node):
 
     def checkMenuSelection(self, msg):
         self.menuItem=msg.data
-        self.test()
+        print( self.menuItem) #//MANOS/Right_Hand/Pointer_pos
 
+        print( self.binding) #/turtle1/teleport_absolute
+        print(f"{type(self.menuItem)} type")
+        # self.turtle.teleport_client.
+        self.pointer_pos_sub = self.create_subscription(Pos,  self.menuItem, self.handle_pointer_pos, self.qos_profile)   
+        print("wYEET")
+
+        print("AFTER SUBTHINGY")
+    def handle_pointer_pos(self, msg):
+        print(msg)
+        self.turtle.teleport_turtle(msg)
 
     def checkBindingSelection(self, msg):
-        self.binding=msg.data
+        self.binding=msg.data #/MANOS/Left_Hand/Pointer_pos WHICH UPON SUBSCRIBING YOU GET A pos() LIKE x: 535.0 y: 334.0
+
+
 
         
     def test(self):
@@ -49,14 +61,16 @@ class Manos_Manager(Node):
                 pass
         
     def new(self):
-       
         self.turtle = TurtleSimControl()
-        self.turtle.test()
+
+        # thread2 = threading.Thread(target=rclpy.spin, args=(  self.turtle,), daemon=True)
+        # self.turtle.test()
 
 def main(args=None):
     rclpy.init(args=args)
     manosManager = Manos_Manager()
     manosManager.new()
+    
     rclpy.spin(manosManager)
 
 if __name__ == '__main__':
