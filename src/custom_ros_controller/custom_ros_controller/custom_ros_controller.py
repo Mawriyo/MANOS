@@ -30,10 +30,9 @@ class TurtleSimControl(Node):
         # IF you dont know all the services you can work with Just ros2 topic echo /MANOS/ServiceDetector.
         # this also will filter out all the MANOS services. The keyword method is here so you DONT have 
         #to implement all services when you are just looking to implement a few 
-        self.keywords = ['/clear', '/kill', '/reset', '/spawn',  '/turtle1/teleport_absolute',
-                          '/turtle1/teleport_relative'] #'/turtle1/set_pen' for example. 
+        self.keywords = ['/clear', '/kill', '/reset', '/spawn',  '/turtle1/teleport_absolute',]
         self.spawned_turtles = [] 
-        print("INITIALIZED MAYBE")
+
     def hear(self,type, name):
         print("creates")
 
@@ -41,16 +40,14 @@ class TurtleSimControl(Node):
         print("before!")
 
     def teleport_turtle(self, msg):
-        print("Beforeeee")
+        print("")
 
         teleport_request = TeleportAbsolute.Request()
         teleport_request.x = 10 - (msg.x / 640) * 10
         teleport_request.y = 10 - (msg.y / 480) * 10  # Invert the y-coordinate
         teleport_request.theta = 0.0  # Ensure that the turtle does not change its orientation
-        print("Before")
 
         self.teleport_client.call_async(teleport_request)
-        print("after")
 
     def rotateTurtle(self, msg):
         request = TeleportAbsolute.Request()
