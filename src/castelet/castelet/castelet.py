@@ -8,9 +8,9 @@ from cv_bridge import CvBridge
 from functools import partial
 import math
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import QTimer, Qt
 from PyQt5.QtGui import QImage, QPixmap, QPainter, QPen, QColor
-from PyQt5.QtWidgets import QMainWindow, QAction, QMenu
+from PyQt5.QtWidgets import QMainWindow, QAction, QMenu, QApplication
 import rclpy
 from rclpy.qos import (
     QoSProfile,
@@ -18,13 +18,15 @@ from rclpy.qos import (
     ReliabilityPolicy,
     DurabilityPolicy,
 )
-from sensor_msgs.msg import Image
+from .Calibration_Label import CalibrationLabel 
 from castelet.CasteletWindow import Ui_CaseletWindow
 from geometry_msgs.msg import Twist, Pose
 from custom_msg.msg import Pos, ListString
 from turtlesim.msg import Pose as TPose #This line caused an unessasary amount of frustration
 from turtlesim.srv import TeleportAbsolute, TeleportRelative, Spawn
 from std_msgs.msg import Int16,String
+from sensor_msgs.msg import Image
+
 import sys
 from PyQt5.QtWidgets import QLabel
 SELECTED_STYLE = """
@@ -63,10 +65,10 @@ class Castlet(QMainWindow):
         self.fingerTxt=""      
         self.handbinding=""
         self.services = []
-        
+        self.calibrationLabel = CalibrationLabel(self)
         self.castelet_ui = Ui_CaseletWindow()
         self.castelet_ui.setupUi(self)
-        self.castelet_ui.test.clicked.connect(self.getServiceList)
+        self.castelet_ui.test.clicked.connect(self.calibrate)
         self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
@@ -81,7 +83,7 @@ class Castlet(QMainWindow):
 
 
         }
-
+        self.castelet_ui.camera_lb = self.calibrationLabel
         self.menu_selection_publisher = self.node.create_publisher(String, '/MANOS/menuSelection', 2)
         self.bindings_selection_publisher = self.node.create_publisher(String, '/MANOS/binding', 2)
         self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/ServiceDetector', self.getBindings, self.qos_profile)
@@ -96,6 +98,7 @@ class Castlet(QMainWindow):
         self.guiHelper("left")
         self.guiHelper("right")
         
+        
 
 ###################################################################################################
 #                                                                                                 #
@@ -105,7 +108,22 @@ class Castlet(QMainWindow):
 
         self.castelet_ui.menuBindings.aboutToShow.connect(self.refreshBindings)
         self.castelet_ui.actionTurtleSim.triggered.connect(self.TurtleDemo)
+    
+    
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_C and (event.modifiers() & Qt.ControlModifier):
+            self.node.destroy_node()
+            rclpy.shutdown()
 
+            QApplication.instance().quit()
+            
+       
+    def calibrate(self):
+        self.Cam = CalibrationLabel()
+        self.Cam.setStyleSheet(SELECTED_STYLE)
+        self.castelet_ui.gridLayout_2.addWidget(self.Cam)
+        self.Cam.startCalibration()        
+        
     def test(self, msg):
         pass
    
@@ -140,6 +158,7 @@ class Castlet(QMainWindow):
                 label = QLabel(f"{i + 1}")
                 label.setStyleSheet(UNSELECTED_STYLE)  # Use the constant here
                 grid_layout.addWidget(label, i, 0)     
+                
     def run_turtleSim(self):
         subprocess.Popen(["ros2", "run", "turtlesim", "turtlesim_node"])
 
@@ -172,7 +191,7 @@ class Castlet(QMainWindow):
         )
         child_widgets = self.menu_bindings.findChildren(
             QMenu
-        )  # Children of binding Lhand and RHand
+        ) 
         for widget in child_widgets:
             widget.triggered.connect(partial(self.handSelection, widget.title()))
             sub_children = widget.findChildren(QMenu)
@@ -197,18 +216,6 @@ class Castlet(QMainWindow):
                 action = QAction(sub_widget)
                 action.setText(topic)
                 action.triggered.connect(partial(self.bindings, self.handbinding, topic))
-# =======
-#                 # /MANOS/left_hand/pointer_pos
-#                 action.triggered.connect(
-#                     partial(
-#                         self.change_callback,
-#                         self.handbinding,
-#                         Pos,
-#                         self.handbinding,
-#                         self.teleportMethod,
-#                     )
-#                 )
-# >>>>>>> master
                 sub_widget.addAction(action)
 
     def getBindings(self, msg):
@@ -225,7 +232,6 @@ class Castlet(QMainWindow):
         self.menu_selection_publisher.publish(self.menuselection)
 
     def change_callback(self, sub_key, topic_type, topic, function):
-        # Check if the old subscription exists
         if sub_key in self.subscriptions:
             old_subscription = self.subscriptions[sub_key]
             if old_subscription:
@@ -279,7 +285,6 @@ class Castlet(QMainWindow):
         try:
             cv_image = self.bridge.imgmsg_to_cv2(msg)
             self.display_image(cv_image)
-
         except Exception as e:
             print(str(e))
 
@@ -287,10 +292,7 @@ class Castlet(QMainWindow):
         # Comment this line to become a smurf...
         reversed_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2RGB)
         reversed_image = cv2.flip(reversed_image, 1)
-        # Get the image dimensions
         height, width, channel = reversed_image.shape
-
-        # Convert the NumPy array to bytes
         bytes_per_line = 3 * width
         q_image = QImage(
             reversed_image.data.tobytes(),
@@ -301,15 +303,15 @@ class Castlet(QMainWindow):
         )
 
         pixmap = QPixmap.fromImage(q_image)
-        painter = QPainter(pixmap)
-        pen = QPen(QColor(255, 0, 0)) 
-        pen.setWidth(2)
-        painter.setPen(pen)
-        height, _ = pixmap.height(), pixmap.width()
-        painter.drawLine(0, height // 2, width, height // 2)
-        painter.drawLine(width // 2, 0, width // 2, height)
+        # painter = QPainter(pixmap)
+        # pen = QPen(QColor(255, 0, 0)) 
+        # pen.setWidth(2)
+        # painter.setPen(pen)
+        # height, _ = pixmap.height(), pixmap.width()
+        # painter.drawLine(0, height // 2, width, height // 2)
+        # painter.drawLine(width // 2, 0, width // 2, height)
 
-        painter.end()
+        # painter.end()
 
         self.castelet_ui.camera_lb.setPixmap(pixmap)
 
@@ -321,8 +323,15 @@ def main(args=None):
     app = QtWidgets.QApplication(sys.argv)
     window = Castlet()
     window.show()
-    app.exec_()
-    rclpy.shutdown()
+    try:
+        app.exec_()
+    except KeyboardInterrupt:
+        print("AHHHHHHH")
+        window.node.destroy_node()
+        rclpy.shutdown()
+        app.quit()
+    finally:
+        rclpy.shutdown()
 
 
 if __name__ == "__main__":
