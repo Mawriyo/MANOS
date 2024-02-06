@@ -84,7 +84,7 @@ class Castlet(QMainWindow):
 
         self.menu_selection_publisher = self.node.create_publisher(String, '/MANOS/menuSelection', 2)
         self.bindings_selection_publisher = self.node.create_publisher(String, '/MANOS/binding', 2)
-        self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/ServiceDetector', self.getBindings, self.qos_profile)
+        self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/Services', self.getBindings, self.qos_profile)
 
 
         self.topics = []
