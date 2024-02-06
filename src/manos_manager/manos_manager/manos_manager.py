@@ -38,11 +38,8 @@ class Manos_Manager(Node):
         print(f"{type(self.menuItem)} type")
         # self.turtle.teleport_client.
         self.pointer_pos_sub = self.create_subscription(Pos,  self.menuItem, self.handle_pointer_pos, self.qos_profile)   
-        print("wYEET")
 
-        print("AFTER SUBTHINGY")
     def handle_pointer_pos(self, msg):
-        print(msg)
         self.turtle.teleport_turtle(msg)
 
     def checkBindingSelection(self, msg):

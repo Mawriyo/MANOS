@@ -1,0 +1,34 @@
+[0.092s] Invoking command in '/home/field/MANOS/build/custom_msg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic /home/field/.local/bin/cmake --build /home/field/MANOS/build/custom_msg -- -j20 -l20
+[0.119s] -- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)
+[0.120s] [33mCMake Warning (dev) at /opt/ros/galactic/share/ament_cmake_core/cmake/core/python.cmake:22 (find_package):
+[0.120s]   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+[0.120s]   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+[0.120s]   the cmake_policy command to set the policy and suppress this warning.
+[0.120s] 
+[0.120s] Call Stack (most recent call first):
+[0.120s]   /opt/ros/galactic/share/ament_cmake_core/cmake/core/all.cmake:53 (include)
+[0.120s]   /opt/ros/galactic/share/ament_cmake_core/cmake/ament_cmake_core-extras.cmake:17 (include)
+[0.120s]   /opt/ros/galactic/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)
+[0.120s]   /opt/ros/galactic/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)
+[0.120s]   /opt/ros/galactic/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)
+[0.120s]   CMakeLists.txt:9 (find_package)
+[0.120s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.120s] [0m
+[0.133s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.133s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.171s] -- Found std_msgs: 2.2.4 (/opt/ros/galactic/share/std_msgs/cmake)
+[0.184s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.186s] -- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)
+[0.259s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.282s] -- Found rosidl_default_generators: 1.1.1 (/opt/ros/galactic/share/rosidl_default_generators/cmake)
+[0.287s] [31mCMake Error at /opt/ros/galactic/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:93 (message):
+[0.287s]   rosidl_generate_interfaces() the passed file 'msg/FourPointRect' doesn't
+[0.287s]   exist relative to the CMAKE_CURRENT_SOURCE_DIR
+[0.287s]   '/home/field/MANOS/src/custom_msg'
+[0.288s] Call Stack (most recent call first):
+[0.288s]   CMakeLists.txt:16 (rosidl_generate_interfaces)
+[0.288s] 
+[0.288s] [0m
+[0.288s] -- Configuring incomplete, errors occurred!
+[0.290s] make: *** [Makefile:935: cmake_check_build_system] Error 1
+[0.293s] Invoked command in '/home/field/MANOS/build/custom_msg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic /home/field/.local/bin/cmake --build /home/field/MANOS/build/custom_msg -- -j20 -l20

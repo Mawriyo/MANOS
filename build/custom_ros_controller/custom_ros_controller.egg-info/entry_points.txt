@@ -1,0 +1,3 @@
+[console_scripts]
+custom_ros_controller = custom_ros_controller.custom_ros_controller:main
+

@@ -1,0 +1,3 @@
+[console_scripts]
+host_listener = host_listener_package.host_listener:main
+

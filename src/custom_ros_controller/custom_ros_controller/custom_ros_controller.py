@@ -5,8 +5,8 @@ from geometry_msgs.msg import Twist
 from turtlesim.srv import TeleportAbsolute, Spawn, Kill
 from turtlesim.msg import Pose as TPose #This line caused an unessasary amount of frustration
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
-from custom_msg.msg import ListString, Pos
-from std_msgs import String
+from custom_msg.msg import ListString, Pos, FourPointRect
+from std_msgs.msg import Int16,String
 
 class TurtleSimControl(Node):
     def __init__(self, namespace='turtle1'):
@@ -15,10 +15,12 @@ class TurtleSimControl(Node):
         self.namespace = "turtle1"
         self.filtered_service_list = []
         self.servicess = []
-        self.servicetimer = self.create_timer(1, self.publish_services)
-        self.screenDiff =  Pos()
-        self.screenDiff.x =480
-        self.screenDiff.y = 640
+        self.screenDiff =  FourPointRect()
+        self.screenDiff.xmin = float(0)
+        self.screenDiff.ymin = float(0)
+        self.screenDiff.xmax = float(480)
+        self.screenDiff.ymax = float(640)
+        self.temp = ListString()
         self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
@@ -28,7 +30,7 @@ class TurtleSimControl(Node):
         self.teleport_client = self.create_client(TeleportAbsolute, f'/{self.namespace}/teleport_absolute')
         self.spawn_client = self.create_client(Spawn, 'spawn')
         self.kill_client = self.create_client(Kill, 'kill')
-        self.create_subscription(Pos, "/MANOS/WorkSpace", self.setScreenDifferential ,self.qos_profile)
+        self.create_subscription(FourPointRect, "/MANOS/WorkSpace", self.setScreenDifferential ,self.qos_profile)
 
         #Input Keywords for services here... 
         #additionally HOST_LISTENER provides a list of services that returns a list of services from outside systems.
@@ -39,25 +41,35 @@ class TurtleSimControl(Node):
         self.keywords = ['/clear', '/kill', '/reset', '/turtle_selection', '/follow_me', "/spin"]
         self.spawned_turtles = [] 
         self.service_publisher = self.create_publisher(ListString, "/MANOS/Services",self.qos_profile)
-    
+        self.temp.data = self.keywords
+        print("before")
+        self.service_publisher.publish(self.temp)
+        print("after")
+
+        self.servicetimer = self.create_timer(1, self.publish_services)
+
     def publish_services(self):
-        self.service_publisher.publish(self.keywords)
+        print("In here")
 
     def setScreenDifferential(self,msg):
-        self.screenDiff.x = msg.x
-        self.screenDiff.y = msg.y
-        
+        self.screenDiff.xmin = msg.xmin 
+        self.screenDiff.ymin = msg.ymin 
+        self.screenDiff.xmax = msg.xmax 
+        self.screenDiff.ymax = msg.ymax 
     def hear(self,type, name):
         self.create_subscription(type, name, self.teleport_turtle, self.qos_profile)
 
 
     def teleport_turtle(self, msg):
-        teleport_request = TeleportAbsolute.Request()
-        teleport_request.x = 10 - (msg.x / self.screenDiff.x) * 10
-        teleport_request.y = 10 - (msg.y / self.screenDiff.y) * 10  # Invert the y-coordinate
-        teleport_request.theta = 0.0  # Ensure that the turtle does not change its orientation
-
-        self.teleport_client.call_async(teleport_request)
+            scale_x = (self.screenDiff.xmax - self.screenDiff.xmin) / self.screenDiff.xmax
+            scale_y = (self.screenDiff.ymax - self.screenDiff.ymin) / self.screenDiff.ymax
+            print(str(scale_x))
+            print(str(scale_y)
+         # Adjust turtle position within the scaled rectangle
+            teleport_request = TeleportAbsolute.Request()
+            teleport_request.x = ((msg.x - self.screenDiff.xmin) / scale_x) 
+            teleport_request.y = ((msg.y - self.screenDiff.ymin) / scale_y) 
+            self.teleport_client.call_async(teleport_request)
 
     def rotateTurtle(self, msg):
         request = TeleportAbsolute.Request()

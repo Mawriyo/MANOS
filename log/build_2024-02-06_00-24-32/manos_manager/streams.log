@@ -1,0 +1,37 @@
+[0.861s] Invoking command in '/home/field/MANOS/src/manos_manager': AMENT_PREFIX_PATH=/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic PYTHONPATH=/home/field/MANOS/build/manos_manager/prefix_override:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_manager build --build-base /home/field/MANOS/build/manos_manager/build install --record /home/field/MANOS/build/manos_manager/install.log --single-version-externally-managed
+[0.980s] running egg_info
+[0.980s] creating ../../build/manos_manager/manos_manager.egg-info
+[0.980s] writing ../../build/manos_manager/manos_manager.egg-info/PKG-INFO
+[0.980s] writing dependency_links to ../../build/manos_manager/manos_manager.egg-info/dependency_links.txt
+[0.980s] writing entry points to ../../build/manos_manager/manos_manager.egg-info/entry_points.txt
+[0.980s] writing requirements to ../../build/manos_manager/manos_manager.egg-info/requires.txt
+[0.980s] writing top-level names to ../../build/manos_manager/manos_manager.egg-info/top_level.txt
+[0.981s] writing manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[0.998s] reading manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[0.998s] writing manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[0.998s] running build
+[0.998s] running build_py
+[0.998s] creating /home/field/MANOS/build/manos_manager/build
+[0.998s] creating /home/field/MANOS/build/manos_manager/build/lib
+[0.998s] creating /home/field/MANOS/build/manos_manager/build/lib/manos_manager
+[0.998s] copying manos_manager/__init__.py -> /home/field/MANOS/build/manos_manager/build/lib/manos_manager
+[0.998s] copying manos_manager/manos_manager.py -> /home/field/MANOS/build/manos_manager/build/lib/manos_manager
+[0.999s] running install
+[0.999s] running install_lib
+[0.999s] creating /home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager
+[0.999s] copying /home/field/MANOS/build/manos_manager/build/lib/manos_manager/__init__.py -> /home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager
+[0.999s] copying /home/field/MANOS/build/manos_manager/build/lib/manos_manager/manos_manager.py -> /home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager
+[1.000s] byte-compiling /home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager/__init__.py to __init__.cpython-38.pyc
+[1.000s] byte-compiling /home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager/manos_manager.py to manos_manager.cpython-38.pyc
+[1.000s] running install_data
+[1.001s] creating /home/field/MANOS/install/manos_manager/share/ament_index
+[1.001s] creating /home/field/MANOS/install/manos_manager/share/ament_index/resource_index
+[1.001s] creating /home/field/MANOS/install/manos_manager/share/ament_index/resource_index/packages
+[1.001s] copying resource/manos_manager -> /home/field/MANOS/install/manos_manager/share/ament_index/resource_index/packages
+[1.001s] copying package.xml -> /home/field/MANOS/install/manos_manager/share/manos_manager
+[1.001s] running install_egg_info
+[1.002s] Copying ../../build/manos_manager/manos_manager.egg-info to /home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info
+[1.002s] running install_scripts
+[1.012s] Installing manos_manager script to /home/field/MANOS/install/manos_manager/lib/manos_manager
+[1.012s] writing list of installed files to '/home/field/MANOS/build/manos_manager/install.log'
+[1.024s] Invoked command in '/home/field/MANOS/src/manos_manager' returned '0': AMENT_PREFIX_PATH=/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic PYTHONPATH=/home/field/MANOS/build/manos_manager/prefix_override:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_manager build --build-base /home/field/MANOS/build/manos_manager/build install --record /home/field/MANOS/build/manos_manager/install.log --single-version-externally-managed
