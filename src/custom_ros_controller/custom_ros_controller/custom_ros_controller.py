@@ -5,10 +5,9 @@ from geometry_msgs.msg import Twist
 from turtlesim.srv import TeleportAbsolute, Spawn, Kill
 from turtlesim.msg import Pose as TPose #This line caused an unessasary amount of frustration
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
-from custom_msg.msg import ListString
+from custom_msg.msg import ListString, Pos
+from std_msgs import String
 
-#Look into assertions
-#
 class TurtleSimControl(Node):
     def __init__(self, namespace='turtle1'):
         super().__init__('turtle_sim_control')
@@ -16,6 +15,10 @@ class TurtleSimControl(Node):
         self.namespace = "turtle1"
         self.filtered_service_list = []
         self.servicess = []
+        self.servicetimer = self.create_timer(1, self.publish_services)
+        self.screenDiff =  Pos()
+        self.screenDiff.x =480
+        self.screenDiff.y = 640
         self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
@@ -25,26 +28,33 @@ class TurtleSimControl(Node):
         self.teleport_client = self.create_client(TeleportAbsolute, f'/{self.namespace}/teleport_absolute')
         self.spawn_client = self.create_client(Spawn, 'spawn')
         self.kill_client = self.create_client(Kill, 'kill')
+        self.create_subscription(Pos, "/MANOS/WorkSpace", self.setScreenDifferential ,self.qos_profile)
+
         #Input Keywords for services here... 
         #additionally HOST_LISTENER provides a list of services that returns a list of services from outside systems.
         # IF you dont know all the services you can work with Just ros2 topic echo /MANOS/ServiceDetector.
         # this also will filter out all the MANOS services. The keyword method is here so you DONT have 
         #to implement all services when you are just looking to implement a few 
-        self.keywords = ['/clear', '/kill', '/reset', '/spawn',  '/turtle1/teleport_absolute',]
+        
+        self.keywords = ['/clear', '/kill', '/reset', '/turtle_selection', '/follow_me', "/spin"]
         self.spawned_turtles = [] 
+        self.service_publisher = self.create_publisher(ListString, "/MANOS/Services",self.qos_profile)
+    
+    def publish_services(self):
+        self.service_publisher.publish(self.keywords)
 
+    def setScreenDifferential(self,msg):
+        self.screenDiff.x = msg.x
+        self.screenDiff.y = msg.y
+        
     def hear(self,type, name):
-        print("creates")
-
         self.create_subscription(type, name, self.teleport_turtle, self.qos_profile)
-        print("before!")
+
 
     def teleport_turtle(self, msg):
-        print("")
-
         teleport_request = TeleportAbsolute.Request()
-        teleport_request.x = 10 - (msg.x / 640) * 10
-        teleport_request.y = 10 - (msg.y / 480) * 10  # Invert the y-coordinate
+        teleport_request.x = 10 - (msg.x / self.screenDiff.x) * 10
+        teleport_request.y = 10 - (msg.y / self.screenDiff.y) * 10  # Invert the y-coordinate
         teleport_request.theta = 0.0  # Ensure that the turtle does not change its orientation
 
         self.teleport_client.call_async(teleport_request)
@@ -53,8 +63,8 @@ class TurtleSimControl(Node):
         request = TeleportAbsolute.Request()
         request.x = self.pose.x
         request.y = self.pose.y
-        request.theta = self.calculate_theta(10-(msg.x / 640) * 10, 10 - (msg.y / 480) * 10)  # Invert the y-coordinate
-        self.teleport_service.call_async(request)
+        request.theta = self.calculate_theta(10-(msg.x / self.screenDiff.y) * 10, 10 - (msg.y / self.screenDiff.x) * 10)  # Invert the y-coordinate
+        self.teleport_client.call_async(request)
 
     def calculate_theta(self, x, y):
         # Calculate the angle (theta) based on the finger position
