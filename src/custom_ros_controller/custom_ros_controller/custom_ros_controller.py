@@ -6,74 +6,81 @@ from turtlesim.srv import TeleportAbsolute, Spawn, Kill
 from turtlesim.msg import Pose as TPose #This line caused an unessasary amount of frustration
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 from custom_msg.msg import ListString, Pos
-from std_msgs import String
-
+#TODO: Look into decorators and introspecting in python 
+#TODO:  
 class TurtleSimControl(Node):
-    def __init__(self, namespace='turtle1'):
+    def __init__(self):
         super().__init__('turtle_sim_control')
-        self.namespace = namespace
         self.namespace = "turtle1"
         self.filtered_service_list = []
         self.servicess = []
-        self.servicetimer = self.create_timer(1, self.publish_services)
-        self.screenDiff =  Pos()
-        self.screenDiff.x =480
-        self.screenDiff.y = 640
         self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
                                  depth=1)
+
         
+        service_handlers = {
+            '/kill': lambda args: {"name": args.get("name")},
+            '/teleport': lambda args: {"x": args.get("x"), "y": args.get("y"), "theta": args.get("theta")},
+            '/spawn': lambda args: {"name": args.get("name"), "x": args.get("x"), "y": args.get("y"), "theta": args.get("theta")},
+            '/spin' : lambda args: {"x": args.get("x"), "y": args.get("y"),"theta": args.get("theta")},
+        }
         # self.velocity_publisher = self.create_publisher(Twist, f'/{namespace}/cmd_vel', self.qos_profile)
         self.teleport_client = self.create_client(TeleportAbsolute, f'/{self.namespace}/teleport_absolute')
         self.spawn_client = self.create_client(Spawn, 'spawn')
         self.kill_client = self.create_client(Kill, 'kill')
-        self.create_subscription(Pos, "/MANOS/WorkSpace", self.setScreenDifferential ,self.qos_profile)
+        self.spin_client = self.create_client(TeleportAbsolute, f'/{self.namespace}/teleport_absolute')
 
         #Input Keywords for services here... 
         #additionally HOST_LISTENER provides a list of services that returns a list of services from outside systems.
         # IF you dont know all the services you can work with Just ros2 topic echo /MANOS/ServiceDetector.
         # this also will filter out all the MANOS services. The keyword method is here so you DONT have 
         #to implement all services when you are just looking to implement a few 
+        Service = ListString()
+        self.keywords = ['/clear', '/kill', '/reset', '/teleport', "/spin"]
+        Service.data = self.keywords
         
-        self.keywords = ['/clear', '/kill', '/reset', '/turtle_selection', '/follow_me', "/spin"]
         self.spawned_turtles = [] 
         self.service_publisher = self.create_publisher(ListString, "/MANOS/Services",self.qos_profile)
-    
+        self.service_publisher.publish(Service)
+        self.pose_subscriber = self.create_subscription(TPose, "/" + self.namespace + "/pose", self.update_pose, 1
+        )
+    def update_pose(self, data):
+        self.pose = data
+        self.pose.x = round(self.pose.x, 4)
+        self.pose.y = round(self.pose.y, 4)
+        
     def publish_services(self):
         self.service_publisher.publish(self.keywords)
 
-    def setScreenDifferential(self,msg):
-        self.screenDiff.x = msg.x
-        self.screenDiff.y = msg.y
         
     def hear(self,type, name):
         self.create_subscription(type, name, self.teleport_turtle, self.qos_profile)
 
 
     def teleport_turtle(self, msg):
+        print("We Tele")
         teleport_request = TeleportAbsolute.Request()
-        teleport_request.x = 10 - (msg.x / self.screenDiff.x) * 10
-        teleport_request.y = 10 - (msg.y / self.screenDiff.y) * 10  # Invert the y-coordinate
+        teleport_request.x = 10 - (msg.x / 480) * 10
+        teleport_request.y = 10 - (msg.y / 680) * 10  # Invert the y-coordinate
         teleport_request.theta = 0.0  # Ensure that the turtle does not change its orientation
-
         self.teleport_client.call_async(teleport_request)
+        print("We post Tele")
+
 
     def rotateTurtle(self, msg):
         request = TeleportAbsolute.Request()
         request.x = self.pose.x
         request.y = self.pose.y
-        request.theta = self.calculate_theta(10-(msg.x / self.screenDiff.y) * 10, 10 - (msg.y / self.screenDiff.x) * 10)  # Invert the y-coordinate
+        request.theta = self.calculate_theta(10-(msg.x / 680) * 10, 10 - (msg.y / 480) * 10)  # Invert the y-coordinate
         self.teleport_client.call_async(request)
 
     def calculate_theta(self, x, y):
-        # Calculate the angle (theta) based on the finger position
         current_x = self.pose.x
         current_y = self.pose.y 
         delta_x = x - current_x
         delta_y = y - current_y
-
-        # Calculate the angle using arctangent (in radians)
         theta = math.atan2(delta_y, delta_x)
 
         return theta
@@ -125,7 +132,7 @@ class TurtleSimControl(Node):
             self.destroy_subscription(self.turtlePoseSubNode)
             self.turtlePoseSubNode = self.create_subscription(TPose, '/'+ self.namespace + '/pose', self.update_pose, self.qos_profile)
    
-    def turtleSelection(self, msg): 
+    def turtleSelection(self, msg): #int msg type
         val = msg.data
         if val == 1:
            self.turleSel('turtle1')
@@ -154,12 +161,15 @@ class TurtleSimControl(Node):
                self.spawned_turtles.append('turtle5')
                self.spawn_turtle('turtle5', 8.0, 5.0, 0.0)
             self.turleSel('turtle5')
+        self.keywords.append(self.namespace+ "/teleport_absolute")
+        self.service_publisher.publish(self.keywords)
 
         return self.namespace
     
     
     def kill_turtle(self, turtle_id):
         self.spawned_turtles.remove(turtle_id)
+        self.keywords
         self.temp = Kill.Request()
         self.temp.name = turtle_id
         self.kill_client.call_asyc(self.temp)   
@@ -173,7 +183,7 @@ class TurtleSimControl(Node):
         request.x = x
         request.y = y
         request.theta = theta
-        self.spawnTurtle.call_async(request)
+        self.spawn_client.call_async(request)
 
     def update_pose(self, data):
         self.pose = TPose()

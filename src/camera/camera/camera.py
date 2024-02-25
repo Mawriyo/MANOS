@@ -14,7 +14,7 @@ class Camera_Publisher(Node):
     def __init__(self):
         super().__init__('camera_publisher')
         #camera_arg = self.get_parameter('camera_arg').get_parameter_value().string_value
-        self.cam= cv2.VideoCapture(4)
+        self.cam= cv2.VideoCapture(5)
         self.br = CvBridge()
         self.raw_image_publisher = self.create_publisher(Image, '/MANOS/camera/raw', 60)
         # self.test = self.create_publisher(Int16, 'test', 60)

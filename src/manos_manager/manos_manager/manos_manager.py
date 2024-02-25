@@ -7,76 +7,96 @@ from geometry_msgs.msg import Twist
 from turtlesim.srv import TeleportAbsolute, Spawn, Kill
 from turtlesim.msg import Pose as TPose #This line caused an unessasary amount of frustration
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
-from custom_msg.msg import ListString,Pos
+from custom_msg.msg import ListString,Pos, MANOSBundle
 from std_msgs.msg import Int16, String
+from functools import partial
 
-
+finger_combinations = {
+    "[1, 0, 0, 0, 0]": "Thumb_pos",
+    "[0, 1, 0, 0, 0]": "Pointer_pos",
+    "[0, 0, 1, 0, 0]": "Middle_pos",
+    "[0, 0, 0, 1, 0]": "Ring_pos"  ,
+    "[0, 0, 0, 0, 1]": "Pinky_pos" ,
+    "[1, 1, 0, 0, 0]": "Pointer_pos",
+    "[0, 1, 1, 0, 0]": "Pointer_pos",
+    "[0, 0, 1, 1, 0]": "Middle_pos",
+    "[0, 0, 0, 1, 1]": "Ring_pos",
+    "[1, 1, 1, 0, 0]": "Middle_pos",
+    "[0, 1, 1, 1, 0]": "Middle_pos",
+    "[0, 0, 1, 1, 1]": "Middle_pos",
+    "[1, 1, 1, 1, 0]": "Middle_pos",
+    "[0, 1, 1, 1, 1]": "Middle_pos",
+    "[1, 1, 1, 1, 1]": "Middle_pos",
+}
 class Manos_Manager(Node):
     def __init__(self):
         super().__init__('manos_manager')
+        self.currentTopic = ""
         self.menuItem = ""
-        self.currentArray =[]
-        self.fingersUp = 0 #TODO test to see if subscribing to fingersup vs adding all items in current array is faster/more efficient.
+        self.fingerarray = []
         self.finger_combinations_dict = {}
         self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
                                  depth=1)
 
-        self.bindingSelection = self.create_subscription(String, "/MANOS/binding", self.checkBindingSelection, self.qos_profile)
-        self.menuSelectionSub = self.create_subscription(String, "/MANOS/menuSelection", self.checkMenuSelection, self.qos_profile)
-        self.fingersArraySub = self.create_subscription(ListString, "/MANOS/menuSelection", self.getFingersArray, self.qos_profile)
-
-        self.temp = False
-        # self.turtleSelection = self.turtle.namespace
-        # t1= threading.Thread(target=self.new)
-        # t1.start()
-        # self.new()
+        self.bindingSelection = self.create_subscription(String, "/MANOS/binding", self.checkMenuSelection, self.qos_profile) #"users selected /spawn"
+        self.fingersArraySub = self.create_subscription(String, "/MANOS/arrayFingers", self.fingerSelection, self.qos_profile) #[1][1][1][1][1]
+        self.handSelectionSub = self.create_subscription(String, "/MANOS/handSelection", self.handSelection, self.qos_profile) # left or right
+        self.typeSub = self.create_subscription(String, "/MANOS/TypeSub", self.SubCreation, self.qos_profile) # left or right
 
     def checkMenuSelection(self, msg):
-        self.menuItem=msg.data
-        print( self.menuItem) #//MANOS/Right_Hand/Pointer_pos
-        print( self.binding) #/turtle1/teleport_absolute
+        self.menuItem = msg.data
+        print(str(self.menuItem))
+  
 
-        print(f"{type(self.menuItem)} type")
-        # self.turtle.teleport_client.
-        self.pointer_pos_sub = self.create_subscription(Pos,  self.menuItem, self.handle_pointer_pos, self.qos_profile)
-                #check out make a dictionarry that keeps track what functions are bound to a corisponding combination of fingers... 
-                # [0,1,1,0,0] means pointer and middle are up... if the array has an associated function bound remove it and rebind it...
-
-    def getFingersArray(self,msg):
-        self.currentArray = msg.data
-        print(self.currentArray)
-        finger_states = [int(finger_state) for finger_state in self.currentArray]
-        # self.fingersUp = sum(finger_states) TODO TEST
-        finger_combination = tuple(finger_states)  # Convert list to tuple for dictionary key
-        if finger_combination in self.finger_combinations_dict:
-            action = self.finger_combinations_dict[finger_combination]
-            action()            
-    def handle_pointer_pos(self, msg):
-        print(msg)
-        self.turtle.teleport_turtle(msg)
-
-    def checkBindingSelection(self, msg):
-        self.binding=msg.data #/MANOS/Left_Hand/Pointer_pos WHICH UPON SUBSCRIBING YOU GET A pos() LIKE x: 535.0 y: 334.0
+    def handSelection(self,msg):
+        self.currenthand = msg.data
+        print(str(self.currenthand)+"test")
+        
+    def fingerSelection(self, msg):
+        self.fingerarray = msg.data
+        if self.fingerarray in self.finger_combinations_dict:
+            del self.finger_combinations_dict[self.fingerarray]
+            print("Removed existing bind" + str(self.fingerarray))
+        else:
+            self.finger_combinations_dict[self.fingerarray] = True
 
 
+    def change_callback(self, sub_key, topic_type, topic, function):
+        if sub_key in self.subscriptions:
+            old_subscription = self.subscriptions[sub_key]
+            if old_subscription:
+                self.destroy_subscription(old_subscription)
+        new_subscription = self.create_subscription(topic_type, topic, function, self.qos_profile)
+        self.subscriptions[sub_key] = new_subscription
+        
+    def SubCreation(self, msg):
+        if msg.data == 'Pos':
+            string = self.currenthand + self.get_finger_name(self.fingerarray)
+            self.create_subscription(Pos(), string , partial(self.handle_request, self.menuItem), self.qos_profile)
+        
+        # if msg.data == "Fingersup":
+            
+    
+    def get_finger_name(self, finger_array):
+        finger_key = str(finger_array)
+        print(finger_combinations.get(finger_key, "Unknown combination"))
+        return finger_combinations.get(finger_key, "Unknown combination")
 
-
-    def test(self):
-        # self.turtle.test()
-        while not self.temp:
-            try:
-                self.turtle.hear(Pos, self.menuItem)
-                # self.fingersUP = self.create_subscription(Pos, "/MANOS/Left_Hand/Pointer_pos", self.turtle.teleport_turtle ,self.qos_profile)
-            except:
-                pass
+    def handle_request(self, service_name, msg):
+        if service_name == 'spawn':
+            self.holder = Int16()
+        elif service_name == 'kill':
+            pass
+        elif service_name == '/teleport':
+            self.turtle.teleport_turtle(msg)
+            print("POS")
+        elif service_name == 'spin':
+            self.holder = Pos()
 
     def new(self):
         self.turtle = TurtleSimControl()
-
-        # thread2 = threading.Thread(target=rclpy.spin, args=(  self.turtle,), daemon=True)
-        # self.turtle.test()
 
 def main(args=None):
     rclpy.init(args=args)

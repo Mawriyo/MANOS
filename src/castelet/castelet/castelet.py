@@ -18,7 +18,8 @@ from rclpy.qos import (
     ReliabilityPolicy,
     DurabilityPolicy,
 )
-from .Calibration_Label import CalibrationLabel 
+from .CustomLabel import CalibrationLabel 
+from .Toast_Object import Toast
 from castelet.CasteletWindow import Ui_CaseletWindow
 from geometry_msgs.msg import Twist, Pose
 from custom_msg.msg import Pos, ListString
@@ -26,7 +27,7 @@ from turtlesim.msg import Pose as TPose #This line caused an unessasary amount o
 from turtlesim.srv import TeleportAbsolute, TeleportRelative, Spawn
 from std_msgs.msg import Int16,String
 from sensor_msgs.msg import Image
-
+from .BindingDialog import BindingDialog
 import sys
 from PyQt5.QtWidgets import QLabel
 SELECTED_STYLE = """
@@ -64,30 +65,39 @@ class Castlet(QMainWindow):
         self.handTxt = ""
         self.fingerTxt=""      
         self.handbinding=""
+        self.currentHand=None
         self.services = []
         self.calibrationLabel = CalibrationLabel(self)
         self.castelet_ui = Ui_CaseletWindow()
+        self.castelet_ui.camera_lb = self.calibrationLabel
         self.castelet_ui.setupUi(self)
+
         self.castelet_ui.test.clicked.connect(self.calibrate)
         self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
                                  depth=1)
-        self.castelet_ui.menuLeft_Hand.aboutToShow.connect(partial(self.handSelection, '/MANOS/Left_Hand/'))
-        self.castelet_ui.menuRight_Hand.aboutToShow.connect(partial(self.handSelection, '/MANOS/Right_Hand/'))
+
         self.subscriptions = {
             'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw', self.image_callback , self.qos_profile),
             'Skel':  self.node.create_subscription(Image, '/MANOS/camera/hand_pos', self.test, self.qos_profile),
             'lfingersupgui': self.node.create_subscription(Int16, "/MANOS/Left_Hand/fingers_up", partial(self.guiSelection,'left') , 1  ),
             'rfingersupgui': self.node.create_subscription(Int16, "/MANOS/Right_Hand/fingers_up", partial(self.guiSelection,"right") ,1  ),
 
-
         }
-        self.castelet_ui.camera_lb = self.calibrationLabel
-        self.menu_selection_publisher = self.node.create_publisher(String, '/MANOS/menuSelection', 2)
-        self.bindings_selection_publisher = self.node.create_publisher(String, '/MANOS/binding', 2)
+        self.hand_selection = self.node.create_publisher(String, '/MANOS/handSelection', 2)
+        self.typePub = self.node.create_publisher(String,"/MANOS/TypeSub",2)
+        self.array_publisher = self.node.create_publisher(String, '/MANOS/arrayFingers', 2)
+        self.bindings_selection_publisher = self.node.create_publisher(String, '/MANOS/binding', 2)#eywords passed by manos manager such as /spawn, kill etc
         self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/Services', self.getBindings, self.qos_profile)
+        # self. = self.node.create_subscription(ListString, '/MANOS/Services', self.getBindings, self.qos_profile)
 
+        self.castelet_ui.menuLeft_Hand.aboutToShow.connect(
+            partial(self.populateTopics, self.castelet_ui.menuLeft_Hand, "/MANOS/Left_Hand/")
+        )
+        self.castelet_ui.menuRight_Hand.aboutToShow.connect(
+            partial(self.populateTopics, self.castelet_ui.menuRight_Hand, "/MANOS/Right_Hand/")
+        )
 
         self.topics = []
         self.bridge = CvBridge()
@@ -99,13 +109,6 @@ class Castlet(QMainWindow):
         self.guiHelper("right")
         
         
-
-###################################################################################################
-#                                                                                                 #
-#                                      MENU OPTIONS                                               #
-#                                                                                                 #
-###################################################################################################
-
         self.castelet_ui.menuBindings.aboutToShow.connect(self.refreshBindings)
         self.castelet_ui.actionTurtleSim.triggered.connect(self.TurtleDemo)
     
@@ -119,10 +122,9 @@ class Castlet(QMainWindow):
             
        
     def calibrate(self):
-        self.Cam = CalibrationLabel()
-        self.Cam.setStyleSheet(SELECTED_STYLE)
-        self.castelet_ui.gridLayout_2.addWidget(self.Cam)
-        self.Cam.startCalibration()        
+        self.toast = Toast(self, "This is a toast message!", 3000)
+        self.toast.show(self)
+        
         
     def test(self, msg):
         pass
@@ -137,13 +139,13 @@ class Castlet(QMainWindow):
             grid_layout = self.castelet_ui.LeftHand_GridLayout
         elif side == "right":
             grid_layout = self.castelet_ui.RightHand_GridLayout  # Assuming you have a RightHand_GridLayout
+        self.currentHand = side
 
         for i in range(grid_layout.count()):
             widget = grid_layout.itemAt(i).widget()
             if widget is not None:
                 if i == msg.data:
                     print(f"Widget at index {i}: {widget.objectName()}") 
-
                     widget.setStyleSheet(SELECTED_STYLE)
                 else:
                     widget.setStyleSheet(UNSELECTED_STYLE)
@@ -155,81 +157,84 @@ class Castlet(QMainWindow):
             grid_layout = self.castelet_ui.RightHand_GridLayout 
         if grid_layout is not None:
             for i in range(5):
-                label = QLabel(f"{i + 1}")
-                label.setStyleSheet(UNSELECTED_STYLE)  # Use the constant here
+                label = CalibrationLabel(f"{i + 1}")
+                label.setObjectName((f"{side}{i + 1}"))
+                label.setStyleSheet(UNSELECTED_STYLE) 
+                # label.leftClicked.connect(self.newBinding) # Use the constant here
                 grid_layout.addWidget(label, i, 0)     
-                
-    def run_turtleSim(self):
-        subprocess.Popen(["ros2", "run", "turtlesim", "turtlesim_node"])
 
-    def fingersUp(self, msg):
-        self.fingeruparray = msg.data
+    def newBinding(self):
+        dialog = BindingDialog(self.topics)
+        if dialog.exec_():
+            self.fingersListArray= ListString()
+            self.fingersListArray.data=dialog.getSelectedFingerCombination()
+            self.bindingsSelection = String()
+            self.bindingsSelection.data = dialog.getSelectedTopic()  #keywords passed by manos manager such as /spawn, kill etc
+            self.bindings_selection_publisher.publish(self.bindingsSelection)
+            self.array_publisher.publish(self.fingersListArray)
+            # confirmation = ConfirmationDialog
+            
+    def bindings(self, finger_combination, topic, hand):
+        self.fingersListArray= ListString()
+        self.fingersListArray.data=finger_combination
+
+        self.bindingsSelection = String()
+        self.bindingsSelection.data = topic #keywords passed by manos manager such as /spawn, kill etc
+        
+        self.bindings_selection_publisher.publish(self.bindingsSelection)
+        self.array_publisher.publish(self.fingersListArray)
 
     def refreshBindings(self):
         self.menu_bindings = self.castelet_ui.menuBindings
         self.handTxt = ""
-        self.fingerTxt = ""
-        child_widgets = self.menu_bindings.findChildren(QMenu) 
-         
-        for widget in child_widgets:
-            if not widget.signalsBlocked():
-                widget.triggered.connect(partial(self.handSelection, widget.title()))
-                sub_children = widget.findChildren(QMenu)
-
-                for sub_widget in sub_children:
-                  sub_widget.aboutToShow.connect(partial(self.fingerSelection, sub_widget.title()+"_pos",sub_widget))
-
-    def handSelection(self, text): 
-        self.handTxt=text   
+        self.selections = []
 
 
-        self.castelet_ui.menuLeft_Hand.aboutToShow.connect(
-            partial(self.handSelection, "/MANOS/Left_Hand/")
-        )
-        self.castelet_ui.menuRight_Hand.aboutToShow.connect(
-            partial(self.handSelection, "/MANOS/Right_Hand/")
-        )
-        child_widgets = self.menu_bindings.findChildren(
-            QMenu
-        ) 
-        for widget in child_widgets:
-            widget.triggered.connect(partial(self.handSelection, widget.title()))
-            sub_children = widget.findChildren(QMenu)
-            for sub_widget in sub_children:
-                sub_widget.aboutToShow.connect(
-                    partial(
-                        self.fingerSelection, sub_widget.title() + "_pos", sub_widget
-                    )
-                )
 
-    def handSelection(self, text):
-        print(text)
-        self.handTxt = text
-
-    def fingerSelection(self, text, sub_widget):
-        self.fingerTxt = text
-        self.handbinding = self.handTxt + self.fingerTxt
-        sub_widget.clear()
-
+    def populateTopics(self, menu, handTxt):
+        self.handTxt = handTxt
+        menu.clear()
         for topic in self.topics:
             if "/MANOS/" not in topic and "/rosout" not in topic:
-                action = QAction(sub_widget)
+                action = QAction(menu)
                 action.setText(topic)
-                action.triggered.connect(partial(self.bindings, self.handbinding, topic))
-                sub_widget.addAction(action)
+                action.triggered.connect(partial(self.topicSelected, topic, handTxt))
+                menu.addAction(action)
+        
+        if self.selections:
+            removeMenu = QMenu("Remove Selection", menu)
+            menu.addMenu(removeMenu)
+            for selection in self.selections:
+                removeAction = QAction(removeMenu)
+                removeAction.setText(selection)
+                removeAction.triggered.connect(partial(self.removeSelection, selection))
+                removeMenu.addAction(removeAction)
+
+    def topicSelected(self, topic, hand):
+        print(hand)
+        dialog = BindingDialog(topic,hand)
+        if dialog.exec_():
+            self.msgtype = dialog.getMsgType() #doesnt do anything for now
+            self.bindings_selection_publisher.publish(dialog.getSelectedTopic()) #keywords passed by manos manager such as /spawn, kill etc
+            self.array_publisher.publish(dialog.getSelectedFingerCombination()) #sends the array of fingers to tha manos manager to handle
+            self.hand_selection.publish(dialog.getSelectedHand())
+            self.typePub.publish(dialog.getMsgType())
+            # confirmation = ConfirmationDialog
+        if len(self.selections) < 3:
+            self.selections.append(topic)
+            self.refreshBindings()  # Refresh to update the remove selections submenu
+        
+
+    def removeSelection(self, topic):
+        if topic in self.selections:
+            self.selections.remove(topic)
+            self.refreshBindings() 
 
     def getBindings(self, msg):
+        print(str(msg.data))
         self.topics = msg.data
 
-    def bindings(self, selection, topic):
-        self.menuselection = String()
-        self.menuselection.data=selection
 
-        self.bindingsSelection = String()
-        self.bindingsSelection.data = topic
-        
-        self.bindings_selection_publisher.publish(self.bindingsSelection)
-        self.menu_selection_publisher.publish(self.menuselection)
 
     def change_callback(self, sub_key, topic_type, topic, function):
         if sub_key in self.subscriptions:
