@@ -42,7 +42,7 @@ class BindingDialog(QDialog):
 
         self.msgtype = QComboBox()
         self.msgtype.addItem("Pos")
-        self.msgtype.addItem("NumbersUp")
+        self.msgtype.addItem("FingersUp")
         layout.addWidget(self.msgtype)
         self.okButton = QPushButton("OK")
         self.okButton.clicked.connect(self.accept)
