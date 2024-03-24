@@ -30,6 +30,8 @@ from sensor_msgs.msg import Image
 from .BindingDialog import BindingDialog
 import sys
 from PyQt5.QtWidgets import QLabel
+
+# .TODO: Python Debugger for freezing gui. BLocking method? 
 SELECTED_STYLE = """
     color: #2c3e50;
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -67,12 +69,11 @@ class Castlet(QMainWindow):
         self.handbinding=""
         self.currentHand=None
         self.services = []
-        self.calibrationLabel = CalibrationLabel(self)
+        # self.calibrationLabel = CalibrationLabel(self)
         self.castelet_ui = Ui_CaseletWindow()
-        self.castelet_ui.camera_lb = self.calibrationLabel
+        # self.castelet_ui.camera_lb = self.calibrationLabel
         self.castelet_ui.setupUi(self)
 
-        self.castelet_ui.test.clicked.connect(self.calibrate)
         self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
                                  durability=DurabilityPolicy.VOLATILE,
                                  history=HistoryPolicy.KEEP_LAST,
@@ -85,6 +86,7 @@ class Castlet(QMainWindow):
             'rfingersupgui': self.node.create_subscription(Int16, "/MANOS/Right_Hand/fingers_up", partial(self.guiSelection,"right") ,1  ),
 
         }
+        
         self.hand_selection = self.node.create_publisher(String,  "/MANOS/Manager/HandSelection", 2)
         self.typePub = self.node.create_publisher(String,"/MANOS/Manager/TypeSelection",2)
         self.array_publisher = self.node.create_publisher(String,"/MANOS/Manager/FingerSelection", 2)
@@ -98,7 +100,7 @@ class Castlet(QMainWindow):
         self.castelet_ui.menuRight_Hand.aboutToShow.connect(
             partial(self.populateTopics, self.castelet_ui.menuRight_Hand, "/MANOS/Right_Hand/")
         )
-
+        self.count = 0
         self.topics = []
         self.bridge = CvBridge()
         self.ros_timer = QTimer(self)
@@ -107,8 +109,7 @@ class Castlet(QMainWindow):
         self.temp = False
         self.guiHelper("left")
         self.guiHelper("right")
-        
-        
+
         self.castelet_ui.menuBindings.aboutToShow.connect(self.refreshBindings)
         self.castelet_ui.actionTurtleSim.triggered.connect(self.TurtleDemo)
     
@@ -126,6 +127,7 @@ class Castlet(QMainWindow):
         self.toast.show(self)
 
     def change_callback(self, sub_key, topic_type, topic, function):
+        print(f"Changing callback for {sub_key}")      
         if sub_key in self.subscriptions:
             old_subscription = self.subscriptions[sub_key]
             if old_subscription:
@@ -134,6 +136,7 @@ class Castlet(QMainWindow):
         self.subscriptions[sub_key] = new_subscription
 
     def display_image(self, cv_image):
+        print("Displaying image")
         reversed_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2RGB)
         reversed_image = cv2.flip(reversed_image, 1)
         height, width, channel = reversed_image.shape
@@ -149,7 +152,7 @@ class Castlet(QMainWindow):
         self.castelet_ui.camera_lb.setPixmap(pixmap)
 
     def getBindings(self, msg):
-        print ("AH")
+        print ("AHHHHHHHHHHHHHHHHHH")
         print(str(msg.data))
         self.topics = msg.data
 
@@ -163,12 +166,14 @@ class Castlet(QMainWindow):
             grid_layout = self.castelet_ui.RightHand_GridLayout
         if grid_layout is not None:
             for i in range(5):
-                label = CalibrationLabel(f"{i + 1}")
+                label = QLabel(f"{i + 1}")
                 label.setObjectName(f"{side}{i + 1}")
                 label.setStyleSheet(UNSELECTED_STYLE)
                 grid_layout.addWidget(label, i, 0)
 
     def guiSelection(self, side, msg):
+        print("gui selection image")
+
         grid_layout = None
         if side == "left":
             grid_layout = self.castelet_ui.LeftHand_GridLayout
@@ -192,10 +197,11 @@ class Castlet(QMainWindow):
             print(str(e))
 
     def keyPressEvent(self, event):
-        if event.key() == Qt.Key_C and (event.modifiers() & Qt.ControlModifier):
-            self.node.destroy_node()
-            rclpy.shutdown()
-            QApplication.instance().quit()
+        pass
+        # if event.key() == Qt.Key_C and (event.modifiers() & Qt.ControlModifier):
+        #     self.node.destroy_node()
+        #     rclpy.shutdown()
+        #     QApplication.instance().quit()
 
     def newBinding(self):
         dialog = BindingDialog(self.topics)
@@ -210,6 +216,7 @@ class Castlet(QMainWindow):
     def populateTopics(self, menu, handTxt):
         self.handTxt = handTxt
         menu.clear()
+        print(self.topics)
         for topic in self.topics:
             if "/MANOS/" not in topic and "/rosout" not in topic:
                 action = QAction(menu)
@@ -227,6 +234,11 @@ class Castlet(QMainWindow):
 
     def process_ros_messages(self):
         rclpy.spin_once(self.node)
+        self.count+=1
+        print("success " + str(self.count))
+
+
+
 
     def refreshBindings(self):
         self.menu_bindings = self.castelet_ui.menuBindings

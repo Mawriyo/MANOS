@@ -11,7 +11,7 @@ from custom_msg.msg import ListString, Pos
 class TurtleSimControl(Node):
     def __init__(self):
         super().__init__('turtle_sim_control')
-        self.namespace = "O"
+        self.namespace = "turtle1"
         self.filtered_service_list = []
         self.servicess = []
         self.qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
@@ -19,7 +19,7 @@ class TurtleSimControl(Node):
                                  history=HistoryPolicy.KEEP_LAST,
                                  depth=1)
 
-        
+        self.rotate_services = {}
         # service_handlers = {
         #     '/kill': lambda args: {"name": args.get("name")},
         #     '/teleport': lambda args: {"x": args.get("x"), "y": args.get("y"), "theta": args.get("theta")},
@@ -37,13 +37,17 @@ class TurtleSimControl(Node):
         Service = ListString()
         self.keywords = ['/clear', '/kill', '/reset', '/teleport', "/spin","/select"]
         Service.data = self.keywords
-        
+        self.pose = TPose()
         self.spawned_turtles = [] 
         self.service_publisher = self.create_publisher(ListString, "/MANOS/Manager/Services",self.qos_profile)
         self.service_publisher.publish(Service)
         self.turtle_pose_sub = self.create_subscription(TPose, "/" + self.namespace + "/pose", self.update_pose, 1
         )
+        self.teleport_client = self.create_client(TeleportAbsolute, f'/{self.namespace}/teleport_absolute')
+
+     
     def update_pose(self, data):
+        print("HERE")
         self.pose = data
         self.pose.x = round(self.pose.x, 4)
         self.pose.y = round(self.pose.y, 4)
@@ -60,13 +64,16 @@ class TurtleSimControl(Node):
         self.teleport_client.call_async(teleport_request)
 
 
-    def rotate_turtle(self, msg):
-        request = TeleportAbsolute.Request()
-        request.x = self.pose.x
-        request.y = self.pose.y
-        request.theta = self.calculate_theta(10-(msg.x / 680) * 10, 10 - (msg.y / 480) * 10)  # Invert the y-coordinate
-        self.teleport_client.call_async(request)
 
+    def rotate_turtle(self, msg):
+            teleport_service = self.get_rotate_service(self.namespace)
+            teleport_request = TeleportAbsolute.Request()
+            teleport_request.x = self.pose.x
+            teleport_request.y = self.pose.y
+            teleport_request.theta = self.calculate_theta(
+                10 - (msg.x / 640) * 10, 10 - (msg.y / 480) * 10
+            )
+            teleport_service.call_async(teleport_request)
     def calculate_theta(self, x, y):
         current_x = self.pose.x
         current_y = self.pose.y 

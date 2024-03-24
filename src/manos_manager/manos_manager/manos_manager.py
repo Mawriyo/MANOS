@@ -77,15 +77,20 @@ class ManosManager(Node):
     def handle_request(self, service_name, msg):
         if service_name == '/select':
             self.turtle.turtle_selection(msg)
+            
         elif service_name == '/kill':
             self.turtle.turtle_removal(msg)
+            
         elif service_name == '/teleport':
             self.turtle.teleport_turtle(msg)
+            
         elif service_name == '/spin':
+            print("spin")
             self.turtle.rotate_turtle(msg)
 
     def new(self):
-        self.turtle = TurtleSimControl()
+        self.turtle = TurtleSimControl() 
+        
 
     def sub_creation(self, msg):
         if msg.data == 'Pos':
