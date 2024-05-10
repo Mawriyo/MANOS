@@ -6,11 +6,10 @@
 import cv2
 from cv_bridge import CvBridge
 from functools import partial
-import math
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import QTimer, Qt
-from PyQt5.QtGui import QImage, QPixmap, QPainter, QPen, QColor
-from PyQt5.QtWidgets import QMainWindow, QAction, QMenu, QApplication
+from PyQt5.QtCore import QTimer
+from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtWidgets import QMainWindow, QAction, QMenu
 import rclpy
 from rclpy.qos import (
     QoSProfile,
@@ -21,16 +20,13 @@ from rclpy.qos import (
 from .CustomLabel import CalibrationLabel 
 from .Toast_Object import Toast
 from castelet.CasteletWindow import Ui_CaseletWindow
-from geometry_msgs.msg import Twist, Pose
-from custom_msg.msg import Pos, ListString
-from turtlesim.msg import Pose as TPose #This line caused an unessasary amount of frustration
-from turtlesim.srv import TeleportAbsolute, TeleportRelative, Spawn
-from std_msgs.msg import Int16,String
+from custom_msg.msg import ListString, Pos
+from std_msgs.msg import Int16,String,Bool
 from sensor_msgs.msg import Image
 from .BindingDialog import BindingDialog
 import sys
 from PyQt5.QtWidgets import QLabel
-
+from custom_ros_controller.picarchu_controller import PiCarChuControl
 # .TODO: Python Debugger for freezing gui. BLocking method? 
 SELECTED_STYLE = """
     color: #2c3e50;
@@ -57,7 +53,11 @@ UNSELECTED_STYLE = """
     border-radius: 4px;
     text-align: center;
 """
-
+ #HACK This is for demonstration purposes only    
+TurtleMessageON = Bool()
+TurtleMessageON.data = True  
+TurtleMessageOFF = Bool()
+TurtleMessageOFF.data = False
 class Castlet(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
@@ -69,6 +69,7 @@ class Castlet(QMainWindow):
         self.handbinding=""
         self.currentHand=None
         self.services = []
+        self.currentlabel=QLabel
         # self.calibrationLabel = CalibrationLabel(self)
         self.castelet_ui = Ui_CaseletWindow()
         # self.castelet_ui.camera_lb = self.calibrationLabel
@@ -80,25 +81,29 @@ class Castlet(QMainWindow):
                                  depth=1)
 
         self.subscriptions = {
-            'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw', self.image_callback , self.qos_profile),
-            'Skel':  self.node.create_subscription(Image, '/MANOS/camera/hand_pos', self.test, self.qos_profile),
+            'Cam':  self.node.create_subscription(Image, '/MANOS/camera/raw', self.image_callback , 1),
+            'Skel':  self.node.create_subscription(Image, '/MANOS/camera/hand_pos', self.test, 1),
             'lfingersupgui': self.node.create_subscription(Int16, "/MANOS/Left_Hand/fingers_up", partial(self.guiSelection,'left') , 1  ),
             'rfingersupgui': self.node.create_subscription(Int16, "/MANOS/Right_Hand/fingers_up", partial(self.guiSelection,"right") ,1  ),
 
         }
-        
+
         self.hand_selection = self.node.create_publisher(String,  "/MANOS/Manager/HandSelection", 2)
         self.typePub = self.node.create_publisher(String,"/MANOS/Manager/TypeSelection",2)
         self.array_publisher = self.node.create_publisher(String,"/MANOS/Manager/FingerSelection", 2)
         self.bindings_selection_publisher = self.node.create_publisher(String, "/MANOS/Manager/TopicSelection", 2)#eywords passed by manos manager such as /spawn, kill etc
         self.binding_option_subscriber = self.node.create_subscription(ListString, '/MANOS/Manager/Services', self.getBindings, self.qos_profile)
-        # self. = self.node.create_subscription(ListString, '/MANOS/Services', self.getBindings, self.qos_profile)
+        # self.service_sub = self.node.create_subscription(ListString, '/MANOS/Services', self.getBindings, self.qos_profile)
+        self.topic_sub= self.node.create_subscription(ListString, '/MANOS/Topics', self.getTopicList, self.qos_profile)
+        self.turtlePublisher = self.node.create_publisher(Bool,'TurtleDemo', self.qos_profile)
+        # self.pisub = self.node.create_subscription(Int16, "/MANOS/Left_Hand/fingers_up", self.test,self.qos_profile)
+        # self.pi2sub = self.node.create_subscription(Pos, "/MANOS/Right_Hand/Pointer_pos", self.test2,self.qos_profile)
 
         self.castelet_ui.menuLeft_Hand.aboutToShow.connect(
-            partial(self.populateTopics, self.castelet_ui.menuLeft_Hand, "/MANOS/Left_Hand/")
+            partial(self.populateService, self.castelet_ui.menuLeft_Hand, "/MANOS/Left_Hand/")
         )
         self.castelet_ui.menuRight_Hand.aboutToShow.connect(
-            partial(self.populateTopics, self.castelet_ui.menuRight_Hand, "/MANOS/Right_Hand/")
+            partial(self.populateService, self.castelet_ui.menuRight_Hand, "/MANOS/Right_Hand/")
         )
         self.count = 0
         self.topics = []
@@ -109,11 +114,15 @@ class Castlet(QMainWindow):
         self.temp = False
         self.guiHelper("left")
         self.guiHelper("right")
-
+        # self.servo_controller =PiCarChuControl()
         self.castelet_ui.menuBindings.aboutToShow.connect(self.refreshBindings)
         self.castelet_ui.actionTurtleSim.triggered.connect(self.TurtleDemo)
-    
-    
+        self.castelet_ui.test.clicked.connect(self.calibrate) 
+    def test(self, msg):
+        pass
+    # def test2(self,msg):
+    #     self.servo_controller.send_servo_command(msg)
+        
     def bindings(self, finger_combination, topic, hand):
         self.fingersListArray = ListString()
         self.fingersListArray.data = finger_combination
@@ -127,17 +136,40 @@ class Castlet(QMainWindow):
         self.toast.show(self)
 
     def change_callback(self, sub_key, topic_type, topic, function):
-        print(f"Changing callback for {sub_key}")      
         if sub_key in self.subscriptions:
             old_subscription = self.subscriptions[sub_key]
             if old_subscription:
                 self.node.destroy_subscription(old_subscription)
+        print(topic_type)
+        print(topic)
+        print(function)
+
         new_subscription = self.node.create_subscription(topic_type, topic, function, 1)
         self.subscriptions[sub_key] = new_subscription
-
+        print("DONE")
+    
+    
+    def createTopicListener(self,label):
+        self.currentlabel = label
+        label.setText("hello")
+        msg = None
+        dialog = BindingDialog(self.topics)
+        if dialog.exec_():
+            if dialog.getMsgType == "Pos":
+                msg = Pos
+            if dialog.getMsgType == "String":
+                msg = String
+            if dialog.getMsgType == "int":
+                msg = String
+            print(label.objectName())
+            # self.change_callback("Cam", Image, "/MANOS/camera/raw", self.image_callback)
+            self.change_callback(label.objectName(), msg, dialog.getSelectedTopic().data,self.setTextLabel)  # keywords passed by manos manager such as /spawn, kill etc
+    def setTextLabel(self,msg):
+        self.currentlabel.setText(str(msg.data))
+        print(str(msg.data))
+        
     def display_image(self, cv_image):
-        print("Displaying image")
-        reversed_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2RGB)
+        reversed_image = cv2.cvtColor(cv_image,  cv2.COLOR_BGR2RGB)
         reversed_image = cv2.flip(reversed_image, 1)
         height, width, channel = reversed_image.shape
         bytes_per_line = 3 * width
@@ -152,12 +184,13 @@ class Castlet(QMainWindow):
         self.castelet_ui.camera_lb.setPixmap(pixmap)
 
     def getBindings(self, msg):
-        print ("AHHHHHHHHHHHHHHHHHH")
-        print(str(msg.data))
-        self.topics = msg.data
+        self.services = msg.data
 
     def getServiceList(self):
         return self.services
+    
+    def getTopicList(self,msg):
+        self.topics = msg.data
 
     def guiHelper(self, side):
         if side == "left":
@@ -166,13 +199,16 @@ class Castlet(QMainWindow):
             grid_layout = self.castelet_ui.RightHand_GridLayout
         if grid_layout is not None:
             for i in range(5):
-                label = QLabel(f"{i + 1}")
+                label = CalibrationLabel(f"{i + 1}")
                 label.setObjectName(f"{side}{i + 1}")
                 label.setStyleSheet(UNSELECTED_STYLE)
+                label.leftClicked.connect(partial(self.createTopicListener,label))
                 grid_layout.addWidget(label, i, 0)
+                
+                
 
+                
     def guiSelection(self, side, msg):
-        print("gui selection image")
 
         grid_layout = None
         if side == "left":
@@ -184,7 +220,6 @@ class Castlet(QMainWindow):
             widget = grid_layout.itemAt(i).widget()
             if widget is not None:
                 if i == msg.data:
-                    print(f"Widget at index {i}: {widget.objectName()}")
                     widget.setStyleSheet(SELECTED_STYLE)
                 else:
                     widget.setStyleSheet(UNSELECTED_STYLE)
@@ -203,25 +238,24 @@ class Castlet(QMainWindow):
         #     rclpy.shutdown()
         #     QApplication.instance().quit()
 
-    def newBinding(self):
-        dialog = BindingDialog(self.topics)
-        if dialog.exec_():
-            self.fingersListArray = ListString()
-            self.fingersListArray.data = dialog.getSelectedFingerCombination()
-            self.bindingsSelection = String()
-            self.bindingsSelection.data = dialog.getSelectedTopic()  # keywords passed by manos manager such as /spawn, kill etc
-            self.bindings_selection_publisher.publish(self.bindingsSelection)
-            self.array_publisher.publish(self.fingersListArray)
+    # def newBinding(self):
+    #     dialog = BindingDialog(self.topics)
+    #     if dialog.exec_():
+    #         self.fingersListArray = ListString()
+    #         self.fingersListArray.data = dialog.getSelectedFingerCombination()
+    #         self.bindingsSelection = String()
+    #         self.bindingsSelection.data = dialog.getSelectedTopic()  # keywords passed by manos manager such as /spawn, kill etc
+    #         self.bindings_selection_publisher.publish(self.bindingsSelection)
+    #         self.array_publisher.publish(self.fingersListArray)
 
-    def populateTopics(self, menu, handTxt):
+    def populateService(self, menu, handTxt):
         self.handTxt = handTxt
         menu.clear()
-        print(self.topics)
-        for topic in self.topics:
-            if "/MANOS/" not in topic and "/rosout" not in topic:
+        for service in self.services:
+            if "/MANOS/" not in service and "/rosout" not in service:
                 action = QAction(menu)
-                action.setText(topic)
-                action.triggered.connect(partial(self.topicSelected, topic, handTxt))
+                action.setText(service)
+                action.triggered.connect(partial(self.serviceSelected, service, handTxt))
                 menu.addAction(action)
         if self.selections:
             removeMenu = QMenu("Remove Selection", menu)
@@ -234,8 +268,6 @@ class Castlet(QMainWindow):
 
     def process_ros_messages(self):
         rclpy.spin_once(self.node)
-        self.count+=1
-        print("success " + str(self.count))
 
 
 
@@ -249,13 +281,12 @@ class Castlet(QMainWindow):
         if topic in self.selections:
             self.selections.remove(topic)
             self.refreshBindings()
-            
-    def test(self, msg):
-        pass
 
-    def topicSelected(self, topic, hand):
-        print(hand)
-        dialog = BindingDialog(topic, hand)
+
+    def serviceSelected(self, topic, hand):
+        temp = []
+        temp.append(topic)
+        dialog = BindingDialog(temp, hand=hand)
         if dialog.exec_():
             self.msgtype = dialog.getMsgType()  # doesn't do anything for now
             self.bindings_selection_publisher.publish(dialog.getSelectedTopic())  # keywords passed by manos manager such as /spawn, kill etc
@@ -264,10 +295,15 @@ class Castlet(QMainWindow):
             self.typePub.publish(dialog.getMsgType())
             if len(self.selections) < 3:
                 self.selections.append(topic)
-                self.refreshBindings()  # Refresh to update the remove selections submenu
-
+                print(str(self.selections))
+                self.refreshBindings() 
+                
+       
+    
     def TurtleDemo(self):
+        global TurtleMessageON
         if self.castelet_ui.actionTurtleSim.isChecked():
+            self.turtlePublisher.publish(TurtleMessageON) 
             self.change_callback(
                 "Skel", Image, "/MANOS/camera/hand_pos", self.image_callback
             )
@@ -275,6 +311,8 @@ class Castlet(QMainWindow):
         else:
             self.change_callback("Cam", Image, "/MANOS/camera/raw", self.image_callback)
             self.node.destroy_subscription(self.subscriptions["Skel"])
+            self.turtlePublisher.publish(TurtleMessageOFF) 
+
 
 def main(args=None):
     rclpy.init(args=None)
@@ -284,7 +322,6 @@ def main(args=None):
     try:
         app.exec_()
     except KeyboardInterrupt:
-        print("AHHHHHHH")
         window.node.destroy_node()
         rclpy.shutdown()
         app.quit()

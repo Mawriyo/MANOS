@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from servo_control/srv/SetServo.srv
+// generated code does not contain a copyright notice
+
+
+module servo_control {
+  module srv {
+    struct SetServo_Request {
+      int32 id;
+
+      int32 position;
+    };
+    struct SetServo_Response {
+      boolean success;
+    };
+  };
+};

@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from custom_msg/srv/SetServo.srv
+// generated code does not contain a copyright notice
+
+
+module custom_msg {
+  module srv {
+    struct SetServo_Request {
+      int32 id;
+
+      float position;
+    };
+    struct SetServo_Response {
+      boolean success;
+    };
+  };
+};

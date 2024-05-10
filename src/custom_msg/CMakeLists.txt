@@ -17,6 +17,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ListString.msg"
   "msg/Pos.msg"
   "msg/MANOSBundle.msg"
+  "srv/SetServo.srv"
   DEPENDENCIES std_msgs # Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
 )
 

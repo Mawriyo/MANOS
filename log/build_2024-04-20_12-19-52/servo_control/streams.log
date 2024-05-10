@@ -1,0 +1,49 @@
+[2.603s] Invoking command in '/home/field/MANOS/build/servo_control': CMAKE_PREFIX_PATH=/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic LD_LIBRARY_PATH=/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib PYTHONPATH=/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /home/field/.local/bin/cmake --build /home/field/MANOS/build/servo_control -- -j20 -l20
+[2.630s] -- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)
+[2.631s] [33mCMake Warning (dev) at /opt/ros/galactic/share/ament_cmake_core/cmake/core/python.cmake:22 (find_package):
+[2.631s]   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+[2.631s]   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+[2.631s]   the cmake_policy command to set the policy and suppress this warning.
+[2.631s] 
+[2.631s] Call Stack (most recent call first):
+[2.631s]   /opt/ros/galactic/share/ament_cmake_core/cmake/core/all.cmake:53 (include)
+[2.631s]   /opt/ros/galactic/share/ament_cmake_core/cmake/ament_cmake_core-extras.cmake:17 (include)
+[2.631s]   /opt/ros/galactic/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)
+[2.631s]   /opt/ros/galactic/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)
+[2.632s]   /opt/ros/galactic/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)
+[2.632s]   CMakeLists.txt:9 (find_package)
+[2.632s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.632s] [0m
+[2.647s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.697s] -- Found rosidl_default_generators: 1.1.1 (/opt/ros/galactic/share/rosidl_default_generators/cmake)
+[2.700s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.704s] -- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)
+[2.816s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.831s] -- Found ament_lint_auto: 0.10.7 (/opt/ros/galactic/share/ament_lint_auto/cmake)
+[2.881s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.881s] -- Added test 'lint_cmake' to check CMake code style
+[2.881s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[2.882s] -- Added test 'xmllint' to check XML markup files
+[2.883s] -- Configuring done (0.3s)
+[2.886s] -- Generating done (0.0s)
+[2.888s] -- Build files have been written to: /home/field/MANOS/build/servo_control
+[2.907s] Invoked command in '/home/field/MANOS/build/servo_control' returned '0': CMAKE_PREFIX_PATH=/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic LD_LIBRARY_PATH=/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib PYTHONPATH=/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /home/field/.local/bin/cmake --build /home/field/MANOS/build/servo_control -- -j20 -l20
+[2.947s] Invoking command in '/home/field/MANOS/build/servo_control': CMAKE_PREFIX_PATH=/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic LD_LIBRARY_PATH=/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib PYTHONPATH=/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /home/field/.local/bin/cmake --install /home/field/MANOS/build/servo_control
+[2.967s] -- Install configuration: ""
+[2.968s] -- Installing: /home/field/MANOS/install/servo_control/lib/servo_control/servo_service.py
+[2.968s] -- Installing: /home/field/MANOS/install/servo_control/share/ament_index/resource_index/package_run_dependencies/servo_control
+[2.968s] -- Up-to-date: /home/field/MANOS/install/servo_control/share/ament_index/resource_index/parent_prefix_path/servo_control
+[2.968s] -- Up-to-date: /home/field/MANOS/install/servo_control/share/servo_control/environment/ament_prefix_path.sh
+[2.968s] -- Installing: /home/field/MANOS/install/servo_control/share/servo_control/environment/ament_prefix_path.dsv
+[2.968s] -- Up-to-date: /home/field/MANOS/install/servo_control/share/servo_control/environment/path.sh
+[2.968s] -- Installing: /home/field/MANOS/install/servo_control/share/servo_control/environment/path.dsv
+[2.968s] -- Up-to-date: /home/field/MANOS/install/servo_control/share/servo_control/local_setup.bash
+[2.968s] -- Installing: /home/field/MANOS/install/servo_control/share/servo_control/local_setup.sh
+[2.968s] -- Up-to-date: /home/field/MANOS/install/servo_control/share/servo_control/local_setup.zsh
+[2.968s] -- Installing: /home/field/MANOS/install/servo_control/share/servo_control/local_setup.dsv
+[2.968s] -- Installing: /home/field/MANOS/install/servo_control/share/servo_control/package.dsv
+[2.968s] -- Up-to-date: /home/field/MANOS/install/servo_control/share/ament_index/resource_index/packages/servo_control
+[2.968s] -- Installing: /home/field/MANOS/install/servo_control/share/servo_control/cmake/servo_controlConfig.cmake
+[2.969s] -- Up-to-date: /home/field/MANOS/install/servo_control/share/servo_control/cmake/servo_controlConfig-version.cmake
+[2.969s] -- Installing: /home/field/MANOS/install/servo_control/share/servo_control/package.xml
+[2.972s] Invoked command in '/home/field/MANOS/build/servo_control' returned '0': CMAKE_PREFIX_PATH=/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic LD_LIBRARY_PATH=/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib PYTHONPATH=/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /home/field/.local/bin/cmake --install /home/field/MANOS/build/servo_control

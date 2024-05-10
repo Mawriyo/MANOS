@@ -11,8 +11,7 @@ class Host_Detector(Node):
         self.ros_topic_list = []
         self.old_length=0 
         timer_period = 1  
-        self.topictimer = self.create_timer(timer_period, self.filter_and_store_topics)
-        self.servicetimer = self.create_timer(timer_period, self.filter_and_store_services)
+
 
 
         qos_profile = QoSProfile(reliability=ReliabilityPolicy.BEST_EFFORT,
@@ -20,12 +19,11 @@ class Host_Detector(Node):
                                  history=HistoryPolicy.KEEP_LAST,
                                  depth=1)
 
-        # self.topic_subscriber = self.create_subscription(ListString, '/MANOS/TopicDetector', qos_profile)
-        self.service_publisher = self.create_publisher(ListString, '/MANOS/ServiceDetector', qos_profile)
+        self.service_subscriber = self.create_subscription(ListString, '/MANOS/Services', self.filter_and_store_services,self.qos_profile)
+        self.service_publisher = self.create_publisher(ListString, '/MANOS/Manager/Services', qos_profile)
         self.topic_publisher = self.create_publisher(ListString, '/MANOS/Topics', qos_profile)
-        # self.service_publisher = self.create_publisher(ListString, '/MANOS/Service', qos_profile)
 
-
+        self.topictimer = self.create_timer(timer_period, self.filter_and_store_topics)
 
     def filter_and_store_topics(self):
         topic_names_and_types = self.get_topic_names_and_types()
@@ -39,26 +37,10 @@ class Host_Detector(Node):
     def publish_topics(self, topic_list):
         list_string_msg = ListString()
         list_string_msg.data = topic_list
-        # print("Publishing topics" + str(list_string_msg))
-
         self.topic_publisher.publish(list_string_msg)
 
-
-    def filter_and_store_services(self):
-        service_list = self.get_service_names_and_types()
-        
-        # filtered_service_list = [(service_name, service_type) for service_name, service_type in service_list
-        #                         if not any(keyword in service_name for keyword in [ "parameter", "_action", "topic_names_node", "host_detector_subscriber", "castelet_node"])]
-
-        self.ros_service_list = [service_name for service_name, _ in service_list]
-        self.publish_services(self.ros_service_list)
-
-
-    def publish_services(self, service_list ):
-        list_string_msg = ListString()
-        list_string_msg.data = service_list
-        print("Publishing services" + str(list_string_msg))
-        self.service_publisher.publish(list_string_msg)
+    def publish_services(self, service_list):
+        self.service_publisher.publish(service_list)
 
 
 def main(args=None):

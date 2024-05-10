@@ -1,0 +1,16 @@
+/home/field/MANOS/install/servo_control/lib/servo_control/servo_service.py
+/home/field/MANOS/install/servo_control/share/ament_index/resource_index/package_run_dependencies/servo_control
+/home/field/MANOS/install/servo_control/share/ament_index/resource_index/parent_prefix_path/servo_control
+/home/field/MANOS/install/servo_control/share/servo_control/environment/ament_prefix_path.sh
+/home/field/MANOS/install/servo_control/share/servo_control/environment/ament_prefix_path.dsv
+/home/field/MANOS/install/servo_control/share/servo_control/environment/path.sh
+/home/field/MANOS/install/servo_control/share/servo_control/environment/path.dsv
+/home/field/MANOS/install/servo_control/share/servo_control/local_setup.bash
+/home/field/MANOS/install/servo_control/share/servo_control/local_setup.sh
+/home/field/MANOS/install/servo_control/share/servo_control/local_setup.zsh
+/home/field/MANOS/install/servo_control/share/servo_control/local_setup.dsv
+/home/field/MANOS/install/servo_control/share/servo_control/package.dsv
+/home/field/MANOS/install/servo_control/share/ament_index/resource_index/packages/servo_control
+/home/field/MANOS/install/servo_control/share/servo_control/cmake/servo_controlConfig.cmake
+/home/field/MANOS/install/servo_control/share/servo_control/cmake/servo_controlConfig-version.cmake
+/home/field/MANOS/install/servo_control/share/servo_control/package.xml
