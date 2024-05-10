@@ -1,0 +1,591 @@
+[0.000000] (-) TimerEvent: {}
+[0.000107] (custom_msg) JobQueued: {'identifier': 'custom_msg', 'dependencies': OrderedDict()}
+[0.000127] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict([('custom_msg', '/home/field/MANOS/install/custom_msg')])}
+[0.000140] (castelet) JobQueued: {'identifier': 'castelet', 'dependencies': OrderedDict([('custom_msg', '/home/field/MANOS/install/custom_msg')])}
+[0.000149] (custom_ros_controller) JobQueued: {'identifier': 'custom_ros_controller', 'dependencies': OrderedDict([('custom_msg', '/home/field/MANOS/install/custom_msg')])}
+[0.000157] (hand_detector) JobQueued: {'identifier': 'hand_detector', 'dependencies': OrderedDict([('custom_msg', '/home/field/MANOS/install/custom_msg')])}
+[0.000164] (host_listener_package) JobQueued: {'identifier': 'host_listener_package', 'dependencies': OrderedDict([('custom_msg', '/home/field/MANOS/install/custom_msg')])}
+[0.000171] (manos_manager) JobQueued: {'identifier': 'manos_manager', 'dependencies': OrderedDict([('custom_msg', '/home/field/MANOS/install/custom_msg'), ('custom_ros_controller', '/home/field/MANOS/install/custom_ros_controller')])}
+[0.000179] (custom_msg) JobStarted: {'identifier': 'custom_msg'}
+[0.099744] (-) TimerEvent: {}
+[0.200265] (-) TimerEvent: {}
+[0.278128] (custom_msg) JobProgress: {'identifier': 'custom_msg', 'progress': 'cmake'}
+[0.278340] (custom_msg) JobProgress: {'identifier': 'custom_msg', 'progress': 'build'}
+[0.278790] (custom_msg) Command: {'cmd': ['/home/field/.local/bin/cmake', '--build', '/home/field/MANOS/build/custom_msg', '--', '-j20', '-l20'], 'cwd': '/home/field/MANOS/build/custom_msg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'field'), ('SSH_AGENT_PID', '3783'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/home/field/MANOS/install/custom_msg/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib'), ('HOME', '/home/field'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/field/MANOS/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '3388'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/field/MANOS/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'field'), ('JOURNAL_STREAM', '8:34748'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'field'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda/bin:/home/field/miniconda3/condabin:/opt/ros/galactic/bin:/home/field/.cargo/bin:/home/field/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/field-Precision-5570:@/tmp/.ICE-unix/3821,unix/field-Precision-5570:/tmp/.ICE-unix/3821'), ('INVOCATION_ID', '6257b61199264e608628d3287c7b61f9'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/136cb7ce_e69e_4a14_a348_51e5967369ad'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.93'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic'), ('CONDA_PYTHON_EXE', '/home/field/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('TVM_NDK_CC', '/home/field/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('JAVA_HOME', '/usr/lib/jvm/java-17-openjdk-amd64'), ('PWD', '/home/field/MANOS/build/custom_msg'), ('TVM_HOME', '/home/field/tvm-unity'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/field/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('ANDROID_NDK', '/home/field/Android/Sdk/ndk/25.2.9519653'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/field/MANOS/install/servo_control:/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic')]), 'shell': False}
+[0.300453] (-) TimerEvent: {}
+[0.304686] (custom_msg) StdoutLine: {'line': b'-- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)\n'}
+[0.305634] (custom_msg) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/galactic/share/ament_cmake_core/cmake/core/python.cmake:22 (find_package):\n'}
+[0.305724] (custom_msg) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.305763] (custom_msg) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.305794] (custom_msg) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.305823] (custom_msg) StderrLine: {'line': b'\n'}
+[0.305851] (custom_msg) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.305881] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_cmake_core/cmake/core/all.cmake:53 (include)\n'}
+[0.305909] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_cmake_core/cmake/ament_cmake_core-extras.cmake:17 (include)\n'}
+[0.305935] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)\n'}
+[0.305960] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)\n'}
+[0.305986] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)\n'}
+[0.306012] (custom_msg) StderrLine: {'line': b'  CMakeLists.txt:9 (find_package)\n'}
+[0.306040] (custom_msg) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.306067] (custom_msg) StderrLine: {'line': b'\x1b[0m\n'}
+[0.317943] (custom_msg) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.318024] (custom_msg) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.353692] (custom_msg) StdoutLine: {'line': b'-- Found std_msgs: 2.2.4 (/opt/ros/galactic/share/std_msgs/cmake)\n'}
+[0.365775] (custom_msg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.367626] (custom_msg) StdoutLine: {'line': b'-- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)\n'}
+[0.400639] (-) TimerEvent: {}
+[0.436842] (custom_msg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.459473] (custom_msg) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.1.1 (/opt/ros/galactic/share/rosidl_default_generators/cmake)\n'}
+[0.465212] (custom_msg) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/galactic/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:40 (find_package):\n'}
+[0.465286] (custom_msg) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.465321] (custom_msg) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.465349] (custom_msg) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.465376] (custom_msg) StderrLine: {'line': b'\n'}
+[0.465402] (custom_msg) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.465430] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)\n'}
+[0.465456] (custom_msg) StderrLine: {'line': b'  CMakeLists.txt:16 (rosidl_generate_interfaces)\n'}
+[0.465483] (custom_msg) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.465509] (custom_msg) StderrLine: {'line': b'\x1b[0m\n'}
+[0.478099] (custom_msg) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") \n'}
+[0.500739] (-) TimerEvent: {}
+[0.574841] (custom_msg) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.9.2 (/opt/ros/galactic/share/ament_cmake_ros/cmake)\n'}
+[0.600924] (-) TimerEvent: {}
+[0.676081] (custom_msg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.700992] (-) TimerEvent: {}
+[0.708095] (custom_msg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.710364] (custom_msg) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/galactic/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:20 (find_package):\n'}
+[0.710434] (custom_msg) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.710473] (custom_msg) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.710502] (custom_msg) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.710530] (custom_msg) StderrLine: {'line': b'\n'}
+[0.710558] (custom_msg) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.710591] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[0.710619] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[0.710646] (custom_msg) StderrLine: {'line': b'  CMakeLists.txt:16 (rosidl_generate_interfaces)\n'}
+[0.710673] (custom_msg) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.710700] (custom_msg) StderrLine: {'line': b'\x1b[0m\n'}
+[0.722993] (custom_msg) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") \n'}
+[0.723165] (custom_msg) StdoutLine: {'line': b'-- Found python_cmake_module: 0.8.1 (/opt/ros/galactic/share/python_cmake_module/cmake)\n'}
+[0.723463] (custom_msg) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/galactic/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:45 (find_package):\n'}
+[0.723532] (custom_msg) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.723566] (custom_msg) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.723594] (custom_msg) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.723623] (custom_msg) StderrLine: {'line': b'\n'}
+[0.723649] (custom_msg) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.723675] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)\n'}
+[0.723701] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[0.723732] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[0.723758] (custom_msg) StderrLine: {'line': b'  CMakeLists.txt:16 (rosidl_generate_interfaces)\n'}
+[0.723783] (custom_msg) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.723808] (custom_msg) StderrLine: {'line': b'\x1b[0m\n'}
+[0.736571] (custom_msg) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/galactic/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:133 (find_package):\n'}
+[0.736668] (custom_msg) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.736701] (custom_msg) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.736730] (custom_msg) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.736758] (custom_msg) StderrLine: {'line': b'\n'}
+[0.736785] (custom_msg) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.736812] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)\n'}
+[0.736837] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[0.736864] (custom_msg) StderrLine: {'line': b'  /opt/ros/galactic/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[0.736890] (custom_msg) StderrLine: {'line': b'  CMakeLists.txt:16 (rosidl_generate_interfaces)\n'}
+[0.736915] (custom_msg) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.736946] (custom_msg) StderrLine: {'line': b'\x1b[0m\n'}
+[0.737895] (custom_msg) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.738018] (custom_msg) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8\n'}
+[0.738055] (custom_msg) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so\n'}
+[0.758143] (custom_msg) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.10.7 (/opt/ros/galactic/share/ament_lint_auto/cmake)\n'}
+[0.762854] (custom_msg) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[0.763756] (custom_msg) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.763953] (custom_msg) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.764959] (custom_msg) StdoutLine: {'line': b'-- Configuring done (0.5s)\n'}
+[0.787295] (custom_msg) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.788630] (custom_msg) StdoutLine: {'line': b'-- Build files have been written to: /home/field/MANOS/build/custom_msg\n'}
+[0.796544] (custom_msg) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[0.798927] (custom_msg) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[0.801172] (-) TimerEvent: {}
+[0.901456] (-) TimerEvent: {}
+[0.987100] (custom_msg) StdoutLine: {'line': b'[  3%] Built target custom_msg__cpp\n'}
+[0.989826] (custom_msg) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[0.989954] (custom_msg) StdoutLine: {'line': b'[  7%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[0.990103] (custom_msg) StdoutLine: {'line': b'[  9%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.001537] (-) TimerEvent: {}
+[1.004092] (custom_msg) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/msg/detail/list_string__functions.c.o\x1b[0m\n'}
+[1.004289] (custom_msg) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/msg/detail/pos__functions.c.o\x1b[0m\n'}
+[1.004458] (custom_msg) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/msg/detail/manos_bundle__functions.c.o\x1b[0m\n'}
+[1.005111] (custom_msg) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/srv/detail/set_servo__functions.c.o\x1b[0m\n'}
+[1.039621] (custom_msg) StdoutLine: {'line': b'[ 18%] \x1b[32m\x1b[1mLinking C shared library libcustom_msg__rosidl_generator_c.so\x1b[0m\n'}
+[1.055034] (custom_msg) StdoutLine: {'line': b'[ 18%] Built target custom_msg__rosidl_generator_c\n'}
+[1.057790] (custom_msg) StdoutLine: {'line': b'[ 20%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[1.057968] (custom_msg) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.101621] (-) TimerEvent: {}
+[1.149834] (custom_msg) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msg/msg/list_string__type_support.cpp.o\x1b[0m\n'}
+[1.150426] (custom_msg) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msg/srv/set_servo__type_support.cpp.o\x1b[0m\n'}
+[1.150523] (custom_msg) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msg/msg/pos__type_support.cpp.o\x1b[0m\n'}
+[1.150830] (custom_msg) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msg/msg/manos_bundle__type_support.cpp.o\x1b[0m\n'}
+[1.172172] (custom_msg) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msg/msg/detail/list_string__type_support.cpp.o\x1b[0m\n'}
+[1.172857] (custom_msg) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msg/msg/detail/pos__type_support.cpp.o\x1b[0m\n'}
+[1.173007] (custom_msg) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msg/msg/detail/manos_bundle__type_support.cpp.o\x1b[0m\n'}
+[1.173246] (custom_msg) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msg/srv/detail/set_servo__type_support.cpp.o\x1b[0m\n'}
+[1.188763] (custom_msg) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msg/msg/detail/dds_fastrtps/list_string__type_support.cpp.o\x1b[0m\n'}
+[1.189375] (custom_msg) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msg/msg/detail/dds_fastrtps/manos_bundle__type_support.cpp.o\x1b[0m\n'}
+[1.189514] (custom_msg) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msg/msg/detail/dds_fastrtps/pos__type_support.cpp.o\x1b[0m\n'}
+[1.189702] (custom_msg) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msg/srv/detail/dds_fastrtps/set_servo__type_support.cpp.o\x1b[0m\n'}
+[1.201716] (-) TimerEvent: {}
+[1.222598] (custom_msg) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msg/msg/list_string__type_support.cpp.o\x1b[0m\n'}
+[1.222942] (custom_msg) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msg/msg/pos__type_support.cpp.o\x1b[0m\n'}
+[1.223053] (custom_msg) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msg/msg/manos_bundle__type_support.cpp.o\x1b[0m\n'}
+[1.223143] (custom_msg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msg/srv/set_servo__type_support.cpp.o\x1b[0m\n'}
+[1.245496] (custom_msg) StdoutLine: {'line': b'[ 52%] \x1b[32m\x1b[1mLinking CXX shared library libcustom_msg__rosidl_typesupport_c.so\x1b[0m\n'}
+[1.254655] (custom_msg) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msg/msg/detail/manos_bundle__type_support.c.o\x1b[0m\n'}
+[1.254852] (custom_msg) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msg/msg/detail/list_string__type_support.c.o\x1b[0m\n'}
+[1.255009] (custom_msg) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msg/msg/detail/pos__type_support.c.o\x1b[0m\n'}
+[1.255083] (custom_msg) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msg/srv/detail/set_servo__type_support.c.o\x1b[0m\n'}
+[1.272277] (custom_msg) StdoutLine: {'line': b'[ 60%] Built target custom_msg__rosidl_typesupport_c\n'}
+[1.281211] (custom_msg) StdoutLine: {'line': b'[ 61%] \x1b[32m\x1b[1mLinking C shared library libcustom_msg__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[1.299112] (custom_msg) StdoutLine: {'line': b'[ 61%] Built target custom_msg__rosidl_typesupport_introspection_c\n'}
+[1.301823] (-) TimerEvent: {}
+[1.402116] (-) TimerEvent: {}
+[1.411762] (custom_msg) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking CXX shared library libcustom_msg__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[1.415753] (custom_msg) StdoutLine: {'line': b'[ 65%] \x1b[32m\x1b[1mLinking CXX shared library libcustom_msg__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[1.433585] (custom_msg) StdoutLine: {'line': b'[ 65%] Built target custom_msg__rosidl_typesupport_cpp\n'}
+[1.450711] (custom_msg) StdoutLine: {'line': b'[ 65%] Built target custom_msg__rosidl_typesupport_introspection_cpp\n'}
+[1.502243] (-) TimerEvent: {}
+[1.527948] (custom_msg) StdoutLine: {'line': b'[ 67%] \x1b[32m\x1b[1mLinking CXX shared library libcustom_msg__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[1.571459] (custom_msg) StdoutLine: {'line': b'[ 67%] Built target custom_msg__rosidl_typesupport_fastrtps_cpp\n'}
+[1.574177] (custom_msg) StdoutLine: {'line': b'[ 69%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.602415] (-) TimerEvent: {}
+[1.702680] (-) TimerEvent: {}
+[1.757108] (custom_msg) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msg/msg/detail/list_string__type_support_c.cpp.o\x1b[0m\n'}
+[1.757391] (custom_msg) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msg/msg/detail/pos__type_support_c.cpp.o\x1b[0m\n'}
+[1.757441] (custom_msg) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msg/msg/detail/manos_bundle__type_support_c.cpp.o\x1b[0m\n'}
+[1.757695] (custom_msg) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msg/srv/detail/set_servo__type_support_c.cpp.o\x1b[0m\n'}
+[1.802779] (-) TimerEvent: {}
+[1.903068] (-) TimerEvent: {}
+[1.936123] (custom_msg) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking CXX shared library libcustom_msg__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[1.977207] (custom_msg) StdoutLine: {'line': b'[ 78%] Built target custom_msg__rosidl_typesupport_fastrtps_c\n'}
+[1.982459] (custom_msg) StdoutLine: {'line': b'[ 78%] Built target custom_msg\n'}
+[1.987699] (custom_msg) StdoutLine: {'line': b'[ 80%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[2.003340] (-) TimerEvent: {}
+[2.103572] (-) TimerEvent: {}
+[2.203915] (-) TimerEvent: {}
+[2.304229] (-) TimerEvent: {}
+[2.367824] (custom_msg) StdoutLine: {'line': b'[ 80%] Built target custom_msg__py\n'}
+[2.375896] (custom_msg) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding C object CMakeFiles/custom_msg__python.dir/rosidl_generator_py/custom_msg/msg/_list_string_s.c.o\x1b[0m\n'}
+[2.376011] (custom_msg) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding C object CMakeFiles/custom_msg__python.dir/rosidl_generator_py/custom_msg/msg/_pos_s.c.o\x1b[0m\n'}
+[2.376174] (custom_msg) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/custom_msg__python.dir/rosidl_generator_py/custom_msg/msg/_manos_bundle_s.c.o\x1b[0m\n'}
+[2.376441] (custom_msg) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/custom_msg__python.dir/rosidl_generator_py/custom_msg/srv/_set_servo_s.c.o\x1b[0m\n'}
+[2.404325] (-) TimerEvent: {}
+[2.422711] (custom_msg) StdoutLine: {'line': b'[ 89%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/custom_msg/libcustom_msg__python.so\x1b[0m\n'}
+[2.439715] (custom_msg) StdoutLine: {'line': b'[ 89%] Built target custom_msg__python\n'}
+[2.447292] (custom_msg) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/custom_msg/_custom_msg_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[2.447446] (custom_msg) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/custom_msg/_custom_msg_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[2.447494] (custom_msg) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/custom_msg/_custom_msg_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[2.493114] (custom_msg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/custom_msg/custom_msg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.493263] (custom_msg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/custom_msg/custom_msg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.493308] (custom_msg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library rosidl_generator_py/custom_msg/custom_msg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.504516] (-) TimerEvent: {}
+[2.507202] (custom_msg) StdoutLine: {'line': b'[100%] Built target custom_msg__rosidl_typesupport_introspection_c__pyext\n'}
+[2.507327] (custom_msg) StdoutLine: {'line': b'[100%] Built target custom_msg__rosidl_typesupport_c__pyext\n'}
+[2.523125] (custom_msg) StdoutLine: {'line': b'[100%] Built target custom_msg__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.528709] (custom_msg) CommandEnded: {'returncode': 0}
+[2.591809] (custom_msg) JobProgress: {'identifier': 'custom_msg', 'progress': 'install'}
+[2.604699] (-) TimerEvent: {}
+[2.611386] (custom_msg) Command: {'cmd': ['/home/field/.local/bin/cmake', '--install', '/home/field/MANOS/build/custom_msg'], 'cwd': '/home/field/MANOS/build/custom_msg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'field'), ('SSH_AGENT_PID', '3783'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/home/field/MANOS/install/custom_msg/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib'), ('HOME', '/home/field'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/field/MANOS/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '3388'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/field/MANOS/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'field'), ('JOURNAL_STREAM', '8:34748'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'field'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/local/cuda/bin:/home/field/miniconda3/condabin:/opt/ros/galactic/bin:/home/field/.cargo/bin:/home/field/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/field-Precision-5570:@/tmp/.ICE-unix/3821,unix/field-Precision-5570:/tmp/.ICE-unix/3821'), ('INVOCATION_ID', '6257b61199264e608628d3287c7b61f9'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/136cb7ce_e69e_4a14_a348_51e5967369ad'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.93'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic'), ('CONDA_PYTHON_EXE', '/home/field/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('TVM_NDK_CC', '/home/field/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('JAVA_HOME', '/usr/lib/jvm/java-17-openjdk-amd64'), ('PWD', '/home/field/MANOS/build/custom_msg'), ('TVM_HOME', '/home/field/tvm-unity'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/field/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('ANDROID_NDK', '/home/field/Android/Sdk/ndk/25.2.9519653'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/field/MANOS/install/servo_control:/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic')]), 'shell': False}
+[2.628626] (custom_msg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[2.628889] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/ament_index/resource_index/rosidl_interfaces/custom_msg\n'}
+[2.628938] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg\n'}
+[2.629021] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg\n'}
+[2.629055] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/rosidl_generator_c__visibility_control.h\n'}
+[2.629085] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/list_string.h\n'}
+[2.629115] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail\n'}
+[2.629145] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__functions.c\n'}
+[2.629172] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__functions.h\n'}
+[2.629202] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__functions.h\n'}
+[2.629230] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__type_support.h\n'}
+[2.629258] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__functions.h\n'}
+[2.629286] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__struct.h\n'}
+[2.629314] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__functions.c\n'}
+[2.629341] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__functions.c\n'}
+[2.629369] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__struct.h\n'}
+[2.629396] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__struct.h\n'}
+[2.629423] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__type_support.h\n'}
+[2.629471] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__type_support.h\n'}
+[2.629549] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/pos.h\n'}
+[2.629578] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/manos_bundle.h\n'}
+[2.629606] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv\n'}
+[2.629635] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/set_servo.h\n'}
+[2.629663] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail\n'}
+[2.629705] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__struct.h\n'}
+[2.629771] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__type_support.h\n'}
+[2.629797] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__functions.h\n'}
+[2.629824] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__functions.c\n'}
+[2.629851] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/library_path.sh\n'}
+[2.629878] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/library_path.dsv\n'}
+[2.629904] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_generator_c.so\n'}
+[2.629945] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_generator_c.so" to ""\n'}
+[2.629973] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg\n'}
+[2.630000] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg\n'}
+[2.630026] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[2.630054] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail\n'}
+[2.630117] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_fastrtps_c.h\n'}
+[2.630146] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__rosidl_typesupport_fastrtps_c.h\n'}
+[2.630174] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_fastrtps_c.h\n'}
+[2.630202] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv\n'}
+[2.630229] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail\n'}
+[2.630256] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__rosidl_typesupport_fastrtps_c.h\n'}
+[2.630285] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_c.so\n'}
+[2.630313] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[2.630342] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg\n'}
+[2.630369] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg\n'}
+[2.630396] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail\n'}
+[2.630423] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.630465] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.630540] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/dds_fastrtps\n'}
+[2.630577] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.630610] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[2.630642] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv\n'}
+[2.630672] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail\n'}
+[2.630701] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.630730] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/dds_fastrtps\n'}
+[2.630758] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_cpp.so\n'}
+[2.630800] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[2.630827] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg\n'}
+[2.630856] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg\n'}
+[2.630917] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail\n'}
+[2.630950] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_introspection_c.h\n'}
+[2.630982] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__rosidl_typesupport_introspection_c.h\n'}
+[2.631009] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__type_support.c\n'}
+[2.631067] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__type_support.c\n'}
+[2.631097] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__type_support.c\n'}
+[2.631125] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_introspection_c.h\n'}
+[2.631153] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[2.631180] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv\n'}
+[2.631207] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail\n'}
+[2.631234] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__rosidl_typesupport_introspection_c.h\n'}
+[2.631262] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__type_support.c\n'}
+[2.631301] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_c.so\n'}
+[2.631329] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_c.so" to ""\n'}
+[2.631399] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_c.so\n'}
+[2.631440] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_c.so" to ""\n'}
+[2.631470] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg\n'}
+[2.631499] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg\n'}
+[2.631527] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/pos.hpp\n'}
+[2.631554] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/manos_bundle.hpp\n'}
+[2.631582] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail\n'}
+[2.631608] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__traits.hpp\n'}
+[2.631636] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__traits.hpp\n'}
+[2.631682] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__builder.hpp\n'}
+[2.631743] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__struct.hpp\n'}
+[2.631775] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__builder.hpp\n'}
+[2.631804] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__struct.hpp\n'}
+[2.631832] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__traits.hpp\n'}
+[2.631860] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__struct.hpp\n'}
+[2.631888] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__builder.hpp\n'}
+[2.631939] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/list_string.hpp\n'}
+[2.631969] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv\n'}
+[2.631997] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/set_servo.hpp\n'}
+[2.632074] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail\n'}
+[2.632104] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__traits.hpp\n'}
+[2.632133] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__builder.hpp\n'}
+[2.632160] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__struct.hpp\n'}
+[2.632188] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg\n'}
+[2.632217] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg\n'}
+[2.632244] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail\n'}
+[2.632295] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__type_support.cpp\n'}
+[2.632324] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.632353] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__type_support.cpp\n'}
+[2.632382] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.632429] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__type_support.cpp\n'}
+[2.632455] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.632483] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv\n'}
+[2.632510] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail\n'}
+[2.632538] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__type_support.cpp\n'}
+[2.632566] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/include/custom_msg/srv/detail/set_servo__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.632605] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_cpp.so\n'}
+[2.632633] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[2.632658] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_cpp.so\n'}
+[2.632700] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_cpp.so" to ""\n'}
+[2.632737] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/pythonpath.sh\n'}
+[2.632765] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/pythonpath.dsv\n'}
+[2.632804] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/__init__.py\n'}
+[2.652272] (custom_msg) StdoutLine: {'line': b"Compiling '/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/__init__.py'...\n"}
+[2.654850] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg\n'}
+[2.654903] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_manos_bundle_s.c\n'}
+[2.655019] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/__init__.py\n'}
+[2.655091] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_list_string.py\n'}
+[2.655221] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_pos.py\n'}
+[2.655301] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_manos_bundle.py\n'}
+[2.655335] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_pos_s.c\n'}
+[2.655363] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_list_string_s.c\n'}
+[2.655392] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/srv\n'}
+[2.655422] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/srv/__init__.py\n'}
+[2.655463] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/srv/_set_servo_s.c\n'}
+[2.655489] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/srv/_set_servo.py\n'}
+[2.655515] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\n'}
+[2.655559] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[2.655600] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\n'}
+[2.655722] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[2.655787] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\n'}
+[2.655917] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[2.655978] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__python.so\n'}
+[2.656121] (custom_msg) StdoutLine: {'line': b'-- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__python.so" to ""\n'}
+[2.656165] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/ListString.idl\n'}
+[2.656195] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/Pos.idl\n'}
+[2.656234] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/MANOSBundle.idl\n'}
+[2.656272] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/share/custom_msg/srv/SetServo.idl\n'}
+[2.656300] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/ListString.msg\n'}
+[2.656340] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/Pos.msg\n'}
+[2.656366] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/MANOSBundle.msg\n'}
+[2.656394] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/share/custom_msg/srv/SetServo.srv\n'}
+[2.656421] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/share/custom_msg/srv/SetServo_Request.msg\n'}
+[2.656459] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/srv/SetServo_Response.msg\n'}
+[2.656508] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/ament_index/resource_index/package_run_dependencies/custom_msg\n'}
+[2.656538] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/ament_index/resource_index/parent_prefix_path/custom_msg\n'}
+[2.656567] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/ament_prefix_path.sh\n'}
+[2.656595] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/ament_prefix_path.dsv\n'}
+[2.656623] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/path.sh\n'}
+[2.656662] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/path.dsv\n'}
+[2.656713] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/local_setup.bash\n'}
+[2.656741] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/local_setup.sh\n'}
+[2.656769] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/local_setup.zsh\n'}
+[2.656796] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/share/custom_msg/local_setup.dsv\n'}
+[2.656823] (custom_msg) StdoutLine: {'line': b'-- Installing: /home/field/MANOS/install/custom_msg/share/custom_msg/package.dsv\n'}
+[2.656866] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/ament_index/resource_index/packages/custom_msg\n'}
+[2.656894] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_generator_cExport.cmake\n'}
+[2.656922] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_generator_cExport-noconfig.cmake\n'}
+[2.656950] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cExport.cmake\n'}
+[2.656990] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[2.657017] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cExport.cmake\n'}
+[2.657045] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[2.657073] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_generator_cppExport.cmake\n'}
+[2.657112] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[2.657172] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[2.657203] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cppExport.cmake\n'}
+[2.657231] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[2.657259] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/rosidl_cmake-extras.cmake\n'}
+[2.657288] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[2.657315] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[2.657342] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[2.657382] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[2.657408] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[2.657436] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[2.657462] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msgConfig.cmake\n'}
+[2.657489] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msgConfig-version.cmake\n'}
+[2.657514] (custom_msg) StdoutLine: {'line': b'-- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/package.xml\n'}
+[2.660892] (custom_msg) CommandEnded: {'returncode': 0}
+[2.705589] (-) TimerEvent: {}
+[2.806105] (-) TimerEvent: {}
+[2.906512] (-) TimerEvent: {}
+[3.006982] (-) TimerEvent: {}
+[3.107583] (-) TimerEvent: {}
+[3.208363] (-) TimerEvent: {}
+[3.309040] (-) TimerEvent: {}
+[3.410286] (-) TimerEvent: {}
+[3.491097] (custom_msg) JobEnded: {'identifier': 'custom_msg', 'rc': 0}
+[3.491352] (custom_ros_controller) JobStarted: {'identifier': 'custom_ros_controller'}
+[3.510465] (-) TimerEvent: {}
+[3.611049] (-) TimerEvent: {}
+[3.711434] (-) TimerEvent: {}
+[3.812911] (-) TimerEvent: {}
+[3.837369] (camera) JobStarted: {'identifier': 'camera'}
+[3.913275] (-) TimerEvent: {}
+[4.014314] (-) TimerEvent: {}
+[4.114605] (-) TimerEvent: {}
+[4.186366] (castelet) JobStarted: {'identifier': 'castelet'}
+[4.216644] (-) TimerEvent: {}
+[4.317535] (-) TimerEvent: {}
+[4.418274] (-) TimerEvent: {}
+[4.519514] (-) TimerEvent: {}
+[4.538240] (hand_detector) JobStarted: {'identifier': 'hand_detector'}
+[4.620117] (-) TimerEvent: {}
+[4.720804] (-) TimerEvent: {}
+[4.821625] (-) TimerEvent: {}
+[4.885593] (host_listener_package) JobStarted: {'identifier': 'host_listener_package'}
+[4.922093] (-) TimerEvent: {}
+[5.022712] (-) TimerEvent: {}
+[5.123420] (-) TimerEvent: {}
+[5.224115] (-) TimerEvent: {}
+[5.324978] (-) TimerEvent: {}
+[5.425489] (-) TimerEvent: {}
+[5.525838] (-) TimerEvent: {}
+[5.626348] (-) TimerEvent: {}
+[5.726648] (-) TimerEvent: {}
+[5.827359] (-) TimerEvent: {}
+[5.927698] (-) TimerEvent: {}
+[6.028342] (-) TimerEvent: {}
+[6.128740] (-) TimerEvent: {}
+[6.229498] (-) TimerEvent: {}
+[6.330183] (-) TimerEvent: {}
+[6.431048] (-) TimerEvent: {}
+[6.531413] (-) TimerEvent: {}
+[6.631888] (-) TimerEvent: {}
+[6.732205] (-) TimerEvent: {}
+[6.832690] (-) TimerEvent: {}
+[6.933037] (-) TimerEvent: {}
+[7.034798] (-) TimerEvent: {}
+[7.135640] (-) TimerEvent: {}
+[7.235983] (-) TimerEvent: {}
+[7.336349] (-) TimerEvent: {}
+[7.436739] (-) TimerEvent: {}
+[7.537048] (-) TimerEvent: {}
+[7.538600] (custom_ros_controller) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/custom_ros_controller', 'build', '--build-base', '/home/field/MANOS/build/custom_ros_controller/build', 'install', '--record', '/home/field/MANOS/build/custom_ros_controller/install.log', '--single-version-externally-managed'], 'cwd': '/home/field/MANOS/src/custom_ros_controller', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'field', 'SSH_AGENT_PID': '3783', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib', 'HOME': '/home/field', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/field/MANOS/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '3388', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/field/MANOS/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'field', 'JOURNAL_STREAM': '8:34748', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'field', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/usr/local/cuda/bin:/home/field/miniconda3/condabin:/opt/ros/galactic/bin:/home/field/.cargo/bin:/home/field/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/field-Precision-5570:@/tmp/.ICE-unix/3821,unix/field-Precision-5570:/tmp/.ICE-unix/3821', 'INVOCATION_ID': '6257b61199264e608628d3287c7b61f9', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/136cb7ce_e69e_4a14_a348_51e5967369ad', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.93', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic', 'CONDA_PYTHON_EXE': '/home/field/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'TVM_NDK_CC': '/home/field/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'JAVA_HOME': '/usr/lib/jvm/java-17-openjdk-amd64', 'PWD': '/home/field/MANOS/build/custom_ros_controller', 'TVM_HOME': '/home/field/tvm-unity', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/field/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/field/MANOS/build/custom_ros_controller/prefix_override:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'ANDROID_NDK': '/home/field/Android/Sdk/ndk/25.2.9519653', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control'}, 'shell': False}
+[7.547840] (camera) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/camera', 'build', '--build-base', '/home/field/MANOS/build/camera/build', 'install', '--record', '/home/field/MANOS/build/camera/install.log', '--single-version-externally-managed'], 'cwd': '/home/field/MANOS/src/camera', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'field', 'SSH_AGENT_PID': '3783', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib', 'HOME': '/home/field', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/field/MANOS/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '3388', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/field/MANOS/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'field', 'JOURNAL_STREAM': '8:34748', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'field', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/usr/local/cuda/bin:/home/field/miniconda3/condabin:/opt/ros/galactic/bin:/home/field/.cargo/bin:/home/field/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/field-Precision-5570:@/tmp/.ICE-unix/3821,unix/field-Precision-5570:/tmp/.ICE-unix/3821', 'INVOCATION_ID': '6257b61199264e608628d3287c7b61f9', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/136cb7ce_e69e_4a14_a348_51e5967369ad', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.93', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic', 'CONDA_PYTHON_EXE': '/home/field/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'TVM_NDK_CC': '/home/field/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'JAVA_HOME': '/usr/lib/jvm/java-17-openjdk-amd64', 'PWD': '/home/field/MANOS/build/camera', 'TVM_HOME': '/home/field/tvm-unity', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/field/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/field/MANOS/build/camera/prefix_override:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'ANDROID_NDK': '/home/field/Android/Sdk/ndk/25.2.9519653', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control'}, 'shell': False}
+[7.550149] (castelet) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/castelet', 'build', '--build-base', '/home/field/MANOS/build/castelet/build', 'install', '--record', '/home/field/MANOS/build/castelet/install.log', '--single-version-externally-managed'], 'cwd': '/home/field/MANOS/src/castelet', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'field', 'SSH_AGENT_PID': '3783', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib', 'HOME': '/home/field', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/field/MANOS/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '3388', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/field/MANOS/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'field', 'JOURNAL_STREAM': '8:34748', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'field', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/usr/local/cuda/bin:/home/field/miniconda3/condabin:/opt/ros/galactic/bin:/home/field/.cargo/bin:/home/field/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/field-Precision-5570:@/tmp/.ICE-unix/3821,unix/field-Precision-5570:/tmp/.ICE-unix/3821', 'INVOCATION_ID': '6257b61199264e608628d3287c7b61f9', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/136cb7ce_e69e_4a14_a348_51e5967369ad', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.93', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic', 'CONDA_PYTHON_EXE': '/home/field/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'TVM_NDK_CC': '/home/field/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'JAVA_HOME': '/usr/lib/jvm/java-17-openjdk-amd64', 'PWD': '/home/field/MANOS/build/castelet', 'TVM_HOME': '/home/field/tvm-unity', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/field/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/field/MANOS/build/castelet/prefix_override:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'ANDROID_NDK': '/home/field/Android/Sdk/ndk/25.2.9519653', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control'}, 'shell': False}
+[7.554034] (hand_detector) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/hand_detector', 'build', '--build-base', '/home/field/MANOS/build/hand_detector/build', 'install', '--record', '/home/field/MANOS/build/hand_detector/install.log', '--single-version-externally-managed'], 'cwd': '/home/field/MANOS/src/hand_detector', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'field', 'SSH_AGENT_PID': '3783', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib', 'HOME': '/home/field', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/field/MANOS/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '3388', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/field/MANOS/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'field', 'JOURNAL_STREAM': '8:34748', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'field', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/usr/local/cuda/bin:/home/field/miniconda3/condabin:/opt/ros/galactic/bin:/home/field/.cargo/bin:/home/field/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/field-Precision-5570:@/tmp/.ICE-unix/3821,unix/field-Precision-5570:/tmp/.ICE-unix/3821', 'INVOCATION_ID': '6257b61199264e608628d3287c7b61f9', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/136cb7ce_e69e_4a14_a348_51e5967369ad', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.93', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic', 'CONDA_PYTHON_EXE': '/home/field/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'TVM_NDK_CC': '/home/field/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'JAVA_HOME': '/usr/lib/jvm/java-17-openjdk-amd64', 'PWD': '/home/field/MANOS/build/hand_detector', 'TVM_HOME': '/home/field/tvm-unity', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/field/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/field/MANOS/build/hand_detector/prefix_override:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'ANDROID_NDK': '/home/field/Android/Sdk/ndk/25.2.9519653', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control'}, 'shell': False}
+[7.555463] (host_listener_package) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/host_listener_package', 'build', '--build-base', '/home/field/MANOS/build/host_listener_package/build', 'install', '--record', '/home/field/MANOS/build/host_listener_package/install.log', '--single-version-externally-managed'], 'cwd': '/home/field/MANOS/src/host_listener_package', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'field', 'SSH_AGENT_PID': '3783', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib', 'HOME': '/home/field', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/field/MANOS/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '3388', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/field/MANOS/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'field', 'JOURNAL_STREAM': '8:34748', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'field', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/usr/local/cuda/bin:/home/field/miniconda3/condabin:/opt/ros/galactic/bin:/home/field/.cargo/bin:/home/field/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/field-Precision-5570:@/tmp/.ICE-unix/3821,unix/field-Precision-5570:/tmp/.ICE-unix/3821', 'INVOCATION_ID': '6257b61199264e608628d3287c7b61f9', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/136cb7ce_e69e_4a14_a348_51e5967369ad', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.93', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic', 'CONDA_PYTHON_EXE': '/home/field/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'TVM_NDK_CC': '/home/field/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'JAVA_HOME': '/usr/lib/jvm/java-17-openjdk-amd64', 'PWD': '/home/field/MANOS/build/host_listener_package', 'TVM_HOME': '/home/field/tvm-unity', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/field/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/field/MANOS/build/host_listener_package/prefix_override:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'ANDROID_NDK': '/home/field/Android/Sdk/ndk/25.2.9519653', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control'}, 'shell': False}
+[7.637171] (-) TimerEvent: {}
+[7.676212] (custom_ros_controller) StdoutLine: {'line': b'running egg_info\n'}
+[7.676576] (custom_ros_controller) StdoutLine: {'line': b'writing ../../build/custom_ros_controller/custom_ros_controller.egg-info/PKG-INFO\n'}
+[7.676789] (custom_ros_controller) StdoutLine: {'line': b'writing dependency_links to ../../build/custom_ros_controller/custom_ros_controller.egg-info/dependency_links.txt\n'}
+[7.676885] (custom_ros_controller) StdoutLine: {'line': b'writing entry points to ../../build/custom_ros_controller/custom_ros_controller.egg-info/entry_points.txt\n'}
+[7.676957] (custom_ros_controller) StdoutLine: {'line': b'writing requirements to ../../build/custom_ros_controller/custom_ros_controller.egg-info/requires.txt\n'}
+[7.677022] (custom_ros_controller) StdoutLine: {'line': b'writing top-level names to ../../build/custom_ros_controller/custom_ros_controller.egg-info/top_level.txt\n'}
+[7.683778] (castelet) StdoutLine: {'line': b'running egg_info\n'}
+[7.684110] (castelet) StdoutLine: {'line': b'writing ../../build/castelet/castelet.egg-info/PKG-INFO\n'}
+[7.684414] (castelet) StdoutLine: {'line': b'writing dependency_links to ../../build/castelet/castelet.egg-info/dependency_links.txt\n'}
+[7.684539] (castelet) StdoutLine: {'line': b'writing entry points to ../../build/castelet/castelet.egg-info/entry_points.txt\n'}
+[7.684625] (castelet) StdoutLine: {'line': b'writing requirements to ../../build/castelet/castelet.egg-info/requires.txt\n'}
+[7.684700] (castelet) StdoutLine: {'line': b'writing top-level names to ../../build/castelet/castelet.egg-info/top_level.txt\n'}
+[7.685728] (hand_detector) StdoutLine: {'line': b'running egg_info\n'}
+[7.686182] (hand_detector) StdoutLine: {'line': b'writing ../../build/hand_detector/hand_detector.egg-info/PKG-INFO\n'}
+[7.686313] (hand_detector) StdoutLine: {'line': b'writing dependency_links to ../../build/hand_detector/hand_detector.egg-info/dependency_links.txt\n'}
+[7.686428] (hand_detector) StdoutLine: {'line': b'writing entry points to ../../build/hand_detector/hand_detector.egg-info/entry_points.txt\n'}
+[7.686499] (hand_detector) StdoutLine: {'line': b'writing requirements to ../../build/hand_detector/hand_detector.egg-info/requires.txt\n'}
+[7.686567] (hand_detector) StdoutLine: {'line': b'writing top-level names to ../../build/hand_detector/hand_detector.egg-info/top_level.txt\n'}
+[7.695716] (host_listener_package) StdoutLine: {'line': b'running egg_info\n'}
+[7.696054] (host_listener_package) StdoutLine: {'line': b'writing ../../build/host_listener_package/host_listener_package.egg-info/PKG-INFO\n'}
+[7.696189] (host_listener_package) StdoutLine: {'line': b'writing dependency_links to ../../build/host_listener_package/host_listener_package.egg-info/dependency_links.txt\n'}
+[7.696281] (host_listener_package) StdoutLine: {'line': b'writing entry points to ../../build/host_listener_package/host_listener_package.egg-info/entry_points.txt\n'}
+[7.696363] (host_listener_package) StdoutLine: {'line': b'writing requirements to ../../build/host_listener_package/host_listener_package.egg-info/requires.txt\n'}
+[7.696444] (host_listener_package) StdoutLine: {'line': b'writing top-level names to ../../build/host_listener_package/host_listener_package.egg-info/top_level.txt\n'}
+[7.697404] (custom_ros_controller) StdoutLine: {'line': b"reading manifest file '../../build/custom_ros_controller/custom_ros_controller.egg-info/SOURCES.txt'\n"}
+[7.697898] (custom_ros_controller) StdoutLine: {'line': b"writing manifest file '../../build/custom_ros_controller/custom_ros_controller.egg-info/SOURCES.txt'\n"}
+[7.697973] (custom_ros_controller) StdoutLine: {'line': b'running build\n'}
+[7.698035] (custom_ros_controller) StdoutLine: {'line': b'running build_py\n'}
+[7.698134] (custom_ros_controller) StdoutLine: {'line': b'running install\n'}
+[7.698620] (custom_ros_controller) StdoutLine: {'line': b'running install_lib\n'}
+[7.699482] (custom_ros_controller) StdoutLine: {'line': b'running install_data\n'}
+[7.699770] (custom_ros_controller) StdoutLine: {'line': b'running install_egg_info\n'}
+[7.700821] (custom_ros_controller) StdoutLine: {'line': b"removing '/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages/custom_ros_controller-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[7.700982] (custom_ros_controller) StdoutLine: {'line': b'Copying ../../build/custom_ros_controller/custom_ros_controller.egg-info to /home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages/custom_ros_controller-0.0.0-py3.8.egg-info\n'}
+[7.701253] (custom_ros_controller) StdoutLine: {'line': b'running install_scripts\n'}
+[7.704427] (camera) StdoutLine: {'line': b'running egg_info\n'}
+[7.704747] (camera) StdoutLine: {'line': b'writing ../../build/camera/camera.egg-info/PKG-INFO\n'}
+[7.704938] (camera) StdoutLine: {'line': b'writing dependency_links to ../../build/camera/camera.egg-info/dependency_links.txt\n'}
+[7.705111] (camera) StdoutLine: {'line': b'writing entry points to ../../build/camera/camera.egg-info/entry_points.txt\n'}
+[7.705184] (camera) StdoutLine: {'line': b'writing requirements to ../../build/camera/camera.egg-info/requires.txt\n'}
+[7.705249] (camera) StdoutLine: {'line': b'writing top-level names to ../../build/camera/camera.egg-info/top_level.txt\n'}
+[7.705353] (castelet) StdoutLine: {'line': b"reading manifest file '../../build/castelet/castelet.egg-info/SOURCES.txt'\n"}
+[7.705577] (castelet) StdoutLine: {'line': b"writing manifest file '../../build/castelet/castelet.egg-info/SOURCES.txt'\n"}
+[7.705647] (castelet) StdoutLine: {'line': b'running build\n'}
+[7.705713] (castelet) StdoutLine: {'line': b'running build_py\n'}
+[7.705869] (castelet) StdoutLine: {'line': b'running install\n'}
+[7.706397] (castelet) StdoutLine: {'line': b'running install_lib\n'}
+[7.706803] (hand_detector) StdoutLine: {'line': b"reading manifest file '../../build/hand_detector/hand_detector.egg-info/SOURCES.txt'\n"}
+[7.707259] (hand_detector) StdoutLine: {'line': b"writing manifest file '../../build/hand_detector/hand_detector.egg-info/SOURCES.txt'\n"}
+[7.707354] (hand_detector) StdoutLine: {'line': b'running build\n'}
+[7.707447] (hand_detector) StdoutLine: {'line': b'running build_py\n'}
+[7.707513] (castelet) StdoutLine: {'line': b'running install_data\n'}
+[7.707623] (hand_detector) StdoutLine: {'line': b'running install\n'}
+[7.707693] (castelet) StdoutLine: {'line': b'running install_egg_info\n'}
+[7.708001] (hand_detector) StdoutLine: {'line': b'running install_lib\n'}
+[7.708566] (castelet) StdoutLine: {'line': b"removing '/home/field/MANOS/install/castelet/lib/python3.8/site-packages/castelet-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[7.708724] (castelet) StdoutLine: {'line': b'Copying ../../build/castelet/castelet.egg-info to /home/field/MANOS/install/castelet/lib/python3.8/site-packages/castelet-0.0.0-py3.8.egg-info\n'}
+[7.708823] (hand_detector) StdoutLine: {'line': b'running install_data\n'}
+[7.709100] (castelet) StdoutLine: {'line': b'running install_scripts\n'}
+[7.709164] (hand_detector) StdoutLine: {'line': b'running install_egg_info\n'}
+[7.710111] (hand_detector) StdoutLine: {'line': b"removing '/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages/hand_detector-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[7.710253] (hand_detector) StdoutLine: {'line': b'Copying ../../build/hand_detector/hand_detector.egg-info to /home/field/MANOS/install/hand_detector/lib/python3.8/site-packages/hand_detector-0.0.0-py3.8.egg-info\n'}
+[7.710526] (hand_detector) StdoutLine: {'line': b'running install_scripts\n'}
+[7.711625] (custom_ros_controller) StdoutLine: {'line': b'Installing custom_ros_controller script to /home/field/MANOS/install/custom_ros_controller/lib/custom_ros_controller\n'}
+[7.711848] (custom_ros_controller) StdoutLine: {'line': b"writing list of installed files to '/home/field/MANOS/build/custom_ros_controller/install.log'\n"}
+[7.717063] (host_listener_package) StdoutLine: {'line': b"reading manifest file '../../build/host_listener_package/host_listener_package.egg-info/SOURCES.txt'\n"}
+[7.717515] (host_listener_package) StdoutLine: {'line': b"writing manifest file '../../build/host_listener_package/host_listener_package.egg-info/SOURCES.txt'\n"}
+[7.717633] (host_listener_package) StdoutLine: {'line': b'running build\n'}
+[7.717705] (host_listener_package) StdoutLine: {'line': b'running build_py\n'}
+[7.717793] (host_listener_package) StdoutLine: {'line': b'running install\n'}
+[7.718379] (host_listener_package) StdoutLine: {'line': b'running install_lib\n'}
+[7.719166] (host_listener_package) StdoutLine: {'line': b'running install_data\n'}
+[7.719469] (host_listener_package) StdoutLine: {'line': b'running install_egg_info\n'}
+[7.719590] (castelet) StdoutLine: {'line': b'Installing castelet script to /home/field/MANOS/install/castelet/lib/castelet\n'}
+[7.719821] (castelet) StdoutLine: {'line': b"writing list of installed files to '/home/field/MANOS/build/castelet/install.log'\n"}
+[7.720549] (host_listener_package) StdoutLine: {'line': b"removing '/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages/host_listener_package-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[7.720703] (host_listener_package) StdoutLine: {'line': b'Copying ../../build/host_listener_package/host_listener_package.egg-info to /home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages/host_listener_package-0.0.0-py3.8.egg-info\n'}
+[7.720997] (hand_detector) StdoutLine: {'line': b'Installing hand_detector script to /home/field/MANOS/install/hand_detector/lib/hand_detector\n'}
+[7.721114] (host_listener_package) StdoutLine: {'line': b'running install_scripts\n'}
+[7.721261] (hand_detector) StdoutLine: {'line': b"writing list of installed files to '/home/field/MANOS/build/hand_detector/install.log'\n"}
+[7.725533] (custom_ros_controller) CommandEnded: {'returncode': 0}
+[7.725976] (camera) StdoutLine: {'line': b"reading manifest file '../../build/camera/camera.egg-info/SOURCES.txt'\n"}
+[7.726106] (camera) StdoutLine: {'line': b"writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'\n"}
+[7.726182] (camera) StdoutLine: {'line': b'running build\n'}
+[7.726251] (camera) StdoutLine: {'line': b'running build_py\n'}
+[7.726316] (camera) StdoutLine: {'line': b'running install\n'}
+[7.726656] (camera) StdoutLine: {'line': b'running install_lib\n'}
+[7.728313] (camera) StdoutLine: {'line': b'running install_data\n'}
+[7.728521] (camera) StdoutLine: {'line': b'running install_egg_info\n'}
+[7.729099] (camera) StdoutLine: {'line': b"removing '/home/field/MANOS/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[7.729214] (camera) StdoutLine: {'line': b'Copying ../../build/camera/camera.egg-info to /home/field/MANOS/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info\n'}
+[7.729529] (camera) StdoutLine: {'line': b'running install_scripts\n'}
+[7.732331] (host_listener_package) StdoutLine: {'line': b'Installing host_listener script to /home/field/MANOS/install/host_listener_package/lib/host_listener_package\n'}
+[7.732656] (host_listener_package) StdoutLine: {'line': b"writing list of installed files to '/home/field/MANOS/build/host_listener_package/install.log'\n"}
+[7.737240] (-) TimerEvent: {}
+[7.740504] (camera) StdoutLine: {'line': b'Installing cam script to /home/field/MANOS/install/camera/lib/camera\n'}
+[7.740902] (camera) StdoutLine: {'line': b'Installing camera script to /home/field/MANOS/install/camera/lib/camera\n'}
+[7.741277] (camera) StdoutLine: {'line': b"writing list of installed files to '/home/field/MANOS/build/camera/install.log'\n"}
+[7.838065] (-) TimerEvent: {}
+[7.939476] (-) TimerEvent: {}
+[7.962984] (custom_ros_controller) JobEnded: {'identifier': 'custom_ros_controller', 'rc': 0}
+[7.964107] (manos_manager) JobStarted: {'identifier': 'manos_manager'}
+[8.040046] (-) TimerEvent: {}
+[8.141967] (-) TimerEvent: {}
+[8.243464] (-) TimerEvent: {}
+[8.338544] (castelet) CommandEnded: {'returncode': 0}
+[8.343857] (-) TimerEvent: {}
+[8.444641] (-) TimerEvent: {}
+[8.546323] (-) TimerEvent: {}
+[8.561081] (castelet) JobEnded: {'identifier': 'castelet', 'rc': 0}
+[8.561405] (host_listener_package) CommandEnded: {'returncode': 0}
+[8.646605] (-) TimerEvent: {}
+[8.747324] (-) TimerEvent: {}
+[8.777683] (host_listener_package) JobEnded: {'identifier': 'host_listener_package', 'rc': 0}
+[8.777901] (hand_detector) CommandEnded: {'returncode': 0}
+[8.848155] (-) TimerEvent: {}
+[8.948814] (-) TimerEvent: {}
+[8.989000] (hand_detector) JobEnded: {'identifier': 'hand_detector', 'rc': 0}
+[8.989342] (camera) CommandEnded: {'returncode': 0}
+[9.049145] (-) TimerEvent: {}
+[9.149674] (-) TimerEvent: {}
+[9.198259] (camera) JobEnded: {'identifier': 'camera', 'rc': 0}
+[9.249898] (-) TimerEvent: {}
+[9.350331] (-) TimerEvent: {}
+[9.451014] (-) TimerEvent: {}
+[9.551561] (-) TimerEvent: {}
+[9.652444] (-) TimerEvent: {}
+[9.752843] (-) TimerEvent: {}
+[9.837142] (manos_manager) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/manos_manager', 'build', '--build-base', '/home/field/MANOS/build/manos_manager/build', 'install', '--record', '/home/field/MANOS/build/manos_manager/install.log', '--single-version-externally-managed'], 'cwd': '/home/field/MANOS/src/manos_manager', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'field', 'SSH_AGENT_PID': '3783', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib', 'HOME': '/home/field', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/field/MANOS/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '3388', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/field/MANOS/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'field', 'JOURNAL_STREAM': '8:34748', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'field', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/usr/local/cuda/bin:/home/field/miniconda3/condabin:/opt/ros/galactic/bin:/home/field/.cargo/bin:/home/field/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/field-Precision-5570:@/tmp/.ICE-unix/3821,unix/field-Precision-5570:/tmp/.ICE-unix/3821', 'INVOCATION_ID': '6257b61199264e608628d3287c7b61f9', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/136cb7ce_e69e_4a14_a348_51e5967369ad', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.93', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic', 'CONDA_PYTHON_EXE': '/home/field/miniconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'TVM_NDK_CC': '/home/field/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'JAVA_HOME': '/usr/lib/jvm/java-17-openjdk-amd64', 'PWD': '/home/field/MANOS/build/manos_manager', 'TVM_HOME': '/home/field/tvm-unity', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/field/miniconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/field/MANOS/build/manos_manager/prefix_override:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'ANDROID_NDK': '/home/field/Android/Sdk/ndk/25.2.9519653', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control'}, 'shell': False}
+[9.853035] (-) TimerEvent: {}
+[9.953373] (-) TimerEvent: {}
+[9.956752] (manos_manager) StdoutLine: {'line': b'running egg_info\n'}
+[9.957028] (manos_manager) StdoutLine: {'line': b'writing ../../build/manos_manager/manos_manager.egg-info/PKG-INFO\n'}
+[9.957121] (manos_manager) StdoutLine: {'line': b'writing dependency_links to ../../build/manos_manager/manos_manager.egg-info/dependency_links.txt\n'}
+[9.957277] (manos_manager) StdoutLine: {'line': b'writing entry points to ../../build/manos_manager/manos_manager.egg-info/entry_points.txt\n'}
+[9.957346] (manos_manager) StdoutLine: {'line': b'writing requirements to ../../build/manos_manager/manos_manager.egg-info/requires.txt\n'}
+[9.957409] (manos_manager) StdoutLine: {'line': b'writing top-level names to ../../build/manos_manager/manos_manager.egg-info/top_level.txt\n'}
+[9.974426] (manos_manager) StdoutLine: {'line': b"reading manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'\n"}
+[9.974720] (manos_manager) StdoutLine: {'line': b"writing manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'\n"}
+[9.974812] (manos_manager) StdoutLine: {'line': b'running build\n'}
+[9.974880] (manos_manager) StdoutLine: {'line': b'running build_py\n'}
+[9.975029] (manos_manager) StdoutLine: {'line': b'running install\n'}
+[9.975467] (manos_manager) StdoutLine: {'line': b'running install_lib\n'}
+[9.976189] (manos_manager) StdoutLine: {'line': b'running install_data\n'}
+[9.976405] (manos_manager) StdoutLine: {'line': b'running install_egg_info\n'}
+[9.977249] (manos_manager) StdoutLine: {'line': b"removing '/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[9.977398] (manos_manager) StdoutLine: {'line': b'Copying ../../build/manos_manager/manos_manager.egg-info to /home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info\n'}
+[9.977583] (manos_manager) StdoutLine: {'line': b'running install_scripts\n'}
+[9.986440] (manos_manager) StdoutLine: {'line': b'Installing manos_manager script to /home/field/MANOS/install/manos_manager/lib/manos_manager\n'}
+[9.986581] (manos_manager) StdoutLine: {'line': b"writing list of installed files to '/home/field/MANOS/build/manos_manager/install.log'\n"}
+[9.997270] (manos_manager) CommandEnded: {'returncode': 0}
+[10.053959] (-) TimerEvent: {}
+[10.154291] (-) TimerEvent: {}
+[10.205661] (manos_manager) JobEnded: {'identifier': 'manos_manager', 'rc': 0}
+[10.206177] (-) EventReactorShutdown: {}

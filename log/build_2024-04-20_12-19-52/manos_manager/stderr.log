@@ -1,0 +1,5 @@
+  File "/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager/manos_manager.py", line 102
+    self.servo_controller =
+                           ^
+SyntaxError: invalid syntax
+

@@ -1,0 +1,5 @@
+  File "/home/field/MANOS/install/castelet/lib/python3.8/site-packages/castelet/castelet.py", line 116
+    self.castelet_ui.test.clicked.connect(self.calibrate) 5
+                                                          ^
+SyntaxError: invalid syntax
+

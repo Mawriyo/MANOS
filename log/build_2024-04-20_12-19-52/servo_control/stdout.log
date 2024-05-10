@@ -1,0 +1,31 @@
+-- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found rosidl_default_generators: 1.1.1 (/opt/ros/galactic/share/rosidl_default_generators/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found ament_lint_auto: 0.10.7 (/opt/ros/galactic/share/ament_lint_auto/cmake)
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/field/MANOS/build/servo_control
+-- Install configuration: ""
+-- Installing: /home/field/MANOS/install/servo_control/lib/servo_control/servo_service.py
+-- Installing: /home/field/MANOS/install/servo_control/share/ament_index/resource_index/package_run_dependencies/servo_control
+-- Up-to-date: /home/field/MANOS/install/servo_control/share/ament_index/resource_index/parent_prefix_path/servo_control
+-- Up-to-date: /home/field/MANOS/install/servo_control/share/servo_control/environment/ament_prefix_path.sh
+-- Installing: /home/field/MANOS/install/servo_control/share/servo_control/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/field/MANOS/install/servo_control/share/servo_control/environment/path.sh
+-- Installing: /home/field/MANOS/install/servo_control/share/servo_control/environment/path.dsv
+-- Up-to-date: /home/field/MANOS/install/servo_control/share/servo_control/local_setup.bash
+-- Installing: /home/field/MANOS/install/servo_control/share/servo_control/local_setup.sh
+-- Up-to-date: /home/field/MANOS/install/servo_control/share/servo_control/local_setup.zsh
+-- Installing: /home/field/MANOS/install/servo_control/share/servo_control/local_setup.dsv
+-- Installing: /home/field/MANOS/install/servo_control/share/servo_control/package.dsv
+-- Up-to-date: /home/field/MANOS/install/servo_control/share/ament_index/resource_index/packages/servo_control
+-- Installing: /home/field/MANOS/install/servo_control/share/servo_control/cmake/servo_controlConfig.cmake
+-- Up-to-date: /home/field/MANOS/install/servo_control/share/servo_control/cmake/servo_controlConfig-version.cmake
+-- Installing: /home/field/MANOS/install/servo_control/share/servo_control/package.xml

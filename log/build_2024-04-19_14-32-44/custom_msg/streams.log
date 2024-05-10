@@ -1,0 +1,200 @@
+[0.918s] Invoking command in '/home/field/MANOS/build/custom_msg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic /home/field/.local/bin/cmake --build /home/field/MANOS/build/custom_msg -- -j20 -l20
+[1.425s] [  2%] Built target custom_msg__cpp
+[1.425s] [  4%] [32mBuilding C object CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/msg/detail/list_string__functions.c.o[0m
+[1.425s] [  8%] [32mBuilding C object CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/msg/detail/pos__functions.c.o[0m
+[1.425s] [  8%] [32mBuilding C object CMakeFiles/custom_msg__rosidl_generator_c.dir/rosidl_generator_c/custom_msg/msg/detail/manos_bundle__functions.c.o[0m
+[1.426s] [ 10%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msg/msg/pos__type_support.cpp.o[0m
+[1.426s] [ 12%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msg/msg/detail/dds_fastrtps/manos_bundle__type_support.cpp.o[0m
+[1.426s] [ 14%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msg/msg/detail/manos_bundle__type_support.cpp.o[0m
+[1.426s] [ 17%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msg/msg/list_string__type_support.cpp.o[0m
+[1.426s] [ 21%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msg/msg/detail/list_string__type_support.cpp.o[0m
+[1.426s] [ 21%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msg/msg/detail/dds_fastrtps/list_string__type_support.cpp.o[0m
+[1.426s] [ 23%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msg/msg/detail/dds_fastrtps/pos__type_support.cpp.o[0m
+[1.427s] [ 25%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msg/msg/detail/pos__type_support.cpp.o[0m
+[1.427s] [ 27%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msg/msg/manos_bundle__type_support.cpp.o[0m
+[1.427s] [ 29%] [32m[1mLinking C shared library libcustom_msg__rosidl_generator_c.so[0m
+[1.428s] [ 31%] Built target custom_msg__rosidl_generator_c
+[1.428s] [ 34%] [32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msg/msg/detail/list_string__type_support.c.o[0m
+[1.429s] [ 36%] [32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msg/msg/detail/pos__type_support.c.o[0m
+[1.429s] [ 38%] [32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msg/msg/detail/manos_bundle__type_support.c.o[0m
+[1.429s] [ 40%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msg/msg/pos__type_support.cpp.o[0m
+[1.429s] [ 42%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msg/msg/list_string__type_support.cpp.o[0m
+[1.429s] [ 44%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msg/msg/manos_bundle__type_support.cpp.o[0m
+[1.429s] [ 46%] [32m[1mLinking C shared library libcustom_msg__rosidl_typesupport_introspection_c.so[0m
+[1.429s] [ 48%] [32m[1mLinking CXX shared library libcustom_msg__rosidl_typesupport_c.so[0m
+[1.429s] [ 51%] Built target custom_msg__rosidl_typesupport_introspection_c
+[1.429s] [ 53%] Built target custom_msg__rosidl_typesupport_c
+[1.429s] [ 55%] [32m[1mLinking CXX shared library libcustom_msg__rosidl_typesupport_introspection_cpp.so[0m
+[1.429s] [ 57%] [32m[1mLinking CXX shared library libcustom_msg__rosidl_typesupport_cpp.so[0m
+[1.429s] [ 59%] Built target custom_msg__rosidl_typesupport_introspection_cpp
+[1.429s] [ 61%] Built target custom_msg__rosidl_typesupport_cpp
+[1.430s] [ 63%] [32m[1mLinking CXX shared library libcustom_msg__rosidl_typesupport_fastrtps_cpp.so[0m
+[1.430s] [ 65%] Built target custom_msg__rosidl_typesupport_fastrtps_cpp
+[1.430s] [ 68%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msg/msg/detail/list_string__type_support_c.cpp.o[0m
+[1.430s] [ 70%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msg/msg/detail/pos__type_support_c.cpp.o[0m
+[1.430s] [ 72%] [32mBuilding CXX object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msg/msg/detail/manos_bundle__type_support_c.cpp.o[0m
+[1.492s] [ 74%] [32m[1mLinking CXX shared library libcustom_msg__rosidl_typesupport_fastrtps_c.so[0m
+[1.533s] [ 76%] Built target custom_msg__rosidl_typesupport_fastrtps_c
+[1.539s] [ 76%] Built target custom_msg
+[1.544s] [ 78%] Built target custom_msg__py
+[1.553s] [ 80%] [32mBuilding C object CMakeFiles/custom_msg__python.dir/rosidl_generator_py/custom_msg/msg/_list_string_s.c.o[0m
+[1.554s] [ 82%] [32mBuilding C object CMakeFiles/custom_msg__python.dir/rosidl_generator_py/custom_msg/msg/_pos_s.c.o[0m
+[1.554s] [ 85%] [32mBuilding C object CMakeFiles/custom_msg__python.dir/rosidl_generator_py/custom_msg/msg/_manos_bundle_s.c.o[0m
+[1.611s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/custom_msg/libcustom_msg__python.so[0m
+[1.629s] [ 87%] Built target custom_msg__python
+[1.636s] [ 89%] [32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/custom_msg/_custom_msg_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[1.636s] [ 93%] [32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/custom_msg/_custom_msg_s.ep.rosidl_typesupport_c.c.o[0m
+[1.636s] [ 93%] [32mBuilding C object CMakeFiles/custom_msg__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/custom_msg/_custom_msg_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[1.680s] [ 97%] [32m[1mLinking CXX shared library rosidl_generator_py/custom_msg/custom_msg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[1.680s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/custom_msg/custom_msg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[1.684s] [100%] [32m[1mLinking C shared library rosidl_generator_py/custom_msg/custom_msg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[1.695s] [100%] Built target custom_msg__rosidl_typesupport_c__pyext
+[1.699s] [100%] Built target custom_msg__rosidl_typesupport_introspection_c__pyext
+[1.713s] [100%] Built target custom_msg__rosidl_typesupport_fastrtps_c__pyext
+[1.720s] Invoked command in '/home/field/MANOS/build/custom_msg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic /home/field/.local/bin/cmake --build /home/field/MANOS/build/custom_msg -- -j20 -l20
+[1.796s] Invoking command in '/home/field/MANOS/build/custom_msg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic /home/field/.local/bin/cmake --install /home/field/MANOS/build/custom_msg
+[1.814s] -- Install configuration: ""
+[1.814s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/ament_index/resource_index/rosidl_interfaces/custom_msg
+[1.814s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg
+[1.814s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg
+[1.814s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/rosidl_generator_c__visibility_control.h
+[1.814s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/list_string.h
+[1.814s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__functions.c
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__functions.h
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__functions.h
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__type_support.h
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__functions.h
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__struct.h
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__functions.c
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__functions.c
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__struct.h
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__struct.h
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__type_support.h
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__type_support.h
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/pos.h
+[1.815s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/manos_bundle.h
+[1.816s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/library_path.sh
+[1.816s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/library_path.dsv
+[1.816s] -- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_generator_c.so
+[1.816s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_generator_c.so" to ""
+[1.816s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg
+[1.816s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg
+[1.816s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.816s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail
+[1.816s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_fastrtps_c.h
+[1.816s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__rosidl_typesupport_fastrtps_c.h
+[1.816s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_fastrtps_c.h
+[1.816s] -- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_c.so
+[1.816s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_c.so" to ""
+[1.816s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_fastrtps_cpp.hpp
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_fastrtps_cpp.hpp
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/dds_fastrtps
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__rosidl_typesupport_fastrtps_cpp.hpp
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.817s] -- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_cpp.so
+[1.817s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_fastrtps_cpp.so" to ""
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_introspection_c.h
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__rosidl_typesupport_introspection_c.h
+[1.817s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__type_support.c
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__type_support.c
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__type_support.c
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_introspection_c.h
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.818s] -- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_c.so
+[1.818s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_c.so" to ""
+[1.818s] -- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_c.so
+[1.818s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_c.so" to ""
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/pos.hpp
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/manos_bundle.hpp
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__traits.hpp
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__traits.hpp
+[1.818s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__builder.hpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__struct.hpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__builder.hpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__struct.hpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__traits.hpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__struct.hpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__builder.hpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/list_string.hpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__type_support.cpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__rosidl_typesupport_introspection_cpp.hpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/list_string__type_support.cpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__rosidl_typesupport_introspection_cpp.hpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/manos_bundle__type_support.cpp
+[1.819s] -- Up-to-date: /home/field/MANOS/install/custom_msg/include/custom_msg/msg/detail/pos__rosidl_typesupport_introspection_cpp.hpp
+[1.819s] -- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_cpp.so
+[1.820s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_introspection_cpp.so" to ""
+[1.820s] -- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_cpp.so
+[1.820s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__rosidl_typesupport_cpp.so" to ""
+[1.820s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/pythonpath.sh
+[1.820s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/pythonpath.dsv
+[1.820s] -- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/__init__.py
+[1.839s] -- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg
+[1.839s] -- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_manos_bundle_s.c
+[1.839s] -- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/__init__.py
+[1.839s] -- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_list_string.py
+[1.839s] -- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_pos.py
+[1.839s] -- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_manos_bundle.py
+[1.839s] -- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_pos_s.c
+[1.839s] -- Up-to-date: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/msg/_list_string_s.c
+[1.839s] -- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+[1.839s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""
+[1.840s] -- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+[1.840s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""
+[1.840s] -- Installing: /home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+[1.840s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages/custom_msg/custom_msg_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""
+[1.840s] -- Installing: /home/field/MANOS/install/custom_msg/lib/libcustom_msg__python.so
+[1.840s] -- Set runtime path of "/home/field/MANOS/install/custom_msg/lib/libcustom_msg__python.so" to ""
+[1.840s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/ListString.idl
+[1.840s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/Pos.idl
+[1.840s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/MANOSBundle.idl
+[1.840s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/ListString.msg
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/Pos.msg
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/msg/MANOSBundle.msg
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/ament_index/resource_index/package_run_dependencies/custom_msg
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/ament_index/resource_index/parent_prefix_path/custom_msg
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/ament_prefix_path.sh
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/ament_prefix_path.dsv
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/path.sh
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/environment/path.dsv
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/local_setup.bash
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/local_setup.sh
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/local_setup.zsh
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/local_setup.dsv
+[1.841s] -- Installing: /home/field/MANOS/install/custom_msg/share/custom_msg/package.dsv
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/ament_index/resource_index/packages/custom_msg
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_generator_cExport.cmake
+[1.841s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_generator_cExport-noconfig.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cExport.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cExport.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cExport-noconfig.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_generator_cppExport.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cppExport.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cppExport.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msg__rosidl_typesupport_cppExport-noconfig.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/rosidl_cmake-extras.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_libraries-extras.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_targets-extras.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.842s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.843s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msgConfig.cmake
+[1.843s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/cmake/custom_msgConfig-version.cmake
+[1.843s] -- Up-to-date: /home/field/MANOS/install/custom_msg/share/custom_msg/package.xml
+[1.846s] Invoked command in '/home/field/MANOS/build/custom_msg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/opt/ros/galactic /home/field/.local/bin/cmake --install /home/field/MANOS/build/custom_msg

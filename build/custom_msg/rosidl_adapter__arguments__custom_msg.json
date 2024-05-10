@@ -1,0 +1,9 @@
+{
+  "package_name": "custom_msg",
+  "non_idl_tuples": [
+    "/home/field/MANOS/src/custom_msg:msg/ListString.msg",
+    "/home/field/MANOS/src/custom_msg:msg/Pos.msg",
+    "/home/field/MANOS/src/custom_msg:msg/MANOSBundle.msg",
+    "/home/field/MANOS/src/custom_msg:srv/SetServo.srv"
+  ]
+}

@@ -1,0 +1,10 @@
+msg/ListString.idl
+msg/ListString.msg
+msg/MANOSBundle.idl
+msg/MANOSBundle.msg
+msg/Pos.idl
+msg/Pos.msg
+srv/SetServo.idl
+srv/SetServo.srv
+srv/SetServo_Request.msg
+srv/SetServo_Response.msg

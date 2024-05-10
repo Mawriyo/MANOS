@@ -1,0 +1,29 @@
+[3.285s] Invoking command in '/home/field/MANOS/src/manos_manager': AMENT_PREFIX_PATH=/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic CMAKE_PREFIX_PATH=/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control LD_LIBRARY_PATH=/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib PYTHONPATH=/home/field/MANOS/build/manos_manager/prefix_override:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_manager build --build-base /home/field/MANOS/build/manos_manager/build install --record /home/field/MANOS/build/manos_manager/install.log --single-version-externally-managed
+[3.432s] running egg_info
+[3.432s] writing ../../build/manos_manager/manos_manager.egg-info/PKG-INFO
+[3.432s] writing dependency_links to ../../build/manos_manager/manos_manager.egg-info/dependency_links.txt
+[3.432s] writing entry points to ../../build/manos_manager/manos_manager.egg-info/entry_points.txt
+[3.432s] writing requirements to ../../build/manos_manager/manos_manager.egg-info/requires.txt
+[3.432s] writing top-level names to ../../build/manos_manager/manos_manager.egg-info/top_level.txt
+[3.454s] reading manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[3.455s] writing manifest file '../../build/manos_manager/manos_manager.egg-info/SOURCES.txt'
+[3.455s] running build
+[3.456s] running build_py
+[3.456s] copying manos_manager/manos_manager.py -> /home/field/MANOS/build/manos_manager/build/lib/manos_manager
+[3.456s] running install
+[3.457s] running install_lib
+[3.457s] copying /home/field/MANOS/build/manos_manager/build/lib/manos_manager/manos_manager.py -> /home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager
+[3.458s] byte-compiling /home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager/manos_manager.py to manos_manager.cpython-38.pyc
+[3.459s] running install_data
+[3.460s]   File "/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager/manos_manager.py", line 102
+[3.461s]     self.servo_controller =
+[3.461s]                            ^
+[3.461s] SyntaxError: invalid syntax
+[3.461s] 
+[3.461s] running install_egg_info
+[3.461s] removing '/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info' (and everything under it)
+[3.461s] Copying ../../build/manos_manager/manos_manager.egg-info to /home/field/MANOS/install/manos_manager/lib/python3.8/site-packages/manos_manager-0.0.0-py3.8.egg-info
+[3.461s] running install_scripts
+[3.469s] Installing manos_manager script to /home/field/MANOS/install/manos_manager/lib/manos_manager
+[3.470s] writing list of installed files to '/home/field/MANOS/build/manos_manager/install.log'
+[4.280s] Invoked command in '/home/field/MANOS/src/manos_manager' returned '0': AMENT_PREFIX_PATH=/home/field/MANOS/install/custom_ros_controller:/home/field/MANOS/install/servo_control:/home/field/MANOS/install/manos_manager:/home/field/MANOS/install/host_listener_package:/home/field/MANOS/install/hand_detector:/home/field/MANOS/install/castelet:/home/field/MANOS/install/camera:/home/field/MANOS/install/custom_msg:/opt/ros/galactic CMAKE_PREFIX_PATH=/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control LD_LIBRARY_PATH=/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib PYTHONPATH=/home/field/MANOS/build/manos_manager/prefix_override:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/manos_manager build --build-base /home/field/MANOS/build/manos_manager/build install --record /home/field/MANOS/build/manos_manager/install.log --single-version-externally-managed

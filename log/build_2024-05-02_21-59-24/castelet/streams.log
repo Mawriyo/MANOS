@@ -1,0 +1,21 @@
+[0.976s] Invoking command in '/home/field/MANOS/src/castelet': CMAKE_PREFIX_PATH=/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control LD_LIBRARY_PATH=/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib PYTHONPATH=/home/field/MANOS/build/castelet/prefix_override:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/castelet build --build-base /home/field/MANOS/build/castelet/build install --record /home/field/MANOS/build/castelet/install.log --single-version-externally-managed
+[1.096s] running egg_info
+[1.096s] writing ../../build/castelet/castelet.egg-info/PKG-INFO
+[1.096s] writing dependency_links to ../../build/castelet/castelet.egg-info/dependency_links.txt
+[1.096s] writing entry points to ../../build/castelet/castelet.egg-info/entry_points.txt
+[1.096s] writing requirements to ../../build/castelet/castelet.egg-info/requires.txt
+[1.096s] writing top-level names to ../../build/castelet/castelet.egg-info/top_level.txt
+[1.113s] reading manifest file '../../build/castelet/castelet.egg-info/SOURCES.txt'
+[1.114s] writing manifest file '../../build/castelet/castelet.egg-info/SOURCES.txt'
+[1.114s] running build
+[1.114s] running build_py
+[1.114s] running install
+[1.114s] running install_lib
+[1.115s] running install_data
+[1.115s] running install_egg_info
+[1.116s] removing '/home/field/MANOS/install/castelet/lib/python3.8/site-packages/castelet-0.0.0-py3.8.egg-info' (and everything under it)
+[1.116s] Copying ../../build/castelet/castelet.egg-info to /home/field/MANOS/install/castelet/lib/python3.8/site-packages/castelet-0.0.0-py3.8.egg-info
+[1.116s] running install_scripts
+[1.126s] Installing castelet script to /home/field/MANOS/install/castelet/lib/castelet
+[1.126s] writing list of installed files to '/home/field/MANOS/build/castelet/install.log'
+[1.137s] Invoked command in '/home/field/MANOS/src/castelet' returned '0': CMAKE_PREFIX_PATH=/home/field/MANOS/install/custom_msg:/home/field/MANOS/install/servo_control LD_LIBRARY_PATH=/home/field/MANOS/install/custom_msg/lib:/usr/local/cuda/lib64:/home/field/MANOS/install/servo_control/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib PYTHONPATH=/home/field/MANOS/build/castelet/prefix_override:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/custom_msg/lib/python3.8/site-packages:/home/field/MANOS/install/servo_control/lib/python3.8/site-packages:/home/field/MANOS/install/manos_manager/lib/python3.8/site-packages:/home/field/MANOS/install/host_listener_package/lib/python3.8/site-packages:/home/field/MANOS/install/hand_detector/lib/python3.8/site-packages:/home/field/MANOS/install/custom_ros_controller/lib/python3.8/site-packages:/home/field/MANOS/install/castelet/lib/python3.8/site-packages:/home/field/MANOS/install/camera/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py egg_info --egg-base ../../build/castelet build --build-base /home/field/MANOS/build/castelet/build install --record /home/field/MANOS/build/castelet/install.log --single-version-externally-managed
